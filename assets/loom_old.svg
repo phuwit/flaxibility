@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1024.0px"
+   height="1024.0px"
+   viewBox="0 0 1024.0 1024.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="drawing.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview671"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="0.64765011"
+     inkscape:cx="598.31689"
+     inkscape:cy="536.55515"
+     inkscape:window-width="1920"
+     inkscape:window-height="994"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer6"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-others="false"
+     inkscape:snap-grids="false"
+     inkscape:bbox-nodes="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid677" />
+  </sodipodi:namedview>
+  <defs
+     id="defs666">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect8376"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1 @ F,0,0,1,0,30,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="30"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="Layer 7">
+    <rect
+       style="fill:#ffffff;fill-opacity:1"
+       id="rect7000"
+       width="1456.1555"
+       height="1177.4419"
+       x="-189.39116"
+       y="-64.250015" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Layer 6">
+    <path
+       style="fill:#494949;fill-opacity:1;stroke-width:1.06224"
+       id="rect6759"
+       width="377.95276"
+       height="440.30164"
+       x="323.02362"
+       y="583.69836"
+       inkscape:path-effect="#path-effect8376"
+       d="m 353.02362,583.69836 h 317.95276 a 30,30 45 0 1 30,30 V 994 a 30,30 135 0 1 -30,30 H 353.02362 a 30,30 45 0 1 -30,-30 V 613.69836 a 30,30 135 0 1 30,-30 z"
+       sodipodi:type="rect" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#757575;fill-rule:evenodd;stroke-width:0.686273;fill-opacity:1"
+       id="path724"
+       cx="512"
+       cy="350"
+       r="350" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline">
+    <circle
+       style="fill:#a4a4a4;fill-rule:evenodd;stroke-width:0.588234;fill-opacity:1"
+       id="path724-6"
+       cx="512"
+       cy="350"
+       r="300" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 4">
+    <path
+       id="path724-6-7"
+       style="display:inline;fill:#673ab7;fill-rule:evenodd;stroke-width:0.490195;fill-opacity:1"
+       d="M 512 100 A 250 250 0 0 0 423.60938 116.9043 L 487.4375 227.45508 A 125 125 0 0 1 512 225 A 125 125 0 0 1 536.55859 227.46484 L 600.58984 116.55664 A 250 250 0 0 0 512 100 z M 354.21289 156.70898 A 250 250 0 0 0 265.50586 310 L 394.13867 310 A 125 125 0 0 1 418.42773 267.92773 L 354.21289 156.70898 z M 669.7793 156.7207 L 605.81836 267.50391 A 125 125 0 0 1 630.37305 310 L 758.71875 310 A 250 250 0 0 0 669.7793 156.7207 z M 265.50586 390 A 250 250 0 0 0 354.29492 543.15234 L 418.42773 432.07227 A 125 125 0 0 1 394.13867 390 L 265.50586 390 z M 629.86133 390 A 125 125 0 0 1 605.57227 432.07227 L 669.78711 543.29102 A 250 250 0 0 0 758.49414 390 L 629.86133 390 z M 487.4375 472.54492 L 423.44922 583.375 A 250 250 0 0 0 512 600 A 250 250 0 0 0 600.39062 583.0957 L 536.5625 472.54492 A 125 125 0 0 1 512 475 A 125 125 0 0 1 487.4375 472.54492 z " />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 5">
+    <circle
+       style="fill:#494949;fill-opacity:1;stroke-width:1.12949"
+       id="path2945"
+       cx="512"
+       cy="350"
+       r="75" />
+    <circle
+       style="fill:#262626;fill-opacity:1;stroke-width:1.48545"
+       id="path3105"
+       cx="512.1123"
+       cy="350"
+       r="37.5" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer8"
+     inkscape:label="Layer 8" />
+</svg>
