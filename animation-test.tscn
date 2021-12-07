@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [ 0.0, 120.0 ]
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="animation-test" type="Node2D"]
 position = Vector2( 345.703, 294.953 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
