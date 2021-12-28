@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="loom_base.svg"
+   inkscape:export-filename="/home/phuwit/Code/flaxibility/assets/Kdenlive/loom_base.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:zoom="1.0040364"
+     inkscape:cx="163.34069"
+     inkscape:cy="290.32812"
+     inkscape:window-width="1920"
+     inkscape:window-height="994"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer4" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1193"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="12.5"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect8376"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="12.5"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1396"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="12.5"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <path
+       style="fill:#494949;fill-opacity:1;fill-rule:evenodd;stroke-width:0.965339"
+       id="rect31-3"
+       width="512"
+       height="150"
+       x="0"
+       y="362"
+       inkscape:path-effect="#path-effect1193"
+       sodipodi:type="rect"
+       d="m 12.5,362 h 487 a 12.5,12.5 45 0 1 12.5,12.5 v 125 A 12.5,12.5 135 0 1 499.5,512 H 12.5 A 12.5,12.5 45 0 1 0,499.5 v -125 A 12.5,12.5 135 0 1 12.5,362 Z" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <path
+       style="fill:#666666;fill-opacity:1;stroke-width:1.06224"
+       id="rect6759"
+       width="160"
+       height="175.00003"
+       x="176"
+       y="186.99997"
+       inkscape:path-effect="#path-effect8376"
+       sodipodi:type="rect"
+       d="m 188.5,186.99997 h 135 a 12.5,12.5 45 0 1 12.5,12.5 V 349.5 A 12.5,12.5 135 0 1 323.5,362 h -135 A 12.5,12.5 45 0 1 176,349.5 l 0,-150.00003 a 12.5,12.5 135 0 1 12.5,-12.5 z" />
+    <circle
+       style="fill:#757575;fill-opacity:1;fill-rule:evenodd;stroke-width:0.245097"
+       id="path724"
+       cx="256"
+       cy="186.99997"
+       r="125" />
+    <circle
+       style="display:inline;fill:#a4a4a4;fill-opacity:1;fill-rule:evenodd;stroke-width:0.210084"
+       id="path724-6"
+       cx="256"
+       cy="186.99997"
+       r="107.14286" />
+    <circle
+       style="fill:#494949;fill-opacity:1;stroke-width:0.403389"
+       id="path2945"
+       cx="256"
+       cy="186.99997"
+       r="26.785715" />
+    <circle
+       style="fill:#262626;fill-opacity:1;stroke-width:0.530518"
+       id="path3105"
+       cx="256"
+       cy="186.99997"
+       r="13.392858" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 4"
+     style="display:none">
+    <path
+       id="path724-6-7"
+       style="display:inline;fill:#673ab7;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17507"
+       d="m 255.95989,97.71441 a 89.285714,89.285714 0 0 0 -31.56808,6.03725 l 22.79575,39.48242 a 44.642858,44.642858 0 0 1 8.77233,-0.87682 44.642858,44.642858 0 0 1 8.77092,0.8803 l 22.8683,-39.61007 a 89.285714,89.285714 0 0 0 -31.63922,-5.91308 z m -56.35254,20.2532 a 89.285714,89.285714 0 0 0 -31.68108,54.74679 h 45.94029 a 44.642858,44.642858 0 0 1 8.67466,-15.02581 z m 112.70229,0.004 -22.8432,39.56543 a 44.642858,44.642858 0 0 1 8.76953,15.17718 h 45.83776 A 89.285714,89.285714 0 0 0 312.30964,117.9715 Z m -144.38337,83.31392 a 89.285714,89.285714 0 0 0 31.71037,54.69726 l 22.90458,-39.67146 a 44.642858,44.642858 0 0 1 -8.67466,-15.0258 z m 130.12694,0 a 44.642858,44.642858 0 0 1 -8.67465,15.0258 l 22.93388,39.72099 a 89.285714,89.285714 0 0 0 31.68107,-54.74679 z m -50.86565,29.48033 -22.85296,39.58217 a 89.285714,89.285714 0 0 0 31.62528,5.9375 89.285714,89.285714 0 0 0 31.56808,-6.03725 l -22.79575,-39.48242 a 44.642858,44.642858 0 0 1 -8.77233,0.87681 44.642858,44.642858 0 0 1 -8.77232,-0.87681 z"
+       inkscape:export-filename="/home/phuwit/Code/flaxibility/assets/Kdenlive/loom_wheel.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>
