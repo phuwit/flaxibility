@@ -1,1 +1,8 @@
+# gdscript vscode plugin settings
 .vscode/settings.json
+
+# godot
+.import/
+*.translation
+export_presets.cfg
+.mono/
