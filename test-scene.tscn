@@ -6,10 +6,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="rest-zone" parent="." instance=ExtResource( 1 )]
-position = Vector2( 414, 352 )
+position = Vector2( 361, 290 )
 
 [node name="rest-zone2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 716, 258 )
+position = Vector2( 646, 258 )
 
 [node name="drag-and-drop" parent="." instance=ExtResource( 2 )]
 position = Vector2( 211, 130 )
