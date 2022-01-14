@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/packager_hand.svg-c6e71d72e174167d4ad776b8f5a390a7.stex"
+path="res://.import/packager_hand.svg-3a5d3b6578de7c01a52a4ec461ccea64.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/packager_hand.svg"
-dest_files=[ "res://.import/packager_hand.svg-c6e71d72e174167d4ad776b8f5a390a7.stex" ]
+source_file="res://drag-and-drop-assets/packager_hand.svg"
+dest_files=[ "res://.import/packager_hand.svg-3a5d3b6578de7c01a52a4ec461ccea64.stex" ]
 
 [params]
 
