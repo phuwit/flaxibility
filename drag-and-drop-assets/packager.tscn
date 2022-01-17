@@ -31,7 +31,7 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="AnimationPlayer/Sprite"]
-scale = Vector2( 1, 1 )
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Sprite/Area2D"]
 z_index = 1

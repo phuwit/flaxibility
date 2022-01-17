@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="123"
+   width="106"
    height="50"
-   viewBox="0 0 123 50"
+   viewBox="0 0 106 50"
    version="1.1"
    id="SVGRoot"
    sodipodi:docname="sewing_spindle_shades.svg"
@@ -24,15 +24,19 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="5.1812009"
-     inkscape:cx="57.322618"
-     inkscape:cy="51.146444"
+     inkscape:cx="36.864041"
+     inkscape:cy="38.022073"
      inkscape:window-width="1920"
      inkscape:window-height="994"
      inkscape:window-x="0"
      inkscape:window-y="22"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-nodes="false">
+     inkscape:snap-nodes="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true">
     <inkscape:grid
        type="xygrid"
        id="grid28210" />
@@ -44,35 +48,30 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g28279"
-       transform="translate(-2,-10.456675)">
+       id="g63">
       <path
          style="display:inline;fill:#512da8;fill-opacity:1"
-         d="M 19,60.45668 35,10.456688 H 45 L 29,60.45668 Z"
+         d="M 0,50.000001 16,9e-6 H 26 L 10,50.000001 Z"
          id="path13276" />
       <path
          style="display:inline;fill:#512da8;fill-opacity:1"
-         d="M 51,60.45668 67,10.456688 H 77 L 61,60.45668 Z"
+         d="M 32,50.000001 48,9e-6 H 58 L 42,50.000001 Z"
          id="path13276-0" />
       <path
          style="display:inline;fill:#512da8;fill-opacity:1"
-         d="M 67,60.45668 83,10.456688 H 93 L 77,60.45668 Z"
+         d="M 48,50.000001 64,9e-6 H 74 L 58,50.000001 Z"
          id="path13276-23" />
       <path
          style="display:inline;fill:#512da8;fill-opacity:1"
-         d="M 83,60.45668 99,10.456678 h 10 L 93,60.45668 Z"
+         d="M 64,50.000001 80,-1e-6 H 90 L 74,50.000001 Z"
          id="path13276-7" />
       <path
          style="display:inline;fill:#512da8;fill-opacity:1"
-         d="m 99,60.45667 16,-50 h 10 l -16,50 z"
-         id="path13276-7-6" />
+         d="M 80,50.000001 96,-8.5e-7 h 10 L 90,50.000001 Z"
+         id="path13276-7-3" />
       <path
          style="display:inline;fill:#512da8;fill-opacity:1"
-         d="M 2,60.45668 18,10.456678 H 28 L 12,60.45668 Z"
-         id="path13276-7-1" />
-      <path
-         style="display:inline;fill:#512da8;fill-opacity:1"
-         d="M 35,60.45668 51,10.456688 H 61 L 45,60.45668 Z"
+         d="M 16,50.000001 32,9e-6 H 42 L 26,50.000001 Z"
          id="path13276-2" />
     </g>
   </g>
