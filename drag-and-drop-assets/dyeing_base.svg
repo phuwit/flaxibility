@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="dyeing_base.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:zoom="1.4199219"
+     inkscape:cx="209.8707"
+     inkscape:cy="254.23934"
+     inkscape:window-width="1920"
+     inkscape:window-height="994"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1396"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1 @ F,0,0,1,0,12.5,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="12.5"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#494949;fill-opacity:1;fill-rule:evenodd;stroke-width:0.965339"
+       id="rect31"
+       width="512"
+       height="150"
+       x="0"
+       y="362"
+       inkscape:path-effect="#path-effect1396"
+       sodipodi:type="rect"
+       d="m 12.5,362 h 487 a 12.5,12.5 45 0 1 12.5,12.5 v 125 A 12.5,12.5 135 0 1 499.5,512 H 12.5 A 12.5,12.5 45 0 1 0,499.5 v -125 A 12.5,12.5 135 0 1 12.5,362 Z" />
+    <rect
+       style="fill:#808080;stroke-width:0.643469"
+       id="rect952"
+       width="49.900002"
+       height="15"
+       x="151.35303"
+       y="145.8658"
+       transform="rotate(30)" />
+    <rect
+       style="fill:#808080;stroke-width:0.643469"
+       id="rect952-3"
+       width="49.900002"
+       height="15"
+       x="-292.05197"
+       y="401.86581"
+       transform="matrix(-0.8660254,0.5,0.5,0.8660254,0,0)" />
+    <rect
+       style="fill:#808080;stroke-width:1.2907"
+       id="rect1319"
+       width="120"
+       height="300.00003"
+       x="196"
+       y="61.999969" />
+    <rect
+       style="fill:#333333;stroke-width:0.849289"
+       id="rect1993"
+       width="120"
+       height="20"
+       x="196"
+       y="61.999969" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <rect
+       style="fill:#b3b3b3;stroke-width:0.831459"
+       id="rect848"
+       width="360"
+       height="160"
+       x="76"
+       y="202" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 3">
+    <circle
+       style="fill:#808080;stroke-width:0.663045"
+       id="path1423"
+       cx="256"
+       cy="282"
+       r="50" />
+    <circle
+       style="fill:#673ab7;stroke-width:0.977917"
+       id="path1425"
+       cx="256"
+       cy="282"
+       r="40" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 4" />
+</svg>
