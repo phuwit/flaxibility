@@ -9,11 +9,6 @@ func _ready():
 	rest_point = rest_nodes[0].global_position
 	rest_nodes[0].select()
 
-# if clicked on the hitbox -> flip selected to true
-func _on_Area2D_input_event(_viewport, _event, _shape_idx):
-	if Input.is_action_just_pressed("click"):
-		selected = true
-
 # Interpolate obj position to mouse position
 func _physics_process(delta):
 	if selected == true:
@@ -38,3 +33,8 @@ func _input(event):
 					child.select()
 					rest_point = child.global_position
 					shortest_dist = distance
+
+
+func _on_MachineTemplate_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed("click"):
+		selected = true

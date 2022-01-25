@@ -12,7 +12,7 @@ position = Vector2( 361, 290 )
 [node name="rest-zone2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 646, 258 )
 
-[node name="drag-and-drop" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1126, 179 )
-
 [node name="packager-dnd" parent="." instance=ExtResource( 3 )]
+
+[node name="MachineTemplate" parent="." instance=ExtResource( 2 )]
+position = Vector2( 735, 406 )
