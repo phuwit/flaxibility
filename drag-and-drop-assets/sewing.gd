@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 var selected = false
 var rest_point
@@ -34,6 +34,6 @@ func _input(event):
 					rest_point = child.global_position
 					shortest_dist = distance
 
-func _on_Packager_input_event(viewport, event, shape_idx):
+func _on_Sewing_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		selected = true

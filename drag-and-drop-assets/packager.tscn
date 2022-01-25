@@ -1,40 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/packager.svg" type="Texture" id=4]
-[ext_resource path="res://drag-and-drop-assets/packager.gd" type="Script" id=6]
+[ext_resource path="res://drag-and-drop-assets/packager-only-animation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://drag-and-drop-assets/packager.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=4]
-length = 0.001
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 51.2, 51.2 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "packager-animation"
-loop = true
-step = 0.05
+[node name="Packager" type="Area2D"]
+script = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 256, 256 )
+[node name="PackagerNode2D" parent="." instance=ExtResource( 1 )]
 
-[node name="packager-dnd" type="Node2D"]
-position = Vector2( 225.2, 122.2 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 99.0 ]
-}
+[node name="PackagerCollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 4 )
-anims/packager-animation = SubResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
-position = Vector2( 225.2, 122.2 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
-
-[node name="Area2D" type="Area2D" parent="AnimationPlayer/Sprite"]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/Sprite/Area2D"]
-z_index = 1
-shape = SubResource( 3 )
-
-[connection signal="input_event" from="AnimationPlayer/Sprite/Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="input_event" from="." to="." method="_on_Packager_input_event"]
