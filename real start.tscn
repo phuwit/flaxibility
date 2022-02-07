@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://real start.gd" type="Script" id=1]
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -536.5
+margin_top = -137.0
+margin_right = 536.5
+margin_bottom = -57.0004
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="HBoxContainer"]
+margin_left = 494.0
+margin_right = 535.0
+margin_bottom = 79.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+margin_left = 539.0
+margin_right = 579.0
+margin_bottom = 79.0
+text = "Quit"
+
+[connection signal="pressed" from="HBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_Quit_pressed"]

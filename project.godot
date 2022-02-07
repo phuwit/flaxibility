@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="flaxibility"
-run/main_scene="res://test-scene.tscn"
+run/main_scene="res://start.tscn"
 config/icon="res://icon.png"
 
 [display]
