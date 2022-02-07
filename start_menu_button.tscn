@@ -1,0 +1,48 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 213.0
+margin_top = 180.0
+margin_right = 1707.0
+margin_bottom = 900.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 1494.0
+margin_bottom = 358.0
+size_flags_vertical = 3
+stretch_mode = 4
+
+[node name="center row" type="HBoxContainer" parent="Menu"]
+margin_top = 362.0
+margin_right = 1494.0
+margin_bottom = 720.0
+size_flags_vertical = 3
+
+[node name="Button" type="HBoxContainer" parent="Menu/center row"]
+margin_right = 1494.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Start" type="Button" parent="Menu/center row/Button"]
+margin_right = 745.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Quit" type="Button" parent="Menu/center row/Button"]
+margin_left = 749.0
+margin_right = 1494.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
