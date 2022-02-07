@@ -25,7 +25,6 @@ margin_right = 554.0
 margin_bottom = 246.0
 theme = SubResource( 1 )
 text = "New Game"
-percent_visible = -0.142857
 __meta__ = {
 "_edit_use_anchors_": false
 }
