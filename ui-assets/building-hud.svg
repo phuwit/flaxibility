@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="496"
+   height="256"
+   viewBox="0 0 496 256"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="building-hud.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1527"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="0.64765011"
+     inkscape:cx="-248.59102"
+     inkscape:cy="178.33703"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     height="256px">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1533" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1522">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect857-7"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,24,0,1 @ F,0,0,1,0,24,0,1 @ F,0,0,1,0,24,0,1 @ F,0,0,1,0,24,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="24"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ececec;stroke:none;stroke-width:4.24178"
+       id="rect846-3-5"
+       width="496"
+       height="256"
+       x="0"
+       y="0" />
+    <path
+       style="fill:#4d4d4d;stroke:none;stroke-width:4.11598"
+       id="rect846-6"
+       width="476"
+       height="236"
+       x="10"
+       y="10"
+       inkscape:path-effect="#path-effect857-7"
+       sodipodi:type="rect"
+       d="m 34,10 h 428 a 24,24 45 0 1 24,24 v 188 a 24,24 135 0 1 -24,24 H 34 A 24,24 45 0 1 10,222 V 34 A 24,24 135 0 1 34,10 Z" />
+  </g>
+</svg>
