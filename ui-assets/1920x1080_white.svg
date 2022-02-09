@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.64765011"
-     inkscape:cx="397.59122"
-     inkscape:cy="561.25984"
+     inkscape:zoom="0.32382506"
+     inkscape:cx="711.80409"
+     inkscape:cy="730.33261"
      inkscape:window-width="1920"
      inkscape:window-height="1012"
      inkscape:window-x="0"
@@ -37,5 +37,13 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1" />
+     id="layer1">
+    <rect
+       style="fill:#ffffff"
+       id="rect763"
+       width="1920"
+       height="1080"
+       x="0"
+       y="0" />
+  </g>
 </svg>
