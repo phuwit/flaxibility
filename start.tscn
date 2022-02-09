@@ -201,9 +201,10 @@ centered = false
 [node name="button" type="Node" parent="."]
 
 [node name="menu" parent="button" instance=ExtResource( 2 )]
+visible = false
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 104
+frame = 60
 playing = true
 centered = false
