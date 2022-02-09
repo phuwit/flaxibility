@@ -13,41 +13,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 213.0
-margin_top = 180.0
-margin_right = 1707.0
-margin_bottom = 900.0
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 420 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Start" type="Button" parent="."]
+margin_left = 608.0
+margin_top = 578.0
+margin_right = 860.0
+size_flags_vertical = 2
+icon = ExtResource( 2 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Logo" type="TextureRect" parent="Menu"]
-margin_right = 1920.0
-margin_bottom = 1080.0
-texture = ExtResource( 4 )
-stretch_mode = 4
-
-[node name="center row" type="HBoxContainer" parent="Menu"]
-margin_top = 1084.0
-margin_right = 1920.0
-margin_bottom = 1330.0
-size_flags_vertical = 3
-
-[node name="Start" type="Button" parent="Menu/center row"]
-margin_right = 252.0
-margin_bottom = 246.0
-size_flags_vertical = 2
-icon = ExtResource( 2 )
-flat = true
-
-[node name="Quit" type="Button" parent="Menu/center row"]
-margin_left = 256.0
-margin_right = 508.0
-margin_bottom = 246.0
+[node name="Quit" type="Button" parent="."]
+margin_left = 1060.0
+margin_top = 578.0
+margin_right = -608.0
 size_flags_vertical = 2
 icon = ExtResource( 3 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="pressed" from="Menu/center row/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="Menu/center row/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
