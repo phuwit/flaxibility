@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://start_menu_button.gd" type="Script" id=1]
 [ext_resource path="res://ui-assets/play button.svg" type="Texture" id=2]
 [ext_resource path="res://ui-assets/exit button.svg" type="Texture" id=3]
+[ext_resource path="res://ui-assets/intro-anim-pngseq/intro-anim179.png" type="Texture" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -22,15 +23,15 @@ __meta__ = {
 }
 
 [node name="Logo" type="TextureRect" parent="Menu"]
-margin_right = 1494.0
-margin_bottom = 358.0
-size_flags_vertical = 3
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
 stretch_mode = 4
 
 [node name="center row" type="HBoxContainer" parent="Menu"]
-margin_top = 362.0
-margin_right = 1494.0
-margin_bottom = 720.0
+margin_top = 1084.0
+margin_right = 1920.0
+margin_bottom = 1330.0
 size_flags_vertical = 3
 
 [node name="Start" type="Button" parent="Menu/center row"]
@@ -48,4 +49,5 @@ size_flags_vertical = 2
 icon = ExtResource( 3 )
 flat = true
 
+[connection signal="pressed" from="Menu/center row/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Menu/center row/Quit" to="." method="_on_Quit_pressed"]
