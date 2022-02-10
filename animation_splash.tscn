@@ -200,8 +200,9 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 94 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 1 )
-frame = 78
+frame = 1
 playing = true
 centered = false
 
