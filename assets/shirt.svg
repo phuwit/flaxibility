@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="95.3554"
+   height="64.037102"
+   viewBox="0 0 95.355398 64.037104"
+   version="1.1"
+   id="svg2638"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="shirt.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2632" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="41.163716"
+     inkscape:cy="37.691317"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2635">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-322.55181,-585.12431)">
+    <path
+       id="rect873"
+       style="fill:#b3b3b3;stroke-width:0.912871"
+       d="m 355.29591,585.12431 -15.0664,4.0371 -17.6777,17.67774 14.1425,14.14258 8.5352,-8.53516 v 36.71484 h 50 v -36.71484 l 8.5352,8.53516 14.1425,-14.14258 -17.6777,-17.67774 -15.0664,-4.0371 a 16,12 0 0 1 -14.9336,7.74609 16,12 0 0 1 -14.9336,-7.74609 z" />
+    <path
+       id="path1882-7-0"
+       style="fill:#e53935;stroke-width:1.14564"
+       d="m 355.29591,585.12431 -1.9629,0.52539 a 18,14 0 0 0 16.8828,9.22461 18,14 0 0 0 16.8828,-9.22461 l -1.9629,-0.52539 a 16,12 0 0 1 -14.9199,7.75 16,12 0 0 1 -14.9199,-7.75 z" />
+  </g>
+</svg>
