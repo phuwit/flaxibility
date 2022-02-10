@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.47598761"
-     inkscape:cx="222.69487"
-     inkscape:cy="221.64442"
+     inkscape:zoom="0.84373954"
+     inkscape:cx="385.18996"
+     inkscape:cy="350.22656"
      inkscape:window-width="1920"
      inkscape:window-height="1012"
      inkscape:window-x="0"
@@ -38,7 +38,11 @@
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-page="true"
-     width="960px" />
+     width="960px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -131,34 +135,39 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       style="fill:#cccccc;stroke-width:0.985524"
-       id="rect846"
-       width="950"
-       height="530"
-       x="10"
-       y="10"
-       inkscape:path-effect="#path-effect1478"
-       sodipodi:type="rect" />
-    <path
-       style="fill:#5e35b1;stroke-width:0.985524"
-       id="rect846-3"
-       width="950"
-       height="530"
-       x="0"
-       y="0"
-       inkscape:path-effect="#path-effect1476"
-       sodipodi:type="rect" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:120px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none"
-       x="474.45996"
-       y="168.47998"
-       id="text7389"><tspan
-         sodipodi:role="line"
-         id="tspan7387"
+    <g
+       id="g852">
+      <path
+         style="fill:#cccccc;stroke-width:0.985524"
+         id="rect846"
+         width="950"
+         height="530"
+         x="10"
+         y="10"
+         inkscape:path-effect="#path-effect1478"
+         sodipodi:type="rect"
+         d="m 42,10 h 886 a 32,32 45 0 1 32,32 v 466 a 32,32 135 0 1 -32,32 H 42 A 32,32 45 0 1 10,508 V 42 A 32,32 135 0 1 42,10 Z" />
+      <path
+         style="fill:#5e35b1;stroke-width:0.985524"
+         id="rect846-3"
+         width="950"
+         height="530"
+         x="0"
+         y="0"
+         inkscape:path-effect="#path-effect1476"
+         sodipodi:type="rect"
+         d="m 32,0 h 886 a 32,32 45 0 1 32,32 v 466 a 32,32 135 0 1 -32,32 H 32 A 32,32 45 0 1 0,498 V 32 A 32,32 135 0 1 32,0 Z" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:120px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none"
          x="474.45996"
          y="168.47998"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:120px;font-family:Dosis;-inkscape-font-specification:'Dosis Bold';text-align:center;text-anchor:middle;fill:#ffffff">Level Completed</tspan></text>
+         id="text7389"><tspan
+           sodipodi:role="line"
+           id="tspan7387"
+           x="474.45996"
+           y="168.47998"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:120px;font-family:Dosis;-inkscape-font-specification:'Dosis Bold';text-align:center;text-anchor:middle;fill:#ffffff">Level Completed</tspan></text>
+    </g>
   </g>
 </svg>
