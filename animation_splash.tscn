@@ -202,7 +202,7 @@ texture = ExtResource( 94 )
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 1 )
-frame = 1
+frame = 174
 playing = true
 centered = false
 
