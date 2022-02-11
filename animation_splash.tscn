@@ -194,16 +194,16 @@ animations = [ {
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 182 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Bg" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 94 )
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+[node name="animation" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 1 )
-frame = 1
+frame = 54
 playing = true
 centered = false
 
-[connection signal="animation_finished" from="AnimatedSprite2" to="." method="_on_AnimatedSprite2_animation_finished"]
+[connection signal="animation_finished" from="animation" to="." method="_on_AnimatedSprite2_animation_finished"]

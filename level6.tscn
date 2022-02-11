@@ -14,11 +14,11 @@ position = Vector2( 960, 540 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
-[node name="Node" type="Node" parent="."]
+[node name="grid for machine" type="Node" parent="."]
 
-[node name="grid" parent="Node" instance=ExtResource( 5 )]
+[node name="grid" parent="grid for machine" instance=ExtResource( 5 )]
 
-[node name="Building-machinedrawer" type="Sprite" parent="."]
+[node name="machine seller zone" type="Sprite" parent="."]
 position = Vector2( 249, 540 )
 texture = ExtResource( 2 )
 
@@ -101,6 +101,6 @@ visible = false
 position = Vector2( 960, 540 )
 texture = ExtResource( 1 )
 
-[node name="Node2" type="Node" parent="."]
+[node name="next level pop up" type="Node" parent="."]
 
-[node name="next level" parent="Node2" instance=ExtResource( 6 )]
+[node name="next level" parent="next level pop up" instance=ExtResource( 6 )]

@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/246596905_611837846522422_5590490234798968082_n.png" type="Texture" id=1]
-[ext_resource path="res://start_menu_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main_menu_button.tscn" type="PackedScene" id=2]
 
-[node name="start" type="Node2D"]
+[node name="main menu" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Bg" type="Sprite" parent="."]
 scale = Vector2( 1.49723, 1.49444 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="button" type="Node" parent="."]
 
-[node name="menu" parent="button" instance=ExtResource( 2 )]
+[node name="main menu button" parent="button" instance=ExtResource( 2 )]
