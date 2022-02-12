@@ -2,7 +2,7 @@ extends Area2D
 
 
 var cost = 40
-var type = "Dyeing"
+var type = "Packager"
 var shortestDist = 100
 
 var mouse_over = false
@@ -39,10 +39,10 @@ func _input(event):
 				restPoint = child.global_position
 #				print('snapped to ', restPoint, '; distanceToRest = ', distanceToRest)
 
-func _on_MachineDyeing_mouse_entered():
+func _on_MachinePackager_mouse_entered():
 	mouse_over = true
 	# print("MOUSE OVER LAEW")
 
-func _on_MachineDyeing_mouse_exited():
+func _on_MachinePackager_mouse_exited():
 	mouse_over = false
 	# print("MOUSE EXIT LAEW")

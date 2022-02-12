@@ -1,14 +1,17 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+var restNodesX = []
+var restNodesY = []
+var gridColumn = 2
+var girdRows = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var restNodesCount = get_tree().get_nodes_in_group("restZones").size()
+	for child in get_tree().get_nodes_in_group('restZones'):
+		restNodesCount = 
+		# print(child)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
