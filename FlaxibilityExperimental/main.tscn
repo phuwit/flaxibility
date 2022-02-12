@@ -36,7 +36,7 @@ __meta__ = {
 }
 
 [node name="GridMachine" type="Area2D" parent="."]
-position = Vector2( 16, 24 )
+position = Vector2( 32, 32 )
 
 [node name="Sprite" type="Sprite" parent="GridMachine"]
 position = Vector2( 168, 16 )
