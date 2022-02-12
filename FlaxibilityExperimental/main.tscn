@@ -85,10 +85,10 @@ __meta__ = {
 }
 
 [node name="RestZone" parent="." instance=ExtResource( 1 )]
-position = Vector2( 68, 153 )
+position = Vector2( 727, 145 )
 
 [node name="RestZone2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 403, 330 )
 
 [node name="MachineLoom" parent="." instance=ExtResource( 5 )]
-position = Vector2( 132, 89 )
+position = Vector2( 486, 150 )

@@ -1,7 +1,7 @@
 extends Position2D
 
 func _draw():
-	draw_circle(Vector2.ZERO, 75, Color.salmon)
+	draw_circle(Vector2.ZERO, 100, Color.salmon)
 	# draw_rect(Rect2(Vector2(0, 0), Vector2(1, 1), Color.salmon)
 
 # inactive snapping area
