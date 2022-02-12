@@ -5,7 +5,7 @@
 [ext_resource path="res://ui-assets/building-hud.svg" type="Texture" id=3]
 [ext_resource path="res://assets/246596905_611837846522422_5590490234798968082_n.png" type="Texture" id=4]
 [ext_resource path="res://grid.tscn" type="PackedScene" id=5]
-[ext_resource path="res://next level.tscn" type="PackedScene" id=6]
+[ext_resource path="res://FlaxMachine/Loom.tscn" type="PackedScene" id=6]
 [ext_resource path="res://level 1.gd" type="Script" id=7]
 
 [node name="Node2D" type="Node2D"]
@@ -43,6 +43,10 @@ margin_right = 496.0
 margin_bottom = 1072.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="LoomMachine" parent="left control/machine" instance=ExtResource( 6 )]
+position = Vector2( 214, 338 )
+z_index = 5
 
 [node name="left mach" type="VBoxContainer" parent="left control/machine"]
 margin_right = 246.0
@@ -102,19 +106,3 @@ __meta__ = {
 visible = false
 position = Vector2( 960, 540 )
 texture = ExtResource( 1 )
-
-[node name="next level pop up" type="Node" parent="."]
-
-[node name="next level" parent="next level pop up" instance=ExtResource( 6 )]
-
-[node name="Button" type="Button" parent="next level pop up/next level"]
-margin_left = 784.0
-margin_top = 551.0
-margin_right = 903.0
-margin_bottom = 636.0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="next level pop up/next level/Button" to="." method="_on_Button_pressed"]

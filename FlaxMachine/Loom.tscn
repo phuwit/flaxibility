@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/loom.svg" type="Texture" id=1]
+[ext_resource path="res://FlaxMachine/Loom.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "LoomAnim",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 160, 160 )
+
+[node name="LoomMachine" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 7, 25.625 )
+scale = Vector2( 0.652344, 0.580566 )
+frames = SubResource( 1 )
+animation = "LoomAnim"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 12.5, 28 )
+shape = SubResource( 2 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_LoomMachine_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_LoomMachine_mouse_exited"]
