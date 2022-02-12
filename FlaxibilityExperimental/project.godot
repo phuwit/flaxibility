@@ -11,7 +11,13 @@ config_version=4
 [application]
 
 config/name="Flaxibiity Experimental"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=400
+window/size/height=300
 
 [physics]
 
@@ -19,4 +25,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.168627, 0.168627, 0.231373, 1 )
 environment/default_environment="res://default_env.tres"
