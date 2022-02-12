@@ -25,6 +25,19 @@ position = Vector2( -153.334, 98.1819 )
 scale = Vector2( 0.65, 0.65 )
 texture = ExtResource( 2 )
 
+[node name="Button" type="Button" parent="Sprite/next"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -120.0
+margin_top = -120.0
+margin_right = -120.0
+margin_bottom = -120.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="exit" type="Sprite" parent="Sprite"]
 position = Vector2( 132, 98.1818 )
 scale = Vector2( 0.65, 0.65 )
@@ -40,4 +53,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="Sprite/next/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Sprite/exit/exit" to="." method="_on_exit_pressed"]
