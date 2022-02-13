@@ -27,7 +27,7 @@ __meta__ = {
 [node name="grid" parent="." instance=ExtResource( 2 )]
 
 [node name="MachineLoom" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1368, 304 )
+position = Vector2( 1738, 34 )
 
 [node name="Building-machinedrawer" type="Sprite" parent="."]
 position = Vector2( 251, 536 )
