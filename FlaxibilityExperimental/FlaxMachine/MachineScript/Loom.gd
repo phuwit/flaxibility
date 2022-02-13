@@ -3,7 +3,7 @@ extends Area2D
 
 var cost = 30
 var type = "Loom"
-var shortestDist = 60
+var shortestDist = 60 
 
 var mouse_over = false
 var clicked = false

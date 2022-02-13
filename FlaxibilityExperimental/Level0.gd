@@ -4,6 +4,8 @@ extends Node2D
 var restNodesPos = []
 var gridColumn = 1 # start counting at 0
 var gridRows = 1 # start counting at 0
+var money = 100
+var cotton = 100
 
 func _ready():
 	var currentColumn = 0
