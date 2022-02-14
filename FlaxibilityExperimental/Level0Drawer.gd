@@ -1,0 +1,38 @@
+extends Control
+
+
+var drawerColumn = 1 # start counting at 0
+var drawerRows = 1 # start counting at 0
+var drawerNodesPos = []
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$MachineLoom.defaultNode = 2
+	
+	var currentColumn = 0
+	var currentRow = 0
+	var arrayIndex
+	var currentChild = 0
+	
+	var maxArrayIndex = int(String(drawerColumn) + String(drawerRows)) + 1
+	drawerNodesPos.resize(maxArrayIndex)
+	
+	for child in get_tree().get_nodes_in_group('restZones'):
+		print('child = ', child, 'currentChild = ', currentChild)
+		# print(get_tree().get_nodes_in_group('restZones'))
+		if currentRow > drawerRows:
+			print('currentRow = ', currentRow)
+			currentRow = 0
+			currentColumn += 1
+		arrayIndex = int(String(currentColumn) + String(currentRow))
+		print('arrayindex = ', arrayIndex)
+		drawerNodesPos[arrayIndex] = currentChild
+		print(drawerNodesPos[arrayIndex])
+		currentChild += 1
+		currentRow += 1
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
