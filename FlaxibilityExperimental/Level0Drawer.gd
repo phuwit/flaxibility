@@ -1,14 +1,18 @@
 extends Control
 
 
-var drawerColumn = 1 # start counting at 0
-var drawerRows = 1 # start counting at 0
 var drawerNodesPos = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$MachineLoom.defaultNode = 2
+	var drawerColumn = 1 # start counting at 0
+	var drawerRows = 1 # start counting at 0
 	
+	generate_pos_array(drawerColumn, drawerRows)
+	assign_default_node()
+	
+
+func generate_pos_array(drawerColumn, drawerRows):
 	var currentColumn = 0
 	var currentRow = 0
 	var arrayIndex
@@ -31,7 +35,13 @@ func _ready():
 		currentChild += 1
 		currentRow += 1
 
-
+func assign_default_node():
+	var defaultLoomPos = 00
+	var defaultSewingPos = 01
+	var defaultDyeingPos = 10
+	var defaultPackagerPos = 11
+	
+	$MachineLoom.defaultNode = drawerNodesPos[defaultLoomPos]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
