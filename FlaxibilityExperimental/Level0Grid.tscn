@@ -51,14 +51,14 @@ texture = ExtResource( 1 )
 position = Vector2( 872, 600 )
 shape = SubResource( 1 )
 
-[node name="RestZone00" parent="." instance=ExtResource( 2 )]
+[node name="RestZone00" parent="." groups=["restZonesGrid"] instance=ExtResource( 2 )]
 position = Vector2( 704, 432 )
 
-[node name="RestZone01" parent="." instance=ExtResource( 2 )]
+[node name="RestZone01" parent="." groups=["restZonesGrid"] instance=ExtResource( 2 )]
 position = Vector2( 872, 432 )
 
-[node name="RestZone10" parent="." instance=ExtResource( 2 )]
+[node name="RestZone10" parent="." groups=["restZonesGrid"] instance=ExtResource( 2 )]
 position = Vector2( 704, 600 )
 
-[node name="RestZone11" parent="." instance=ExtResource( 2 )]
+[node name="RestZone11" parent="." groups=["restZonesGrid"] instance=ExtResource( 2 )]
 position = Vector2( 872, 600 )

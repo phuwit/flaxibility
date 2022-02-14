@@ -21,7 +21,8 @@ func generate_pos_array(drawerColumn, drawerRows):
 	var maxArrayIndex = int(String(drawerColumn) + String(drawerRows)) + 1
 	drawerNodesPos.resize(maxArrayIndex)
 	
-	for child in get_tree().get_nodes_in_group('restZones'):
+	for child in get_tree().get_nodes_in_group('restZonesDrawer'):
+#	for child in get_ch
 		print('child = ', child, 'currentChild = ', currentChild)
 		# print(get_tree().get_nodes_in_group('restZones'))
 		if currentRow > drawerRows:

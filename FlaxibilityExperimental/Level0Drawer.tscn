@@ -55,16 +55,16 @@ texture = ExtResource( 1 )
 position = Vector2( 336, 432 )
 shape = SubResource( 1 )
 
-[node name="RestZone00" parent="." instance=ExtResource( 2 )]
+[node name="RestZone00" parent="." groups=["restZonesDrawer"] instance=ExtResource( 2 )]
 position = Vector2( 168, 264 )
 
-[node name="RestZone01" parent="." instance=ExtResource( 2 )]
+[node name="RestZone01" parent="." groups=["restZonesDrawer"] instance=ExtResource( 2 )]
 position = Vector2( 336, 264 )
 
-[node name="RestZone10" parent="." instance=ExtResource( 2 )]
+[node name="RestZone10" parent="." groups=["restZonesDrawer"] instance=ExtResource( 2 )]
 position = Vector2( 168, 432 )
 
-[node name="RestZone11" parent="." instance=ExtResource( 2 )]
+[node name="RestZone11" parent="." groups=["restZonesDrawer"] instance=ExtResource( 2 )]
 position = Vector2( 336, 432 )
 
 [node name="MachineDyeing" parent="." instance=ExtResource( 5 )]

@@ -7,8 +7,8 @@ var cotton = 100
 
 
 func _ready():
-	restNodesPos = $Level0Grid.restNodesPos
-	print(restNodesPos)
+	print('restzonesgroup = ', get_tree().get_nodes_in_group('restZones'))
+	pass
 		
 #	for i in restNodesCount:
 #		print(i)
