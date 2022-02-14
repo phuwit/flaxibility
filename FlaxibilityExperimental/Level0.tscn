@@ -53,6 +53,7 @@ __meta__ = {
 }
 
 [node name="MachineLoom" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 96, 552 )
 
 [node name="Money" type="Label" parent="."]
@@ -93,5 +94,3 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="contrainer" type="Node" parent="."]

@@ -1,11 +1,12 @@
 extends Button
-const loom = preload("res://FlaxMachine/Loom.tscn")
+var loom = preload("res://FlaxMachine/Test loom.tscn")
+var screensize = Vector2(1920,1080)
 
 
 func _ready():
 	pass # Replace with function body.
 
 func _toggled(button_pressed):
-	var LoomMachine = loom.instance()
-	$contrainer.add_child(LoomMachine)
-	LoomMachine.position = Vector2(0,0)
+	loom = loom.instance()
+	loom.position = Vector2(rand_range(0,screensize.x),rand_range(0,screensize.y))
+	add_child(loom)

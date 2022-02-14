@@ -38,7 +38,6 @@ func _input(event):
 			if distanceToRest < shortestDist:
 				child.select()
 				restPoint = child.global_position
-				Global.money = Global.money - cost
 				shortestDist = distanceToRest
 func _on_MachineLoom_mouse_entered():
 	mouse_over = true
