@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ui-assets/building-hud.svg" type="Texture" id=1]
 [ext_resource path="res://grid.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Level0.gd" type="Script" id=4]
 [ext_resource path="res://ui-assets/building-machinedrawer.svg" type="Texture" id=5]
 [ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=6]
+[ext_resource path="res://Money.gd" type="Script" id=7]
+[ext_resource path="res://cotton.gd" type="Script" id=8]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource( 4 )
@@ -26,9 +28,6 @@ __meta__ = {
 
 [node name="grid" parent="." instance=ExtResource( 2 )]
 
-[node name="MachineLoom" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1738, 34 )
-
 [node name="Building-machinedrawer" type="Sprite" parent="."]
 position = Vector2( 251, 536 )
 texture = ExtResource( 5 )
@@ -46,6 +45,37 @@ rect_scale = Vector2( 1.46331, 0.979303 )
 text = "00"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MachineLoom" parent="." instance=ExtResource( 3 )]
+position = Vector2( 119, 364 )
+
+[node name="Money" type="Label" parent="."]
+margin_left = 57.0
+margin_top = 174.0
+margin_right = 144.0
+margin_bottom = 288.0
+rect_scale = Vector2( 1.46331, 0.979303 )
+text = "money"
+align = 1
+valign = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cotton" type="Label" parent="."]
+margin_left = 190.0
+margin_top = 173.0
+margin_right = 277.0
+margin_bottom = 287.0
+rect_scale = Vector2( 1.46331, 0.979303 )
+text = "cotton"
+align = 1
+valign = 1
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
