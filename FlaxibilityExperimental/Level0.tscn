@@ -91,3 +91,5 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="contrainer" type="Node" parent="."]

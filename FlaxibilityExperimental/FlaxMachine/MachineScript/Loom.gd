@@ -40,7 +40,6 @@ func _input(event):
 				restPoint = child.global_position
 				Global.money = Global.money - cost
 				shortestDist = distanceToRest
-
 func _on_MachineLoom_mouse_entered():
 	mouse_over = true
 	print("MOUSE OVER LAEW")
