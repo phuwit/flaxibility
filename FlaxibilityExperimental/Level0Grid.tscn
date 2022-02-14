@@ -10,55 +10,55 @@ extents = Vector2( 80, 80 )
 [node name="Level0Grid" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 496.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GridMachine" type="Area2D" parent="."]
-position = Vector2( 760, -208 )
 
-[node name="Sprite3" type="Sprite" parent="GridMachine"]
-position = Vector2( 112, 512 )
+[node name="Gridlets00" type="Sprite" parent="GridMachine"]
+position = Vector2( 704, 432 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="GridMachine"]
-position = Vector2( 112, 512 )
+[node name="CollisionShape00" type="CollisionShape2D" parent="GridMachine"]
+position = Vector2( 704, 432 )
 shape = SubResource( 1 )
 
-[node name="Sprite4" type="Sprite" parent="GridMachine"]
-position = Vector2( 280, 512 )
+[node name="Gridlets01" type="Sprite" parent="GridMachine"]
+position = Vector2( 872, 432 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="GridMachine"]
-position = Vector2( 280, 512 )
+[node name="CollisionShape01" type="CollisionShape2D" parent="GridMachine"]
+position = Vector2( 872, 432 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="GridMachine"]
-position = Vector2( 112, 680 )
+[node name="Gridlets10" type="Sprite" parent="GridMachine"]
+position = Vector2( 704, 600 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GridMachine"]
-position = Vector2( 112, 680 )
+[node name="CollisionShape10" type="CollisionShape2D" parent="GridMachine"]
+position = Vector2( 704, 600 )
 scale = Vector2( 1, 0.99538 )
 shape = SubResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="GridMachine"]
-position = Vector2( 280, 680 )
+[node name="Gridlets11" type="Sprite" parent="GridMachine"]
+position = Vector2( 872, 600 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="GridMachine"]
-position = Vector2( 280, 680 )
+[node name="CollisionShape11" type="CollisionShape2D" parent="GridMachine"]
+position = Vector2( 872, 600 )
 shape = SubResource( 1 )
 
-[node name="RestZone01" parent="." instance=ExtResource( 2 )]
-position = Vector2( 872, 304 )
+[node name="RestZone00" parent="." instance=ExtResource( 2 )]
+position = Vector2( 704, 432 )
 
-[node name="RestZone02" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1040, 304 )
+[node name="RestZone01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 872, 432 )
+
+[node name="RestZone10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 704, 600 )
 
 [node name="RestZone11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 872, 472 )
-
-[node name="RestZone12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1040, 472 )
+position = Vector2( 872, 600 )

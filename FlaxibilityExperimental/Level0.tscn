@@ -28,20 +28,22 @@ __meta__ = {
 }
 
 [node name="Level0Grid" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="Building-machinedrawer" type="Sprite" parent="."]
-position = Vector2( 251, 536 )
 texture = ExtResource( 5 )
+centered = false
 
 [node name="Building-hud" type="Sprite" parent="."]
-position = Vector2( 256, 152 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="LevelNumber" type="Label" parent="."]
-margin_left = 64.0
-margin_top = 80.0
-margin_right = 151.0
-margin_bottom = 194.0
+margin_left = 32.0
+margin_top = 40.0
+margin_right = 119.0
+margin_bottom = 154.0
 rect_scale = Vector2( 1.46331, 0.979303 )
 text = "00"
 align = 1
@@ -54,10 +56,10 @@ __meta__ = {
 position = Vector2( 96, 552 )
 
 [node name="Money" type="Label" parent="."]
-margin_left = 57.0
-margin_top = 174.0
-margin_right = 144.0
-margin_bottom = 288.0
+margin_left = 48.0
+margin_top = 136.0
+margin_right = 135.0
+margin_bottom = 250.0
 rect_scale = Vector2( 1.46331, 0.979303 )
 text = "money"
 align = 1
@@ -68,10 +70,10 @@ __meta__ = {
 }
 
 [node name="cotton" type="Label" parent="."]
-margin_left = 190.0
-margin_top = 173.0
-margin_right = 277.0
-margin_bottom = 287.0
+margin_left = 208.0
+margin_top = 136.0
+margin_right = 295.0
+margin_bottom = 250.0
 rect_scale = Vector2( 1.46331, 0.979303 )
 text = "cotton"
 align = 1
