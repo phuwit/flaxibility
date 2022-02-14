@@ -1,13 +1,13 @@
 extends Node2D
 
 
-var restNodesPos = $Level0Grid.restNodesPos
+var restNodesPos 
 var money = 100
 var cotton = 100
 
 
 func _ready():
-	get_node($Level0Grid).call(restNodesPos)
+	restNodesPos = $Level0Grid.restNodesPos
 	print(restNodesPos)
 		
 #	for i in restNodesCount:
