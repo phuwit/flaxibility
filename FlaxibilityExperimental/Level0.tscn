@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ui-assets/building-hud.svg" type="Texture" id=1]
 [ext_resource path="res://Level0Grid.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://cotton.gd" type="Script" id=8]
 [ext_resource path="res://loom_Button.gd" type="Script" id=9]
 [ext_resource path="res://Level0Drawer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://frabic.gd" type="Script" id=11]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource( 4 )
@@ -97,4 +98,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="frabic" type="Label" parent="."]
+margin_left = 79.0
+margin_top = 213.0
+margin_right = 125.0
+margin_bottom = 227.0
+text = "frabic"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level0Drawer" parent="." instance=ExtResource( 10 )]
+
+[connection signal="pressed" from="RunButton" to="." method="_on_RunButton_pressed"]

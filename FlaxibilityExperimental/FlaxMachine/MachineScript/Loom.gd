@@ -11,13 +11,14 @@ var clicked = false
 var restPoint
 var restNodes = []
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	restNodes = get_tree().get_nodes_in_group('restZones')
 	yield(get_tree().root, "ready")
 	restPoint = restNodes[defaultNode].global_position
 	restNodes[defaultNode].select()
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (clicked == true) and (mouse_over == true):
@@ -35,7 +36,6 @@ func _input(event):
 	elif (event is InputEventMouseButton) and (event.pressed == false):
 		clicked = false
 		snap_to_rest_node()
-		Global.money = Global.money - cost
 
 func snap_to_rest_node():
 	for child in restNodes:
@@ -52,3 +52,4 @@ func _on_MachineLoom_mouse_entered():
 func _on_MachineLoom_mouse_exited():
 	mouse_over = false
 	print("MOUSE EXIT LAEW")
+	
