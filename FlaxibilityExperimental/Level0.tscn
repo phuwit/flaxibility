@@ -135,4 +135,9 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 496.0
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
 [connection signal="pressed" from="RunButton" to="." method="_on_RunButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -47,8 +47,7 @@ func snap_to_rest_node():
 #			print('child = ', child)
 			currentNode = child
 			restPoint = child.global_position #พิกัดหน้าจอ
-#			print("restP :"+str(restPoint)+"\ncurrent :"+str(currentNode))
-#			if restPoint == Vector2(1200, 432):
+			
 
 			
 			
