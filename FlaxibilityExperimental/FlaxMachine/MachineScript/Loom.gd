@@ -43,7 +43,7 @@ func snap_to_rest_node():
 		if distanceToRest < shortestDist:
 			child.select()
 			restPoint = child.global_position
-			shortestDist = distanceToRest
+#			shortestDist = distanceToRest
 
 func _on_MachineLoom_mouse_entered():
 	mouse_over = true
