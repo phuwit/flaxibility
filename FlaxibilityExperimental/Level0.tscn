@@ -18,27 +18,26 @@ script = ExtResource( 4 )
 
 [node name="Bg" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
+z_index = -10
 texture = ExtResource( 6 )
 
 [node name="RunButton" type="Button" parent="."]
-margin_left = 896.0
-margin_top = 584.0
-margin_right = 1024.0
-margin_bottom = 632.0
+margin_left = 1646.0
+margin_top = 768.0
+margin_right = 1774.0
+margin_bottom = 816.0
 text = "Run"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level0Grid" parent="." instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-
 [node name="Building-machinedrawer" type="Sprite" parent="."]
+z_index = -3
 texture = ExtResource( 5 )
 centered = false
 
 [node name="Building-hud" type="Sprite" parent="."]
+z_index = -2
 texture = ExtResource( 1 )
 centered = false
 
@@ -118,5 +117,12 @@ __meta__ = {
 }
 
 [node name="Level0Drawer" parent="." instance=ExtResource( 10 )]
+margin_right = 0.0
+margin_bottom = 256.0
+
+[node name="Level0Grid" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 496.0
 
 [connection signal="pressed" from="RunButton" to="." method="_on_RunButton_pressed"]

@@ -22,6 +22,7 @@ __meta__ = {
 }
 
 [node name="GridMachine" type="Area2D" parent="."]
+z_index = -1
 
 [node name="Gridlets00" type="Sprite" parent="GridMachine"]
 position = Vector2( 168, 264 )
