@@ -2,12 +2,14 @@ extends Control
 
 
 var restNodesPos = []
+var restNodesGrid
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var gridColumn = 1 # start counting at 0
 	var gridRows = 1 # start counting at 0
 #	var maxArrayIndex = int(gridColumn*gridRows)
+	restNodesGrid = get_tree().get_nodes_in_group('restZonesGrid')
 	
 	generate_pos_array(gridColumn, gridRows)
 

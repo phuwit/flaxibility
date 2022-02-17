@@ -47,11 +47,13 @@ func snap_to_rest_node():
 #			print('child = ', child)
 			currentNode = child
 			restPoint = child.global_position #พิกัดหน้าจอ
-			print("restnode :"+str(restNodes))
-			print("restpoint :"+str(restPoint))
+			print("restP :"+str(restPoint)+"\ncurrent :"+str(currentNode))
+#			if restPoint == Vector2(1200, 432):
 
-#			if (restPoint == )
 			
+			
+
+		
 #			shortestDist = distanceToRest
 
 func _on_MachineLoom_mouse_entered():

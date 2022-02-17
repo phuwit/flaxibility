@@ -43,6 +43,17 @@ func _on_RunButton_pressed():
 		else:
 			break
 		
+func updateLoom():
+	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[00]]:
+		gridID[0] = 1
+	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[01]]:
+		gridID[1] = 1
+	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[10]]:
+		gridID[2] = 1
+	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[11]]:
+		gridID[3] = 1
+		
+#func sellerMachine():
 
 
 func _ready():
