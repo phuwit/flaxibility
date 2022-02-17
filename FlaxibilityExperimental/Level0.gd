@@ -10,6 +10,9 @@ var color_fabric = 0
 var RunButton = false
 var delay = 0
 var i = 2
+var gridID = []
+var gridX = 2
+var gridY = 2
 onready var timer = get_node("Timer")
 
 
@@ -47,6 +50,13 @@ func _ready():
 	Global.money = money
 	Global.cotton = cotton
 	Global.color = color
+	grid()
+
+
+func grid():
+	var maxgrid = int(gridX*gridY)
+	gridID.resize(maxgrid)
+	print ("maxgrid : "+str(maxgrid))
 	
 	
 

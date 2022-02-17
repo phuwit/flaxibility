@@ -39,7 +39,7 @@ func snap_to_rest_node():
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist:
 			child.select()
-			restPoint = child.global_position
+			restPoint = child.global_position #พิกัดหน้าจอ
 #			shortestDist = distanceToRest
 
 func _on_MachineLoom_mouse_entered():

@@ -7,6 +7,7 @@ var restNodesPos = []
 func _ready():
 	var gridColumn = 1 # start counting at 0
 	var gridRows = 1 # start counting at 0
+#	var maxArrayIndex = int(gridColumn*gridRows)
 	
 	generate_pos_array(gridColumn, gridRows)
 
@@ -15,10 +16,11 @@ func generate_pos_array(gridColumn, gridRows):
 	var currentRow = 0
 	var arrayIndex
 	var currentChild = 0
-	
 	var maxArrayIndex = int(String(gridColumn) + String(gridRows)) + 1
-	restNodesPos.resize(maxArrayIndex)
 	
+	
+	restNodesPos.resize(maxArrayIndex)
+
 	for child in get_tree().get_nodes_in_group('restZonesGrid'):
 		print('child = ', child, 'currentChild = ', currentChild)
 		# print(get_tree().get_nodes_in_group('restZones'))
