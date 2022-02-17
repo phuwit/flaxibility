@@ -39,12 +39,12 @@ func _input(event):
 
 func snap_to_rest_node():
 	for child in restNodes:
-		print('child.selected = ', child.selected)
+#		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
 			currentNode.selected = false
 			child.select()
-			print('child = ', child)
+#			print('child = ', child)
 			currentNode = child
 			restPoint = child.global_position #พิกัดหน้าจอ
 			print("restnode :"+str(restNodes))
