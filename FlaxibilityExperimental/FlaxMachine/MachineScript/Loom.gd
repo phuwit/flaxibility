@@ -16,6 +16,7 @@ func _ready():
 	yield(get_tree().root, "ready")
 	restPoint = restNodes[defaultNode].global_position
 	restNodes[defaultNode].select()
+	print("restNodes :"+str(restNodes))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,6 +41,11 @@ func snap_to_rest_node():
 		if distanceToRest < shortestDist:
 			child.select()
 			restPoint = child.global_position #พิกัดหน้าจอ
+			print("restnode :"+str(restNodes))
+			print("restpoint :"+str(restPoint))
+
+#			if (restPoint == )
+			
 #			shortestDist = distanceToRest
 
 func _on_MachineLoom_mouse_entered():
@@ -49,4 +55,5 @@ func _on_MachineLoom_mouse_entered():
 func _on_MachineLoom_mouse_exited():
 	mouse_over = false
 	print("MOUSE EXIT LAEW", type)
+
 	
