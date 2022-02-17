@@ -43,6 +43,9 @@ func assign_default_node():
 	var defaultPackagerPos = 11
 	
 	$MachineLoom.defaultNode = drawerNodesPos[defaultLoomPos]
+	$MachineSewing.defaultNode = drawerNodesPos[defaultSewingPos]
+	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
+	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
