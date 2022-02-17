@@ -11,4 +11,4 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	text = "fabric :"+String(Global.fabric)
+	text = "color :"+String(Global.color)

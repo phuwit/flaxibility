@@ -10,5 +10,6 @@ extends Label
 func _ready():
 	pass # Replace with function body.
 
+
 func _process(delta):
-	text = "fabric :"+String(Global.fabric)
+	text = "color_fabric :"+String(Global.color_fabric)
