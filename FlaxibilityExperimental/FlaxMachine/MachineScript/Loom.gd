@@ -6,6 +6,7 @@ var type = "Loom"
 
 var shortestDist = 60 
 var defaultNode = 0
+var currentNode
 var mouse_over = false
 var clicked = false
 var restPoint
@@ -15,6 +16,7 @@ func _ready():
 	restNodes = get_tree().get_nodes_in_group('restZones')
 	yield(get_tree().root, "ready")
 	restPoint = restNodes[defaultNode].global_position
+	currentNode = restNodes[defaultNode]
 	restNodes[defaultNode].select()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,9 +38,13 @@ func _input(event):
 
 func snap_to_rest_node():
 	for child in restNodes:
+		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
-		if distanceToRest < shortestDist:
+		if distanceToRest < shortestDist and child.selected == false:
+			currentNode.selected = false
 			child.select()
+			print('child = ', child)
+			currentNode = child
 			restPoint = child.global_position #พิกัดหน้าจอ
 #			shortestDist = distanceToRest
 
