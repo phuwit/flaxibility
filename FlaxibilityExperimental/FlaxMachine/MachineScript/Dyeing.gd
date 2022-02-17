@@ -3,8 +3,9 @@ extends Area2D
 
 var cost = 40
 var type = "Dyeing"
-var shortestDist = 100
 
+var shortestDist = 60 
+var defaultNode = 0
 var mouse_over = false
 var clicked = false
 var restPoint
@@ -12,9 +13,9 @@ var restNodes = []
 
 func _ready():
 	restNodes = get_tree().get_nodes_in_group('restZones')
-	restPoint = restNodes[0].global_position
-	restNodes[0].select()
-
+	yield(get_tree().root, "ready")
+	restPoint = restNodes[defaultNode].global_position
+	restNodes[defaultNode].select()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,17 +28,19 @@ func _process(delta):
 func _input(event):
 	if (mouse_over == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
 		get_tree().set_input_as_handled()
-#		print("clicked")
+		print("clicked", type)
 		clicked = true
 	elif (event is InputEventMouseButton) and (event.pressed == false):
 		clicked = false
-		for child in restNodes:
-			var distanceToRest  = global_position.distance_to(child.global_position)
-#			print('in loop as ', child, '; distanceToRest = ', distanceToRest, '; shortest dist = ', shortestDist)
-			if distanceToRest < shortestDist:
-				child.select()
-				restPoint = child.global_position
-#				print('snapped to ', restPoint, '; distanceToRest = ', distanceToRest)
+		snap_to_rest_node()
+
+func snap_to_rest_node():
+	for child in restNodes:
+		var distanceToRest = global_position.distance_to(child.global_position)
+		if distanceToRest < shortestDist:
+			child.select()
+			restPoint = child.global_position
+#			shortestDist = distanceToRest
 
 func _on_MachineDyeing_mouse_entered():
 	mouse_over = true

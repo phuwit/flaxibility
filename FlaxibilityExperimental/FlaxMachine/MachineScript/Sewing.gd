@@ -2,7 +2,7 @@ extends Area2D
 
 
 var cost = 40
-var type = "Packager"
+var type = "Sewing"
 
 var shortestDist = 60 
 var defaultNode = 0
@@ -16,7 +16,7 @@ func _ready():
 	yield(get_tree().root, "ready")
 	restPoint = restNodes[defaultNode].global_position
 	restNodes[defaultNode].select()
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (clicked == true) and (mouse_over == true):
@@ -42,10 +42,11 @@ func snap_to_rest_node():
 			restPoint = child.global_position
 #			shortestDist = distanceToRest
 
-func _on_MachinePackager_mouse_entered():
+func _on_MachineSewing_mouse_entered():
 	mouse_over = true
-	# print("MOUSE OVER LAEW")
+#	print("MOUSE OVER LAEW")
 
-func _on_MachinePackager_mouse_exited():
+
+func _on_MachineSewing_mouse_exited():
 	mouse_over = false
-	# print("MOUSE EXIT LAEW")
+#	print("MOUSE EXIT LAEW")

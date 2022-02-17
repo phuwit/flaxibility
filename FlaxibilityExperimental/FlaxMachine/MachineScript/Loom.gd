@@ -3,16 +3,14 @@ extends Area2D
 
 var cost = 30
 var type = "Loom"
+
 var shortestDist = 60 
 var defaultNode = 0
-
 var mouse_over = false
 var clicked = false
 var restPoint
 var restNodes = []
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	restNodes = get_tree().get_nodes_in_group('restZones')
 	yield(get_tree().root, "ready")
@@ -26,12 +24,11 @@ func _process(delta):
 		global_position = get_global_mouse_position()
 	else:
 		global_position = lerp(global_position, restPoint, 10 * delta)
-	# pass
 
 func _input(event):
 	if (mouse_over == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
 		get_tree().set_input_as_handled()
-		print("clicked")
+		print("clicked", type)
 		clicked = true
 	elif (event is InputEventMouseButton) and (event.pressed == false):
 		clicked = false
@@ -47,9 +44,9 @@ func snap_to_rest_node():
 
 func _on_MachineLoom_mouse_entered():
 	mouse_over = true
-	print("MOUSE OVER LAEW")
+	print("MOUSE OVER LAEW", type)
 
 func _on_MachineLoom_mouse_exited():
 	mouse_over = false
-	print("MOUSE EXIT LAEW")
+	print("MOUSE EXIT LAEW", type)
 	
