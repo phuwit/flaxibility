@@ -13,9 +13,17 @@ var i = 2
 var gridID = []
 var gridX = 2
 var gridY = 2
-onready var timer = get_node("Timer")
+onready var drawer = get_node("Level0Drawer")
+onready var grid = get_node("Level0Grid")
+#onready var timer = get_node("Timer")
 
 
+func _ready():
+#	print('restzonesgroup = ', get_tree().get_nodes_in_group('restZones'))
+	Global.money = money
+	Global.cotton = cotton
+	Global.color = color
+	grid()
 
 func _on_RunButton_pressed():
 	if RunButton == true:
@@ -44,27 +52,19 @@ func _on_RunButton_pressed():
 			break
 		
 func updateLoom():
-	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[00]]:
+	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[00]]:
 		gridID[0] = 1
-	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[01]]:
+	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[01]]:
 		gridID[1] = 1
-	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[10]]:
+	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[10]]:
 		gridID[2] = 1
-	if $Level0Drawer.get_node("MachineLoom").currentNode == $Level0Grid.restNodesGrid[restNodesPos[11]]:
+	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[11]]:
 		gridID[3] = 1
+	print(gridID)
 		
 #func sellerMachine():
-
-
-func _ready():
-	print('restzonesgroup = ', get_tree().get_nodes_in_group('restZones'))
-	Global.money = money
-	Global.cotton = cotton
-	Global.color = color
-	grid()
-
 
 func grid():
 	var maxgrid = int(gridX*gridY)
 	gridID.resize(maxgrid)
-	print ("maxgrid : "+str(maxgrid))
+#	print ("maxgrid : "+str(maxgrid))

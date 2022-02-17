@@ -23,16 +23,16 @@ func generate_pos_array(drawerColumn, drawerRows):
 	
 	for child in get_tree().get_nodes_in_group('restZonesDrawer'):
 #	for child in get_ch
-		print('child = ', child, 'currentChild = ', currentChild)
+#		print('child = ', child, 'currentChild = ', currentChild)
 		# print(get_tree().get_nodes_in_group('restZones'))
 		if currentRow > drawerRows:
-			print('currentRow = ', currentRow)
+#			print('currentRow = ', currentRow)
 			currentRow = 0
 			currentColumn += 1
 		arrayIndex = int(String(currentColumn) + String(currentRow))
-		print('arrayindex = ', arrayIndex)
+#		print('arrayindex = ', arrayIndex)
 		drawerNodesPos[arrayIndex] = currentChild
-		print(drawerNodesPos[arrayIndex])
+#		print(drawerNodesPos[arrayIndex])
 		currentChild += 1
 		currentRow += 1
 

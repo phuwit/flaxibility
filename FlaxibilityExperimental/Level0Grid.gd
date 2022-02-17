@@ -24,16 +24,16 @@ func generate_pos_array(gridColumn, gridRows):
 	restNodesPos.resize(maxArrayIndex)
 
 	for child in get_tree().get_nodes_in_group('restZonesGrid'):
-		print('child = ', child, 'currentChild = ', currentChild)
+#		print('child = ', child, 'currentChild = ', currentChild)
 		# print(get_tree().get_nodes_in_group('restZones'))
 		if currentRow > gridRows:
-			print('currentRow = ', currentRow)
+#			print('currentRow = ', currentRow)
 			currentRow = 0
 			currentColumn += 1
 		arrayIndex = int(String(currentColumn) + String(currentRow))
-		print('arrayindex = ', arrayIndex)
+#		print('arrayindex = ', arrayIndex)
 		restNodesPos[arrayIndex] = currentChild
-		print(restNodesPos[arrayIndex])
+#		print(restNodesPos[arrayIndex])
 		currentChild += 1
 		currentRow += 1
 

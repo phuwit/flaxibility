@@ -18,7 +18,7 @@ func _ready():
 	restPoint = restNodes[defaultNode].global_position
 	currentNode = restNodes[defaultNode]
 	restNodes[defaultNode].select()
-	print("restNodes :"+str(restNodes))
+#	print("restNodes :"+str(restNodes))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,7 +31,7 @@ func _process(delta):
 func _input(event):
 	if (mouse_over == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
 		get_tree().set_input_as_handled()
-		print("clicked", type)
+#		print("clicked", type)
 		clicked = true
 	elif (event is InputEventMouseButton) and (event.pressed == false):
 		clicked = false
@@ -47,7 +47,7 @@ func snap_to_rest_node():
 #			print('child = ', child)
 			currentNode = child
 			restPoint = child.global_position #พิกัดหน้าจอ
-			print("restP :"+str(restPoint)+"\ncurrent :"+str(currentNode))
+#			print("restP :"+str(restPoint)+"\ncurrent :"+str(currentNode))
 #			if restPoint == Vector2(1200, 432):
 
 			
@@ -58,10 +58,10 @@ func snap_to_rest_node():
 
 func _on_MachineLoom_mouse_entered():
 	mouse_over = true
-	print("MOUSE OVER LAEW", type)
+#	print("MOUSE OVER LAEW", type)
 
 func _on_MachineLoom_mouse_exited():
 	mouse_over = false
-	print("MOUSE EXIT LAEW", type)
+#	print("MOUSE EXIT LAEW", type)
 
 	
