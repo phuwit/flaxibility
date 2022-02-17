@@ -68,6 +68,3 @@ func grid():
 	var maxgrid = int(gridX*gridY)
 	gridID.resize(maxgrid)
 	print ("maxgrid : "+str(maxgrid))
-	
-	
-
