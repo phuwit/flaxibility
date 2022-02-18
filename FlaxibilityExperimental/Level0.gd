@@ -36,14 +36,14 @@ func _on_RunButton_pressed():
 	else:
 		RunButton = true
 	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[00]]  and (drawer.get_node("MachineSewing").currentNode == grid.restNodesGrid[grid.restNodesPos[01]] or drawer.get_node("MachineSewing").currentNode == grid.restNodesGrid[grid.restNodesPos[10]]) and drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[11]]:
-		get_node("Warning").visible_characters = 0
+		get_node("RunButton/Warning").visible_characters = 0
 		while cotton >= 5 and RunButton == true:
 			if cotton >= 5:
 				cotton = cotton - 5
 				Global.cotton = cotton
 				fabric += 1
 				Global.fabric = fabric
-				yield(get_tree().create_timer(0.25),"timeout")
+				yield(get_tree().create_timer(0.1),"timeout")
 			else:
 				break
 		while fabric >= 1 and color >= 1 and RunButton == true:
@@ -54,11 +54,11 @@ func _on_RunButton_pressed():
 				Global.fabric = fabric
 				color_fabric += 1
 				Global.color_fabric += 1
-				yield(get_tree().create_timer(0.25),"timeout")
+				yield(get_tree().create_timer(0.1),"timeout")
 			else:
 				break
 	else:
-		get_node("Warning").visible_characters = -1
+		get_node("RunButton/Warning").visible_characters = -1
 	if fabric == 15 and color_fabric ==5 :
 		gameClear()
 	
@@ -96,12 +96,8 @@ func _on_RunButton_pressed():
 			
 
 func gameClear():
-	get_node("GameClearPopup").position = Vector2(960,540)
-
-
-
-
-
+	get_node("LevelCompletedPopup").visible = true
+	get_node("LevelCompletedPopup/LevelCompletedText").visible_characters = -1
 
 #func updateMachine_pos():
 #	#Loom machine update
