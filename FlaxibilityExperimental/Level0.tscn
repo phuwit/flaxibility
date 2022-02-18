@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ui-assets/building-hud.svg" type="Texture" id=1]
 [ext_resource path="res://Level0Grid.tscn" type="PackedScene" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://FontDosisLevelNumber.tres" type="DynamicFont" id=13]
 [ext_resource path="res://FontDosisHUDResources.tres" type="DynamicFont" id=14]
 [ext_resource path="res://ThemeButton.tres" type="Theme" id=15]
+[ext_resource path="res://ui-assets/level_completed.svg" type="Texture" id=16]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 14 )
 
 [node name="Level0" type="Node2D"]
 script = ExtResource( 4 )
@@ -76,7 +80,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cotton" type="Label" parent="."]
+[node name="Cotton" type="Label" parent="."]
 margin_left = 227.0
 margin_top = 90.0
 margin_right = 285.0
@@ -90,7 +94,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="frabic" type="Label" parent="."]
+[node name="Fabric" type="Label" parent="."]
 margin_left = 227.0
 margin_top = 39.0
 margin_right = 276.0
@@ -102,7 +106,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="color" type="Label" parent="."]
+[node name="Color" type="Label" parent="."]
 margin_left = 227.0
 margin_top = 137.0
 margin_right = 271.0
@@ -114,7 +118,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="color_fabric" type="Label" parent="."]
+[node name="Color_fabric" type="Label" parent="."]
 margin_left = 227.0
 margin_top = 183.0
 margin_right = 328.0
@@ -138,6 +142,23 @@ margin_right = 496.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
 autostart = true
+
+[node name="GameClearPopup" type="Sprite" parent="."]
+position = Vector2( -1218, 1125 )
+texture = ExtResource( 16 )
+
+[node name="Warning" type="Label" parent="."]
+margin_left = 1671.0
+margin_top = 819.0
+margin_right = 1760.0
+margin_bottom = 850.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Not corrct"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="RunButton" to="." method="_on_RunButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
