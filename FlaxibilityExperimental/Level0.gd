@@ -137,5 +137,10 @@ func grid():
 	gridID.resize(maxgrid)
 #	print ("maxgrid : "+str(maxgrid))
 
-
-
+#For Demo in slides
+#func _process(_delta):
+#	print(drawer.get_node("MachineLoom").clicked)
+#	if (drawer.get_node("MachineDyeing").clicked == true) or (drawer.get_node("MachineLoom").clicked == true) or (drawer.get_node("MachineSewing").clicked == true) or (drawer.get_node("MachinePackager").clicked == true):
+#		get_node('MouseStatusForDemo').text = '↓ Mouse down ↓'
+#	else:
+#		get_node('MouseStatusForDemo').text = '↑ Mouse up ↑'
