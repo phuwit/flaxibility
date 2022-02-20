@@ -70,13 +70,19 @@ position = Vector2( 168, 432 )
 position = Vector2( 336, 432 )
 
 [node name="MachineDyeing" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 120, 624 )
 
 [node name="MachinePackager" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 336, 640 )
 
 [node name="MachineLoom" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 120, 88 )
 
 [node name="MachineSewing" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 511, 89 )
+
+[node name="Container" type="Node" parent="."]

@@ -3,13 +3,24 @@ extends Control
 
 var drawerNodesPos = []
 
-# Called when the node enters the scene tree for the first time.
+var MachineDyeing = preload('res://FlaxMachine/Dyeing.tscn')
+var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
+var MachinePackager = preload('res://FlaxMachine/Packager.tscn')
+var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
+
+var defaultLoomPos = 00
+var defaultSewingPos = 01
+var defaultDyeingPos = 10
+var defaultPackagerPos = 11
+
 func _ready():
 	var drawerColumn = 1 # start counting at 0
 	var drawerRows = 1 # start counting at 0
 	
 	generate_pos_array(drawerColumn, drawerRows)
 	assign_default_node()
+	
+	spawn_machine(MachineLoom)
 	
 
 func generate_pos_array(drawerColumn, drawerRows):
@@ -37,16 +48,15 @@ func generate_pos_array(drawerColumn, drawerRows):
 		currentRow += 1
 
 func assign_default_node():
-	var defaultLoomPos = 00
-	var defaultSewingPos = 01
-	var defaultDyeingPos = 10
-	var defaultPackagerPos = 11
-	
 	$MachineLoom.defaultNode = drawerNodesPos[defaultLoomPos]
 	$MachineSewing.defaultNode = drawerNodesPos[defaultSewingPos]
 	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
 	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func spawn_machine(machineName):
+	var containerName = 'Container'
+	var newMachine = machineName.instance()
+	var defaultNodeIndex = drawerNodesPos[defaultLoomPos]
+	print(defaultNodeIndex)
+	get_node(containerName).add_child(newMachine)
+	newMachine.snap_to_from_index(defaultNodeIndex)
