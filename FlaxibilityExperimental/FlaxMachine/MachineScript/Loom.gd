@@ -10,14 +10,14 @@ var currentNode
 var mouse_over = false
 var clicked = false
 var restNodePos
-var allRestNodes = []
+#var allRestNodes = [] #moved to Global.allRestNodes
 
 func _ready():
 	
-#	print(allRestNodes)
+#	print(Global.allRestNodes)
 	yield(get_tree().root, "ready")
 	snap_to_from_index(defaultNode)
-#	print("allRestNodes :"+str(allRestNodes))
+#	print("Global.allRestNodes :"+str(Global.allRestNodes))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -37,7 +37,7 @@ func _input(event):
 		snap_to_nearest_rest_node()
 
 func snap_to_nearest_rest_node():
-	for child in allRestNodes:
+	for child in Global.allRestNodes:
 #		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
@@ -61,7 +61,7 @@ func snap_to(restNode):
 	
 
 func snap_to_from_index(index):
-	var snappingTarget = allRestNodes[index]
+	var snappingTarget = Global.allRestNodes[index]
 	snap_to(snappingTarget)
 
 func _on_MachineLoom_mouse_entered():
