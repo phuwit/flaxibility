@@ -31,7 +31,7 @@ func _process(delta):
 
 func generate_pos_array(drawerColumn, drawerRows):
 	var currentColumn = 0
-	var currentRow = 0
+	var currentRow  = 0
 	var arrayIndex
 	var currentChild = 0
 	
