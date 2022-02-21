@@ -16,6 +16,7 @@ var gridX = 2
 var gridY = 2
 onready var drawer = get_node("Level0Drawer")
 onready var grid = get_node("Level0Grid")
+onready var LOOM = get_node("res://FlaxMachine/Loom.tscn")
 onready var gridID_Back = get_node("Level0Drawer/GridMachine")
 
 #onready var timer = get_node("Timer")
@@ -99,32 +100,34 @@ func gameClear():
 	get_node("LevelCompletedPopup").visible = true
 	get_node("LevelCompletedPopup/LevelCompletedText").visible_characters = -1
 
-#func updateMachine_pos():
-#	#Loom machine update
-#	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[00]]: 
-#		gridID[0] = 0
-#	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[01]]: 
+func updateMachine_pos(MACHINENAME):
+	#Loom machine update
+	if MACHINENAME.currentNode == grid.restNodesGrid[grid.restNodesPos[00]]:
+		gridID[0] = MACHINENAME
+		print(gridID)
+#	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[01]] and gridID[1] == null: 
 #		gridID[1] = 0
-#	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[10]]:
+#	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[10]] and gridID[2] == null:
 #		gridID[2] = 0
-#	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[11]]: 
+#	if drawer.get_node("MachineLoom").currentNode == grid.restNodesGrid[grid.restNodesPos[11]] and gridID[3] == null: 
 #		gridID[3] = 0
+#
 #	#dyeing machine update
-#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[00]]: 
+#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[00]] and gridID[0] == null: 
 #		gridID[0] = 1
-#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[01]]: 
+#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[01]] and gridID[1] == null: 
 #		gridID[1] = 1
-#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[10]]: 
+#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[10]] and gridID[2] == null: 
 #		gridID[2] = 1
-#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[11]]: 
+#	if drawer.get_node("MachineDyeing").currentNode == grid.restNodesGrid[grid.restNodesPos[11]] and gridID[3] == null: 
 #		gridID[3] = 1
 #	Global.gridID = gridID
 #	print(gridID)
 
 		
 		
-#func _on_Timer_timeout():
-#	updateMachine_pos()
+func _on_Timer_timeout():
+	updateMachine_pos(LOOM)
 #	updateResource()
 
 #func updateResource():
