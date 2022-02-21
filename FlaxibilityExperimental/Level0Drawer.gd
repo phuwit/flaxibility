@@ -71,5 +71,6 @@ func spawn_machine(machineName):
 
 func spawn_machine_when_rest_node_is_empty(machineName, defaultMachinePos):
 	var restNode = drawerNodesPos[defaultMachinePos]
+
 	if restNode.selected == false:
 		spawn_machine(machineName)
