@@ -150,3 +150,7 @@ func grid():
 #		get_node('MouseStatusForDemo').text = '↓ Mouse down ↓'
 #	else:
 #		get_node('MouseStatusForDemo').text = '↑ Mouse up ↑'
+
+
+func _on_ConveyorButton_pressed():
+	pass # Replace with function body.

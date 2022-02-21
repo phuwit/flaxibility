@@ -13,7 +13,6 @@ var restNodePos
 #var allRestNodes = [] #moved to Global.allRestNodes
 
 func _ready():
-	
 #	print(Global.allRestNodes)
 	yield(get_tree().root, "ready")
 	snap_to_from_index(defaultNode)

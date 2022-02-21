@@ -55,6 +55,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ConveyorButton" type="Button" parent="."]
+margin_left = 1646.0
+margin_top = 850.0
+margin_right = 1774.0
+margin_bottom = 898.0
+theme = ExtResource( 15 )
+text = "Conveyor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Building-machinedrawer" type="Sprite" parent="."]
 z_index = -3
 texture = ExtResource( 5 )
@@ -239,3 +250,4 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="RunButton" to="." method="_on_RunButton_pressed"]
+[connection signal="pressed" from="ConveyorButton" to="." method="_on_ConveyorButton_pressed"]

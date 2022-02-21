@@ -2,15 +2,18 @@ extends Control
 
 
 var drawerNodesPos = []
+var maxArrayIndex
 #var allRestNodesDrawer = [] #moved to Global.allRestNodesDrawer
 
 var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
-var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
+#var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
+var ConveyorStraight = preload('res://FlaxMachine/ConveyorStraight.tscn')
 var MachineDyeing = preload('res://FlaxMachine/Dyeing.tscn')
 var MachinePackager = preload('res://FlaxMachine/Packager.tscn')
 
 var defaultLoomPos = 00
-var defaultSewingPos = 01
+#var defaultSewingPos = 01
+var defaultConveyorStraightPos = 00
 var defaultDyeingPos = 10
 var defaultPackagerPos = 11
 
@@ -26,7 +29,8 @@ func _ready():
 #	spawn_machine(MachineLoom)
 
 func _process(delta):
-	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
+#	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
+#	spawn_machine_when_rest_node_is_empty(ConveyorStraight, defaultConveyorStraightPos)
 #	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPos)
 #	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPos)
 #	spawn_machine_when_rest_node_is_empty(MachinePackager, defaultPackagerPos)
@@ -37,7 +41,7 @@ func generate_pos_array(drawerColumn, drawerRows):
 	var arrayIndex
 	var currentChild = 0
 	
-	var maxArrayIndex = int(String(drawerColumn) + String(drawerRows)) + 1
+	maxArrayIndex = int(String(drawerColumn) + String(drawerRows)) + 1
 	drawerNodesPos.resize(maxArrayIndex)
 	
 	for child in Global.allRestNodesDrawer:
@@ -65,11 +69,14 @@ func spawn_machine(machineName):
 	var containerName = 'Container'
 	var newMachine = machineName.instance()
 	var defaultNode = drawerNodesPos[defaultLoomPos]
+	if newMachine.type == 'Conveyor':
+		newMachine.maxArrayIndex = maxArrayIndex
 #	print(defaultNode)
 	get_node(containerName).add_child(newMachine)
 	newMachine.snap_to(defaultNode)
 
 func spawn_machine_when_rest_node_is_empty(machineName, defaultMachinePos):
 	var restNode = drawerNodesPos[defaultMachinePos]
+	print(restNode.selected)
 	if restNode.selected == false:
 		spawn_machine(machineName)
