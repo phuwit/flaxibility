@@ -41,7 +41,6 @@ func snap_to_nearest_rest_node():
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
 			snap_to(child)
-			print("child : "+str(child))
 
 func snap_to(restNode):
 #	print('restNode')
@@ -55,6 +54,7 @@ func snap_to(restNode):
 	restNode.select()
 	restNode.machine = self
 	print(restNode.machine.type)
+	print(restNode)
 	currentNode = restNode
 	restNodePos = restNode.global_position
 	

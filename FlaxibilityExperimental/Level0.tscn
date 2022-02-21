@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ui-assets/building-hud.svg" type="Texture" id=1]
 [ext_resource path="res://Level0Grid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Thread.gd" type="Script" id=3]
 [ext_resource path="res://Level0.gd" type="Script" id=4]
 [ext_resource path="res://ui-assets/building-machinedrawer.svg" type="Texture" id=5]
 [ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=6]
@@ -21,10 +22,6 @@ default_font = ExtResource( 14 )
 
 [node name="Level0" type="Node2D"]
 script = ExtResource( 4 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.4
-autostart = true
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
@@ -75,6 +72,17 @@ centered = false
 z_index = -2
 texture = ExtResource( 1 )
 centered = false
+
+[node name="Thread" type="Label" parent="Building-hud"]
+margin_left = 64.0
+margin_top = 33.0
+margin_right = 107.0
+margin_bottom = 47.0
+text = "Thread"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelNumber" type="Label" parent="Building-hud"]
 margin_left = 64.0
