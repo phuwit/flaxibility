@@ -30,7 +30,7 @@ func generate_pos_array(gridColumn, gridRows):
 			currentColumn += 1
 		arrayIndex = int(String(currentColumn) + String(currentRow))
 #		print('arrayindex = ', arrayIndex)
-		restNodesPos[arrayIndex] = currentChild
+		restNodesPos[arrayIndex] = child
 #		print(restNodesPos[arrayIndex])
 		currentChild += 1
 		currentRow += 1

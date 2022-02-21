@@ -10,7 +10,7 @@ func _ready():
 
 
 func _process(delta):
-	pass
+#	pass
 	if holding:
 		match conveyorRotation:
 			'north':
