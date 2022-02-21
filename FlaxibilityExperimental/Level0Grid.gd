@@ -1,7 +1,6 @@
 extends Control
 
 
-var restNodesPos = []
 #var allRestNodesGrid #moved to Global.allRestNodesGrid
 
 # Called when the node enters the scene tree for the first time.
@@ -15,13 +14,14 @@ func _ready():
 	generate_pos_array(gridColumn, gridRows)
 
 func generate_pos_array(gridColumn, gridRows):
+	var restNodesGridPos = []
 	var currentColumn = 0
 	var currentRow = 0
 	var arrayIndex
 	var currentChild = 0
 	var maxArrayIndex = int(String(gridColumn) + String(gridRows)) + 1
 	
-	restNodesPos.resize(maxArrayIndex)
+	restNodesGridPos.resize(maxArrayIndex)
 
 	for child in Global.allRestNodesGrid:
 #		print('child = ', child, 'currentChild = ', currentChild)
@@ -32,10 +32,12 @@ func generate_pos_array(gridColumn, gridRows):
 			currentColumn += 1
 		arrayIndex = int(String(currentColumn) + String(currentRow))
 #		print('arrayindex = ', arrayIndex)
-		restNodesPos[arrayIndex] = child
+		restNodesGridPos[arrayIndex] = child
 #		print(restNodesPos[arrayIndex])
 		currentChild += 1
 		currentRow += 1
+	
+	Global.restNodesGridPos = restNodesGridPos
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
