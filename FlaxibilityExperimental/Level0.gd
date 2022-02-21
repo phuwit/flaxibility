@@ -28,6 +28,10 @@ func _ready():
 	Global.color = color
 	grid()
 	Global.gridID = gridID
+	
+	Global.allRestNodes = get_tree().get_nodes_in_group('restZones')
+	Global.allRestNodesGrid = get_tree().get_nodes_in_group('restZonesGrid')
+	Global.allRestNodesDrawer = get_tree().get_nodes_in_group('restZonesDrawer')
 
 func _on_RunButton_pressed():
 	#pause and play

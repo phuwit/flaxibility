@@ -2,6 +2,7 @@ extends Position2D
 
 
 var selected = false
+var machine
 
 #func _draw():
 #	draw_circle(Vector2.ZERO, 100, Color.salmon)
@@ -10,6 +11,7 @@ var selected = false
 # inactive snapping area
 func deselect():
 	selected = false
+	machine = null
 #	modulate = Color.white
 
 # active "snapped" area

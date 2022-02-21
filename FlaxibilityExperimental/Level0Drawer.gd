@@ -2,7 +2,7 @@ extends Control
 
 
 var drawerNodesPos = []
-var allRestNodesDrawer = []
+#var allRestNodesDrawer = [] #moved to Global.allRestNodesDrawer
 
 var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
 var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
@@ -38,9 +38,7 @@ func generate_pos_array(drawerColumn, drawerRows):
 	var maxArrayIndex = int(String(drawerColumn) + String(drawerRows)) + 1
 	drawerNodesPos.resize(maxArrayIndex)
 	
-	allRestNodesDrawer = get_tree().get_nodes_in_group('restZonesDrawer')
-	
-	for child in allRestNodesDrawer:
+	for child in Global.allRestNodesDrawer:
 #	for child in get_ch
 #		print('child = ', child, 'currentChild = ', currentChild)
 		# print(get_tree().get_nodes_in_group('restZones'))

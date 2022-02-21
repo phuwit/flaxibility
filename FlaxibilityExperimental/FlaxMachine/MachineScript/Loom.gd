@@ -13,7 +13,7 @@ var restNodePos
 var allRestNodes = []
 
 func _ready():
-	allRestNodes = get_tree().get_nodes_in_group('restZones')
+	
 #	print(allRestNodes)
 	yield(get_tree().root, "ready")
 	snap_to_from_index(defaultNode)
@@ -53,6 +53,8 @@ func snap_to(restNode):
 #		print(currentNode)
 #		print(currentNode.selected)
 	restNode.select()
+	restNode.machine = self
+	print(restNode.machine.type)
 	currentNode = restNode
 	restNodePos = restNode.global_position
 
@@ -67,5 +69,3 @@ func _on_MachineLoom_mouse_entered():
 func _on_MachineLoom_mouse_exited():
 	mouse_over = false
 #	print("MOUSE EXIT LAEW", type)
-
-	
