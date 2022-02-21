@@ -15,6 +15,8 @@ var defaultDyeingPos = 10
 var defaultPackagerPos = 11
 
 func _ready():
+	Global.allRestNodesDrawer = get_tree().get_nodes_in_group('restZonesDrawer')
+	
 	var drawerColumn = 1 # start counting at 0
 	var drawerRows = 1 # start counting at 0
 	

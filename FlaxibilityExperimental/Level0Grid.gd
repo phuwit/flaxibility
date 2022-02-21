@@ -6,6 +6,8 @@ var restNodesPos = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.allRestNodesGrid = get_tree().get_nodes_in_group('restZonesGrid')
+	
 	var gridColumn = 1 # start counting at 0
 	var gridRows = 1 # start counting at 0
 #	var maxArrayIndex = int(gridColumn*gridRows)
