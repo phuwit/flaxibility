@@ -1,12 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui-assets/building-gridlets.svg" type="Texture" id=1]
 [ext_resource path="res://RestZone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level0Drawer.gd" type="Script" id=3]
-[ext_resource path="res://FlaxMachine/Loom.tscn" type="PackedScene" id=4]
-[ext_resource path="res://FlaxMachine/Dyeing.tscn" type="PackedScene" id=5]
-[ext_resource path="res://FlaxMachine/Packager.tscn" type="PackedScene" id=6]
-[ext_resource path="res://FlaxMachine/Sewing.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 80, 80 )
@@ -68,21 +64,5 @@ position = Vector2( 168, 432 )
 
 [node name="DrawerRestZone11" parent="." groups=["restZonesDrawer"] instance=ExtResource( 2 )]
 position = Vector2( 336, 432 )
-
-[node name="MachineDyeing" parent="." instance=ExtResource( 5 )]
-visible = false
-position = Vector2( 120, 624 )
-
-[node name="MachinePackager" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 336, 640 )
-
-[node name="MachineLoom" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 120, 88 )
-
-[node name="MachineSewing" parent="." instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 511, 89 )
 
 [node name="Container" type="Node" parent="."]

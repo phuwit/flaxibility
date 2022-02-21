@@ -2,11 +2,12 @@ extends Control
 
 
 var drawerNodesPos = []
+var allRestNodesDrawer = []
 
-var MachineDyeing = preload('res://FlaxMachine/Dyeing.tscn')
 var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
-var MachinePackager = preload('res://FlaxMachine/Packager.tscn')
 var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
+var MachineDyeing = preload('res://FlaxMachine/Dyeing.tscn')
+var MachinePackager = preload('res://FlaxMachine/Packager.tscn')
 
 var defaultLoomPos = 00
 var defaultSewingPos = 01
@@ -18,10 +19,15 @@ func _ready():
 	var drawerRows = 1 # start counting at 0
 	
 	generate_pos_array(drawerColumn, drawerRows)
-	assign_default_node()
+#	assign_default_node()
 	
 	spawn_machine(MachineLoom)
-	
+
+func _process(delta):
+	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
+#	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPos)
+#	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPos)
+#	spawn_machine_when_rest_node_is_empty(MachinePackager, defaultPackagerPos)
 
 func generate_pos_array(drawerColumn, drawerRows):
 	var currentColumn = 0
@@ -32,7 +38,9 @@ func generate_pos_array(drawerColumn, drawerRows):
 	var maxArrayIndex = int(String(drawerColumn) + String(drawerRows)) + 1
 	drawerNodesPos.resize(maxArrayIndex)
 	
-	for child in get_tree().get_nodes_in_group('restZonesDrawer'):
+	allRestNodesDrawer = get_tree().get_nodes_in_group('restZonesDrawer')
+	
+	for child in allRestNodesDrawer:
 #	for child in get_ch
 #		print('child = ', child, 'currentChild = ', currentChild)
 		# print(get_tree().get_nodes_in_group('restZones'))
@@ -47,16 +55,21 @@ func generate_pos_array(drawerColumn, drawerRows):
 		currentChild += 1
 		currentRow += 1
 
-func assign_default_node():
-	$MachineLoom.defaultNode = drawerNodesPos[defaultLoomPos]
-	$MachineSewing.defaultNode = drawerNodesPos[defaultSewingPos]
-	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
-	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
+#func assign_default_node():
+#	$MachineLoom.defaultNode = drawerNodesPos[defaultLoomPos]
+#	$MachineSewing.defaultNode = drawerNodesPos[defaultSewingPos]
+#	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
+#	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
 
 func spawn_machine(machineName):
 	var containerName = 'Container'
 	var newMachine = machineName.instance()
 	var defaultNodeIndex = drawerNodesPos[defaultLoomPos]
-	print(defaultNodeIndex)
+#	print(defaultNodeIndex)
 	get_node(containerName).add_child(newMachine)
 	newMachine.snap_to_from_index(defaultNodeIndex)
+
+func spawn_machine_when_rest_node_is_empty(machineName, defaultMachinePos):
+	var restNode = allRestNodesDrawer[drawerNodesPos[defaultMachinePos]]
+	if restNode.selected == false:
+		spawn_machine(machineName)

@@ -14,7 +14,7 @@ var allRestNodes = []
 
 func _ready():
 	allRestNodes = get_tree().get_nodes_in_group('restZones')
-	print(allRestNodes)
+#	print(allRestNodes)
 	yield(get_tree().root, "ready")
 	snap_to_from_index(defaultNode)
 #	print("allRestNodes :"+str(allRestNodes))
@@ -44,9 +44,14 @@ func snap_to_nearest_rest_node():
 			snap_to(child)
 
 func snap_to(restNode):
-	print(restNode)
+#	print('restNode')
+#	print(restNode)
+#	print(restNode.selected)
 	if currentNode:
 		currentNode.selected = false
+#		print('currentNode')
+#		print(currentNode)
+#		print(currentNode.selected)
 	restNode.select()
 	currentNode = restNode
 	restNodePos = restNode.global_position
