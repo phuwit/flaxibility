@@ -21,7 +21,7 @@ func _ready():
 	generate_pos_array(drawerColumn, drawerRows)
 #	assign_default_node()
 	
-	spawn_machine(MachineLoom)
+#	spawn_machine(MachineLoom)
 
 func _process(delta):
 	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
@@ -50,7 +50,7 @@ func generate_pos_array(drawerColumn, drawerRows):
 			currentColumn += 1
 		arrayIndex = int(String(currentColumn) + String(currentRow))
 #		print('arrayindex = ', arrayIndex)
-		drawerNodesPos[arrayIndex] = currentChild
+		drawerNodesPos[arrayIndex] = child
 #		print(drawerNodesPos[arrayIndex])
 		currentChild += 1
 		currentRow += 1
@@ -64,12 +64,12 @@ func generate_pos_array(drawerColumn, drawerRows):
 func spawn_machine(machineName):
 	var containerName = 'Container'
 	var newMachine = machineName.instance()
-	var defaultNodeIndex = drawerNodesPos[defaultLoomPos]
-#	print(defaultNodeIndex)
+	var defaultNode = drawerNodesPos[defaultLoomPos]
+#	print(defaultNode)
 	get_node(containerName).add_child(newMachine)
-	newMachine.snap_to_from_index(defaultNodeIndex)
+	newMachine.snap_to(defaultNode)
 
 func spawn_machine_when_rest_node_is_empty(machineName, defaultMachinePos):
-	var restNode = allRestNodesDrawer[drawerNodesPos[defaultMachinePos]]
+	var restNode = drawerNodesPos[defaultMachinePos]
 	if restNode.selected == false:
 		spawn_machine(machineName)

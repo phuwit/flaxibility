@@ -29,10 +29,11 @@ func _process(delta):
 				pass
 				targetPos = currentpos - 1
 				sourcePos = currentpos - 1
-		if targetPos >= 0 and targetPos <= maxarrayindex:
-			var target = allnodes[nodespos[targetpos]]
-			if target.type == machine:
-				wait 1s
-				play anim
+		if sourcePos >= 0 and sourcePos <= maxarrayindex and targetPos >= 0 and targetPos <= maxarrayindex:
+			var target = allnodes[nodespos[targetPos]]
+			var source = allnodes[nodespos[sourcePos]]
+			if target.holding == true:
+#				todo: play anim
+				yield(get_tree().create_timer(1.0), "timeout")
 				target.holding = holding
 				holding = null
