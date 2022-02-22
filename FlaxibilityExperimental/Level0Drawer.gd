@@ -6,13 +6,13 @@ var maxArrayIndex
 #var allRestNodesDrawer = [] #moved to Global.allRestNodesDrawer
 
 var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
-#var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
+var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
 var ConveyorStraight = preload('res://FlaxMachine/ConveyorStraight.tscn')
 var MachineDyeing = preload('res://FlaxMachine/Dyeing.tscn')
 var MachinePackager = preload('res://FlaxMachine/Packager.tscn')
 
 var defaultLoomPos = 00
-#var defaultSewingPos = 01
+var defaultSewingPos = 01
 var defaultConveyorStraightPos = 00
 var defaultDyeingPos = 10
 var defaultPackagerPos = 11
@@ -30,10 +30,11 @@ func _ready():
 
 func _process(delta):
 #	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
-#	spawn_machine_when_rest_node_is_empty(ConveyorStraight, defaultConveyorStraightPos)
+	spawn_machine_when_rest_node_is_empty(ConveyorStraight, defaultConveyorStraightPos)
 #	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPos)
 #	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPos)
 #	spawn_machine_when_rest_node_is_empty(MachinePackager, defaultPackagerPos)
+	pass
 
 func generate_pos_array(drawerColumn, drawerRows):
 	var currentColumn = 0
@@ -77,6 +78,6 @@ func spawn_machine(machineName):
 
 func spawn_machine_when_rest_node_is_empty(machineName, defaultMachinePos):
 	var restNode = drawerNodesPos[defaultMachinePos]
-	print(restNode.selected)
+#	print(restNode.selected)
 	if restNode.selected == false:
 		spawn_machine(machineName)

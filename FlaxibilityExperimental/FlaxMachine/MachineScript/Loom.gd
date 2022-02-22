@@ -7,27 +7,28 @@ var type = "Loom"
 var shortestDist = 60 
 var defaultNode = 0
 var currentNode
-var mouse_over = false
+var mouseOver = false
 var clicked = false
 var restNodePos
 #var allRestNodes = [] #moved to Global.allRestNodes
 
 func _ready():
 #	print(Global.allRestNodes)
+#	print(get_tree().root)
 	yield(get_tree().root, "ready")
 	snap_to_from_index(defaultNode)
 #	print("Global.allRestNodes :"+str(Global.allRestNodes))
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (clicked == true) and (mouse_over == true):
+	if (clicked == true) and (mouseOver == true):
 		# global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
 func _input(event):
-	if (mouse_over == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
+	if (mouseOver == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
 		get_tree().set_input_as_handled()
 #		print("clicked", type)
 		clicked = true
@@ -64,9 +65,9 @@ func snap_to_from_index(index):
 	snap_to(snappingTarget)
 
 func _on_MachineLoom_mouse_entered():
-	mouse_over = true
+	mouseOver = true
 #	print("MOUSE OVER LAEW", type)
 
 func _on_MachineLoom_mouse_exited():
-	mouse_over = false
+	mouseOver = false
 #	print("MOUSE EXIT LAEW", type)
