@@ -1,8 +1,12 @@
 extends Area2D
 
+var cost = 5
+var type = "ConveyorCW"
 
-var cost = 30
-var type = "Loom"
+var holding
+var conveyorRotation #target location
+var maxArrayIndex
+var currentPos
 
 var shortestDist = 60 
 var defaultNode = 0
@@ -10,14 +14,10 @@ var currentNode
 var mouseOver = false
 var clicked = false
 var restNodePos
-#var allRestNodes = [] #moved to Global.allRestNodes
+
 
 #func _ready():
-#	print(Global.allRestNodes)
-#	print(get_tree().root)
-#	yield(get_tree().root, "ready")
-#	snap_to_from_index(defaultNode)
-#	print("Global.allRestNodes :"+str(Global.allRestNodes))
+#	pass
 
 func _process(delta):
 	if (clicked == true) and (mouseOver == true):
@@ -41,6 +41,7 @@ func snap_to_nearest_rest_node():
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
 			snap_to(child)
+			print("child : "+str(child))
 
 func snap_to(restNode):
 #	print('restNode')
@@ -54,7 +55,6 @@ func snap_to(restNode):
 	restNode.select()
 	restNode.machine = self
 	print(restNode.machine.type)
-	print(restNode)
 	currentNode = restNode
 	restNodePos = restNode.global_position
 	
@@ -63,10 +63,40 @@ func snap_to_from_index(index):
 	var snappingTarget = Global.allRestNodes[index]
 	snap_to(snappingTarget)
 
-func _on_MachineLoom_mouse_entered():
+func _on_ConveyorCW_mouse_entered():
 	mouseOver = true
-#	print("MOUSE OVER LAEW", type)
 
-func _on_MachineLoom_mouse_exited():
+func _on_ConveyorCW_mouse_exited():
 	mouseOver = false
-#	print("MOUSE EXIT LAEW", type)
+
+func move_items():
+	var targetPos
+	var sourcePos
+	match conveyorRotation:
+		'north':
+			targetPos = currentPos - 10
+			sourcePos = currentPos + 1
+		'east':
+			targetPos = currentPos + 1
+			sourcePos = currentPos - 10
+		'south':
+			targetPos = currentPos + 10
+			sourcePos = currentPos - 1
+		'west':
+			targetPos = currentPos + 10
+			sourcePos = currentPos - 1
+	
+	print(sourcePos, targetPos)
+	
+	if 0 <= sourcePos <= maxArrayIndex and 0 <= targetPos <= maxArrayIndex:
+		var target = Global.restNodesGridPos[targetPos].machine
+		var source = Global.restNodesGridPos[sourcePos].machine
+		if source and source.output != null:
+			if target and target.input != null:
+				get_node("HoldingLabel").text = holding
+#				todo: play anim
+				yield(get_tree().create_timer(0.5), "timeout")
+				target.holding = holding
+				holding = null
+#			else:
+#				throw invalid target error & clog
