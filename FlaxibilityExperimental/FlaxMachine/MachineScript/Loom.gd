@@ -3,6 +3,8 @@ extends Area2D
 
 var cost = 30
 var type = "Loom"
+var input
+var output
 
 var shortestDist = 60 
 var defaultNode = 0

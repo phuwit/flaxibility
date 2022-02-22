@@ -9,6 +9,7 @@ var outOfMoney = false
 var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
 var MachineSewing = preload('res://FlaxMachine/Packager.tscn')
 var ConveyorStraight = preload('res://FlaxMachine/ConveyorStraight.tscn')
+var ConveyorCW = preload('res://FlaxMachine/ConveyorCW.tscn')
 var MachineDyeing = preload('res://FlaxMachine/Dyeing.tscn')
 var MachinePackager = preload('res://FlaxMachine/Packager.tscn')
 
@@ -27,7 +28,8 @@ func _ready():
 	generate_pos_array(drawerColumn, drawerRows)
 #	assign_default_node()
 	
-#	spawn_machine(MachineLoom)
+#	spawn_machine(MachineLoom, drawerNodesPos[defaultLoomPos], false)
+#	spawn_machine(ConveyorCW, drawerNodesPos[01], false)
 
 func _process(delta):
 	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
@@ -35,7 +37,7 @@ func _process(delta):
 #	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPos)
 #	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPos)
 #	spawn_machine_when_rest_node_is_empty(MsachinePackager, defaultPackagerPos)
-	pass
+#	pass
 
 func generate_pos_array(drawerColumn, drawerRows):
 	var currentColumn = 0
@@ -67,25 +69,32 @@ func generate_pos_array(drawerColumn, drawerRows):
 #	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
 #	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
 
-func spawn_machine(machine):
+func spawn_machine(machine, restNode, reduceMoney):
 	var containerName = 'Container'
 	var newMachine = machine.instance()
 	var machineCost = newMachine.cost
 	var defaultNode = drawerNodesPos[defaultLoomPos]
-#	print(defaultNode)
-	if Global.money >= machineCost:
-		get_node(containerName).add_child(newMachine)
-		newMachine.snap_to(defaultNode)
-		Global.money = Global.money - machineCost
-		if newMachine.type == 'Conveyor':
-			newMachine.maxArrayIndex = maxArrayIndex
-	else:
-		outOfMoney = true
-		newMachine.queue_free()
-	
+	if reduceMoney ==true:
+		var moneyOpsSuccessful = money_ops(machineCost)
+		if moneyOpsSuccessful == true :
+			get_node(containerName).add_child(newMachine)
+			newMachine.snap_to(defaultNode)
+			if newMachine.type == 'Conveyor':
+				newMachine.maxArrayIndex = maxArrayIndex
+		else:
+			outOfMoney = true
+			newMachine.queue_free()
+
 
 func spawn_machine_when_rest_node_is_empty(machine, defaultMachinePos):
 	var restNode = drawerNodesPos[defaultMachinePos]
 #	print(restNode.selected)
 	if restNode.selected == false and outOfMoney == false:
-		spawn_machine(machine)
+		spawn_machine(machine, restNode, true)
+
+func money_ops(amount):
+	if amount >= Global.money:
+		Global.money - amount
+		return true
+	else:
+		return false

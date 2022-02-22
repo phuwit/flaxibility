@@ -23,9 +23,13 @@ func _ready():
 	Global.money = money
 	Global.cotton = cotton
 	Global.color = color
-
 	
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZones')
+	
+	drawer.get_node('Container').get_node('MachineLoom1').snap_to_from_index(0)
+	drawer.get_node('Container').get_node('MachineLoom1').input = 'input'
+	drawer.get_node('Container').get_node('MachineLoom2').snap_to_from_index(1)
+	drawer.get_node('Container').get_node('ConveyorCW').snap_to_from_index(2)
 
 func _on_RunButton_pressed():
 	#pause and play
@@ -107,4 +111,10 @@ func _process(delta):
 
 
 func _on_ConveyorButton_pressed():
-	pass # Replace with function body.
+	print(drawer.get_node('Container').get_node('MachineLoom1').input)
+	print(drawer.get_node('Container').get_node('ConveyorCW').holding)
+	print(drawer.get_node('Container').get_node('MachineLoom2').output)
+	drawer.get_node('Container').get_node('ConveyorCW').move_items()
+	print(drawer.get_node('Container').get_node('MachineLoom1').input)
+	print(drawer.get_node('Container').get_node('ConveyorCW').holding)
+	print(drawer.get_node('Container').get_node('MachineLoom2').output)

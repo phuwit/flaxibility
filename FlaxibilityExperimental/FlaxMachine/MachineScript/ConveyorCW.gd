@@ -40,8 +40,9 @@ func snap_to_nearest_rest_node():
 #		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
+			currentPos = 
 			snap_to(child)
-			print("child : "+str(child))
+#			print("child : "+str(child))
 
 func snap_to(restNode):
 #	print('restNode')
@@ -72,6 +73,8 @@ func _on_ConveyorCW_mouse_exited():
 func move_items():
 	var targetPos
 	var sourcePos
+	currentPos = 
+	
 	match conveyorRotation:
 		'north':
 			targetPos = currentPos - 10

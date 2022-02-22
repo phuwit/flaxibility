@@ -23,8 +23,9 @@ func _ready():
 
 
 func _process(delta):
-	print("thread2 :"+str(thread))
-	print("cotton2 :"+str(cotton))
+	pass
+#	print("thread2 :"+str(thread))
+#	print("cotton2 :"+str(cotton))
 #	if Global.allRestNodes[1].machine.type == "Loom":
 #		if cotton >= 5:
 #			cotton = cotton - 5
