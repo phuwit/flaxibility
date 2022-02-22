@@ -70,11 +70,18 @@ func spawn_machine(machineName):
 	var containerName = 'Container'
 	var newMachine = machineName.instance()
 	var defaultNode = drawerNodesPos[defaultLoomPos]
+<<<<<<< Updated upstream
 	if newMachine.type == 'Conveyor':
 		newMachine.maxArrayIndex = maxArrayIndex
+=======
+	var machineCost = newMachine.cost
+>>>>>>> Stashed changes
 #	print(defaultNode)
-	get_node(containerName).add_child(newMachine)
-	newMachine.snap_to(defaultNode)
+	if Global.money >= machineCost:
+		get_node(containerName).add_child(newMachine)
+		newMachine.snap_to(defaultNode)
+		Global.money = Global.money - machineCost
+	
 
 func spawn_machine_when_rest_node_is_empty(machineName, defaultMachinePos):
 	var restNode = drawerNodesPos[defaultMachinePos]

@@ -1,6 +1,6 @@
 extends Node
 
-
+var RunButton = false
 var money = 0
 var color = 0
 var cotton = 0

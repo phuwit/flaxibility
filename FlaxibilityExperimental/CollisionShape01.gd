@@ -23,7 +23,8 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	print("thread2 :"+str(thread))
+	print("cotton2 :"+str(cotton))
 #	if Global.allRestNodes[1].machine.type == "Loom":
 #		if cotton >= 5:
 #			cotton = cotton - 5
@@ -73,3 +74,7 @@ func _process(delta):
 #			packedColor_fabric = packedColor_fabric - 1
 #			$Level0Grid/GridMachine/CollisionShape11.packedColor_fabric += 1
 #			yield(get_tree().create_timer(0.25),"timeout")
+
+
+func _on_Timer_timeout():
+	pass # Replace with function body.

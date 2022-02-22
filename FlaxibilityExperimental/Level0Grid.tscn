@@ -71,3 +71,12 @@ position = Vector2( 704, 600 )
 
 [node name="RestZone11" parent="." groups=["restZonesGrid"] instance=ExtResource( 2 )]
 position = Vector2( 872, 600 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridMachine/CollisionShape00" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridMachine/CollisionShape01" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridMachine/CollisionShape10" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="RestZone11" method="_on_Timer_timeout"]

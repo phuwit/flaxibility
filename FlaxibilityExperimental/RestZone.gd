@@ -20,3 +20,7 @@ func select():
 #	for child in get_tree().get_nodes_in_group('restZones'):
 #		child.deselect()
 #	modulate = Color.aquamarine
+
+
+func _on_Timer_timeout():
+	pass # Replace with function body.
