@@ -3,6 +3,7 @@ extends Control
 
 var drawerNodesPos = []
 var maxArrayIndex
+var outOfMoney = false
 #var allRestNodesDrawer = [] #moved to Global.allRestNodesDrawer
 
 var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
@@ -29,11 +30,11 @@ func _ready():
 #	spawn_machine(MachineLoom)
 
 func _process(delta):
-#	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
-	spawn_machine_when_rest_node_is_empty(ConveyorStraight, defaultConveyorStraightPos)
+	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
+#	spawn_machine_when_rest_node_is_empty(ConveyorStraight, defaultConveyorStraightPos)
 #	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPos)
 #	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPos)
-#	spawn_machine_when_rest_node_is_empty(MachinePackager, defaultPackagerPos)
+#	spawn_machine_when_rest_node_is_empty(MsachinePackager, defaultPackagerPos)
 	pass
 
 func generate_pos_array(drawerColumn, drawerRows):
@@ -66,21 +67,25 @@ func generate_pos_array(drawerColumn, drawerRows):
 #	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
 #	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
 
-func spawn_machine(machineName):
+func spawn_machine(machine):
 	var containerName = 'Container'
-	var newMachine = machineName.instance()
+	var newMachine = machine.instance()
+	var machineCost = newMachine.cost
 	var defaultNode = drawerNodesPos[defaultLoomPos]
-	if newMachine.type == 'Conveyor':
-		newMachine.maxArrayIndex = maxArrayIndex
 #	print(defaultNode)
 	if Global.money >= machineCost:
 		get_node(containerName).add_child(newMachine)
 		newMachine.snap_to(defaultNode)
 		Global.money = Global.money - machineCost
+		if newMachine.type == 'Conveyor':
+			newMachine.maxArrayIndex = maxArrayIndex
+	else:
+		outOfMoney = true
+		newMachine.queue_free()
 	
 
-func spawn_machine_when_rest_node_is_empty(machineName, defaultMachinePos):
+func spawn_machine_when_rest_node_is_empty(machine, defaultMachinePos):
 	var restNode = drawerNodesPos[defaultMachinePos]
 #	print(restNode.selected)
-	if restNode.selected == false:
-		spawn_machine(machineName)
+	if restNode.selected == false and outOfMoney == false:
+		spawn_machine(machine)
