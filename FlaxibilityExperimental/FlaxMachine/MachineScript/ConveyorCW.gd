@@ -109,7 +109,9 @@ func move_items():
 	
 	if (0 <= sourcePos) and (sourcePos <= maxArrayIndex) and (0 <= targetPos) and (targetPos <= maxArrayIndex):
 		var target = Global.restNodesGridPos[targetPos].machine
+		print('target', target)
 		var source = Global.restNodesGridPos[sourcePos].machine
+		print('source', source)
 		if source and source.output != null:
 			if target and target.input != null:
 				holding = source.output

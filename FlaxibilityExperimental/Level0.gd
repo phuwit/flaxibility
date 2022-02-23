@@ -27,7 +27,9 @@ func _ready():
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZones')
 	
 	drawer.get_node('Container').get_node('MachineLoom1').snap_to_from_index(0)
+	drawer.get_node('Container').get_node('MachineLoom1').get_node("Label").text = '1: input'
 	drawer.get_node('Container').get_node('MachineLoom2').snap_to_from_index(1)
+	drawer.get_node('Container').get_node('MachineLoom2').get_node("Label").text = '2: output'
 	drawer.get_node('Container').get_node('ConveyorCW').snap_to_from_index(2)
 
 func _on_RunButton_pressed():
@@ -114,8 +116,10 @@ func _on_ConveyorButton_pressed():
 	print(drawer.get_node('Container').get_node('MachineLoom1').input)
 	print(drawer.get_node('Container').get_node('ConveyorCW').holding)
 	print(drawer.get_node('Container').get_node('MachineLoom2').output)
+	
 	drawer.get_node('Container').get_node('ConveyorCW').conveyorRotation = 'east'
 	drawer.get_node('Container').get_node('ConveyorCW').move_items()
+	
 	print(drawer.get_node('Container').get_node('MachineLoom1').input)
 	print(drawer.get_node('Container').get_node('ConveyorCW').holding)
 	print(drawer.get_node('Container').get_node('MachineLoom2').output)

@@ -73,5 +73,7 @@ position = Vector2( 336, 432 )
 position = Vector2( 0, 256 )
 
 [node name="MachineLoom1" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( 121, 113 )
 
 [node name="MachineLoom2" parent="Container" instance=ExtResource( 4 )]
+position = Vector2( 316, 259 )
