@@ -12,7 +12,10 @@ var gridID = []
 var allRestNodes
 var allRestNodesGrid
 var allRestNodesDrawer
+
 var restNodesGridPos
+var gridColumn
+var gridRows
 
 
 func _ready():

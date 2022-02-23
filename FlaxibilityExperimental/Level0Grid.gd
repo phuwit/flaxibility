@@ -7,26 +7,26 @@ extends Control
 func _ready():
 	Global.allRestNodesGrid = get_tree().get_nodes_in_group('restZonesGrid')
 	
-	var gridColumn = 1 # start counting at 0
-	var gridRows = 1 # start counting at 0
-#	var maxArrayIndex = int(gridColumn*gridRows)
+	Global.gridColumn = 1 # start counting at 0
+	Global.gridRows = 1 # start counting at 0
+#	var maxArrayIndex = int(Global.gridColumn*gridRows)
 	
-	generate_pos_array(gridColumn, gridRows)
+	generate_pos_array()
 
-func generate_pos_array(gridColumn, gridRows):
+func generate_pos_array():
 	var restNodesGridPos = []
 	var currentColumn = 0
 	var currentRow = 0
 	var arrayIndex
 	var currentChild = 0
-	var maxArrayIndex = int(String(gridColumn) + String(gridRows)) + 1
+	var maxArrayIndex = int(String(Global.gridColumn) + String(Global.gridRows)) + 1
 	
 	restNodesGridPos.resize(maxArrayIndex)
 
 	for child in Global.allRestNodesGrid:
 #		print('child = ', child, 'currentChild = ', currentChild)
 		# print(get_tree().get_nodes_in_group('restZones'))
-		if currentRow > gridRows:
+		if currentRow > Global.gridRows:
 #			print('currentRow = ', currentRow)
 			currentRow = 0
 			currentColumn += 1
