@@ -21,7 +21,7 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (clicked == true) and (mouse_over == true):
+	if (clicked == true) and (mouse_over == true) and (Global.RunButton == false) and Global.money >= cost:
 		# global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
 	else:
