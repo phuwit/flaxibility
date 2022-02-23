@@ -17,7 +17,9 @@ var restNodePos
 
 
 func _ready():
-	maxArrayIndex = (Global.gridColumn * 10) + Global.gridRows
+	print(Global.gridColumn)
+	print(Global.gridRows)
+	maxArrayIndex = ((Global.gridColumn * 10) + Global.gridRows) + 1
 
 func _process(delta):
 	if (clicked == true) and (mouseOver == true):
@@ -105,21 +107,26 @@ func move_items():
 			targetPos = currentPos + 10
 			sourcePos = currentPos - 1
 	
-	print(sourcePos, targetPos)
+	print(sourcePos, 'and', targetPos, 'and', Global.maxArrayIndex)
 	
-	if (0 <= sourcePos) and (sourcePos <= maxArrayIndex) and (0 <= targetPos) and (targetPos <= maxArrayIndex):
+	if (sourcePos >= 0) and (sourcePos <= Global.maxArrayIndex) and (targetPos >= 0) and (targetPos <= Global.maxArrayIndex):
 		var target = Global.restNodesGridPos[targetPos].machine
-		print('target', target)
+		print('target', target, target.input)
 		var source = Global.restNodesGridPos[sourcePos].machine
-		print('source', source)
+		print('source', source, source.output)
 		if source and source.output != null:
-			if target and target.input != null:
+			print('source.output != null')
+			if target and target.input == null and holding == null:
+				print('target.input != null')
 				holding = source.output
 				source.output = null
 				get_node("HoldingLabel").text = holding
 #				todo: play anim
 				yield(get_tree().create_timer(0.5), "timeout")
-				target.holding = holding
+				target.input = holding
 				holding = null
-#			else:
+				get_node("HoldingLabel").text = 'text'
+				return true
+			else:
+				return false
 #				throw invalid target error & clog

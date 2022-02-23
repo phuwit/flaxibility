@@ -9,6 +9,8 @@ func _ready():
 	
 	Global.gridColumn = 1 # start counting at 0
 	Global.gridRows = 1 # start counting at 0
+	
+	Global.maxArrayIndex = (Global.gridColumn * 10) + Global.gridRows
 #	var maxArrayIndex = int(Global.gridColumn*gridRows)
 	
 	generate_pos_array()
@@ -19,9 +21,8 @@ func generate_pos_array():
 	var currentRow = 0
 	var arrayIndex
 	var currentChild = 0
-	var maxArrayIndex = int(String(Global.gridColumn) + String(Global.gridRows)) + 1
 	
-	restNodesGridPos.resize(maxArrayIndex)
+	restNodesGridPos.resize(Global.maxArrayIndex + 1)
 
 	for child in Global.allRestNodesGrid:
 #		print('child = ', child, 'currentChild = ', currentChild)

@@ -45,8 +45,8 @@ func generate_pos_array(drawerColumn, drawerRows):
 	var arrayIndex
 	var currentChild = 0
 	
-	maxArrayIndex = int(String(drawerColumn) + String(drawerRows)) + 1
-	drawerNodesPos.resize(maxArrayIndex)
+	var maxArrayIndex = (drawerColumn * 10) + drawerRows
+	drawerNodesPos.resize(maxArrayIndex + 1)
 	
 	for child in Global.allRestNodesDrawer:
 #	for child in get_ch

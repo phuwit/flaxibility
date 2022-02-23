@@ -112,14 +112,14 @@ func _process(delta):
 #		get_node('MouseStatusForDemo').text = '↑ Mouse up ↑'
 
 func _on_ConveyorButton_pressed():
-	drawer.get_node('Container').get_node('MachineLoom1').input = 'input'
-	print(drawer.get_node('Container').get_node('MachineLoom1').input)
+	drawer.get_node('Container').get_node('MachineLoom1').output = 'item'
+	print(drawer.get_node('Container').get_node('MachineLoom1').output)
 	print(drawer.get_node('Container').get_node('ConveyorCW').holding)
-	print(drawer.get_node('Container').get_node('MachineLoom2').output)
+	print(drawer.get_node('Container').get_node('MachineLoom2').input)
 	
 	drawer.get_node('Container').get_node('ConveyorCW').conveyorRotation = 'east'
-	drawer.get_node('Container').get_node('ConveyorCW').move_items()
+	print(drawer.get_node('Container').get_node('ConveyorCW').move_items())
 	
-	print(drawer.get_node('Container').get_node('MachineLoom1').input)
+	print(drawer.get_node('Container').get_node('MachineLoom1').output)
 	print(drawer.get_node('Container').get_node('ConveyorCW').holding)
-	print(drawer.get_node('Container').get_node('MachineLoom2').output)
+	print(drawer.get_node('Container').get_node('MachineLoom2').input)

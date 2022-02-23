@@ -14,6 +14,7 @@ var allRestNodesGrid: Array
 var allRestNodesDrawer: Array
 
 var restNodesGridPos: Array
+var maxArrayIndex: int
 var gridColumn: int
 var gridRows: int
 
