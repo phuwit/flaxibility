@@ -21,10 +21,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-<<<<<<< HEAD
-
-=======
 func _process(delta):
 	pass
 #	print("thread2 :"+str(thread))
@@ -78,7 +74,6 @@ func _process(delta):
 #			packedColor_fabric = packedColor_fabric - 1
 #			$Level0Grid/GridMachine/CollisionShape11.packedColor_fabric += 1
 #			yield(get_tree().create_timer(0.25),"timeout")
->>>>>>> 8099f4814725f5967398beb897039b2f7229847b
 
 
 func _on_Timer_timeout():

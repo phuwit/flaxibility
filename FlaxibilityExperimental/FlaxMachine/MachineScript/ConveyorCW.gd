@@ -16,8 +16,8 @@ var clicked = false
 var restNodePos
 
 
-#func _ready():
-#	pass
+func _ready():
+	maxArrayIndex = (Global.gridColumn * 10) + Global.gridRows
 
 func _process(delta):
 	if (clicked == true) and (mouseOver == true):
@@ -36,11 +36,15 @@ func _input(event):
 		snap_to_nearest_rest_node()
 
 func snap_to_nearest_rest_node():
+#	var index = -1
+	
 	for child in Global.allRestNodes:
+#		index += 1
 #		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
-			currentPos = 
+#			currentPos = index_to_pos(index)
+			currentPos = Global.restNodesGridPos.find(child)
 			snap_to(child)
 #			print("child : "+str(child))
 
@@ -70,10 +74,22 @@ func _on_ConveyorCW_mouse_entered():
 func _on_ConveyorCW_mouse_exited():
 	mouseOver = false
 
+func index_to_pos(index):
+	var posX = 0
+	var posY = 0
+	
+	for i in index:
+		print('index', index)
+		print('posX', posX)
+		if posX > Global.gridRows:
+			posX = 0
+			posY += 1
+		posX += 1
+	return ((posY * 10) + posX)
+
 func move_items():
 	var targetPos
 	var sourcePos
-	currentPos = 
 	
 	match conveyorRotation:
 		'north':
@@ -81,7 +97,7 @@ func move_items():
 			sourcePos = currentPos + 1
 		'east':
 			targetPos = currentPos + 1
-			sourcePos = currentPos - 10
+			sourcePos = currentPos + 10
 		'south':
 			targetPos = currentPos + 10
 			sourcePos = currentPos - 1
@@ -91,11 +107,13 @@ func move_items():
 	
 	print(sourcePos, targetPos)
 	
-	if 0 <= sourcePos <= maxArrayIndex and 0 <= targetPos <= maxArrayIndex:
+	if (0 <= sourcePos) and (sourcePos <= maxArrayIndex) and (0 <= targetPos) and (targetPos <= maxArrayIndex):
 		var target = Global.restNodesGridPos[targetPos].machine
 		var source = Global.restNodesGridPos[sourcePos].machine
 		if source and source.output != null:
 			if target and target.input != null:
+				holding = source.output
+				source.output = null
 				get_node("HoldingLabel").text = holding
 #				todo: play anim
 				yield(get_tree().create_timer(0.5), "timeout")

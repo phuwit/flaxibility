@@ -29,10 +29,10 @@ z_index = -10
 texture = ExtResource( 6 )
 
 [node name="RunButton" type="Button" parent="."]
-margin_left = 1646.0
-margin_top = 768.0
-margin_right = 1774.0
-margin_bottom = 816.0
+margin_left = 532.0
+margin_top = 58.0
+margin_right = 660.0
+margin_bottom = 106.0
 theme = ExtResource( 15 )
 text = "Run"
 __meta__ = {
@@ -53,10 +53,10 @@ __meta__ = {
 }
 
 [node name="ConveyorButton" type="Button" parent="."]
-margin_left = 1646.0
-margin_top = 850.0
-margin_right = 1774.0
-margin_bottom = 898.0
+margin_left = 532.0
+margin_top = 140.0
+margin_right = 660.0
+margin_bottom = 188.0
 theme = ExtResource( 15 )
 text = "Conveyor"
 __meta__ = {

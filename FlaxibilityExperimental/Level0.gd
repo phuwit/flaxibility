@@ -27,7 +27,6 @@ func _ready():
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZones')
 	
 	drawer.get_node('Container').get_node('MachineLoom1').snap_to_from_index(0)
-	drawer.get_node('Container').get_node('MachineLoom1').input = 'input'
 	drawer.get_node('Container').get_node('MachineLoom2').snap_to_from_index(1)
 	drawer.get_node('Container').get_node('ConveyorCW').snap_to_from_index(2)
 
@@ -97,6 +96,7 @@ func updateResource():
 		Global.color_fabric = $Level0Grid/GridMachine/CollisionShape00.color_fabric + $Level0Grid/GridMachine/CollisionShape01.color_fabric + $Level0Grid/GridMachine/CollisionShape10.color_fabric + $Level0Grid/GridMachine/CollisionShape11.color_fabric
 		Global.cotton = $Level0Grid/GridMachine/CollisionShape00.cotton + $Level0Grid/GridMachine/CollisionShape01.cotton + $Level0Grid/GridMachine/CollisionShape10.cotton + $Level0Grid/GridMachine/CollisionShape11.cotton
 		Global.cotton = $Level0Grid/GridMachine/CollisionShape00.cotton + $Level0Grid/GridMachine/CollisionShape01.cotton + $Level0Grid/GridMachine/CollisionShape10.cotton + $Level0Grid/GridMachine/CollisionShape11.cotton
+
 func _process(delta):
 	updateResource()
 
@@ -109,11 +109,12 @@ func _process(delta):
 #	else:
 #		get_node('MouseStatusForDemo').text = '↑ Mouse up ↑'
 
-
 func _on_ConveyorButton_pressed():
+	drawer.get_node('Container').get_node('MachineLoom1').input = 'input'
 	print(drawer.get_node('Container').get_node('MachineLoom1').input)
 	print(drawer.get_node('Container').get_node('ConveyorCW').holding)
 	print(drawer.get_node('Container').get_node('MachineLoom2').output)
+	drawer.get_node('Container').get_node('ConveyorCW').conveyorRotation = 'east'
 	drawer.get_node('Container').get_node('ConveyorCW').move_items()
 	print(drawer.get_node('Container').get_node('MachineLoom1').input)
 	print(drawer.get_node('Container').get_node('ConveyorCW').holding)

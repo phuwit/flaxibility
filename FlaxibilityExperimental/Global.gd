@@ -9,13 +9,13 @@ var fabric = 0
 var color_fabric = 0
 var gridID = []
 
-var allRestNodes
-var allRestNodesGrid
-var allRestNodesDrawer
+var allRestNodes: Array
+var allRestNodesGrid: Array
+var allRestNodesDrawer: Array
 
-var restNodesGridPos
-var gridColumn
-var gridRows
+var restNodesGridPos: Array
+var gridColumn: int
+var gridRows: int
 
 
 func _ready():
