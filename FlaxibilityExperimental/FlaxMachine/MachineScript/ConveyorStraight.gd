@@ -20,7 +20,7 @@ var restNodePos
 #	pass
 
 func _process(delta):
-	if (clicked == true) and (mouseOver == true):
+	if (clicked == true) and (mouseOver == true) and (Global.RunButton == false) and Global.money >= cost:
 		# global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
 	else:
