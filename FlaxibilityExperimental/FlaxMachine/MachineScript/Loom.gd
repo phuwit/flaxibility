@@ -3,6 +3,7 @@ extends Area2D
 
 var cost = 30
 var type = "Loom"
+
 var input
 var output
 

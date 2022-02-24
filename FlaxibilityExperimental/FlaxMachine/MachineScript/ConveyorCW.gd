@@ -27,7 +27,6 @@ func _process(delta):
 		# global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
 #	elif (mouseOver == true) and (clickL == true) and (clickR == true):
-#
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
@@ -105,7 +104,7 @@ func _on_ConveyorCW_mouse_exited():
 
 func rotate_conveyor():
 	var rotationsDirections = ['north', 'east', 'south', 'west']
-	var rotationsRadian = [0, 1.570796, 3.141593, 4.712389]
+#	var rotationsRadian = [0, 1.570796, 3.141593, 4.712389]
 #	print(deg2rad(0), deg2rad(90), deg2rad(180), deg2rad(270))
 	var newRotationsIndex = rotationsDirections.find(conveyorRotation) + 1
 	if newRotationsIndex > (rotationsDirections.size() - 1):

@@ -58,7 +58,7 @@ margin_top = 140.0
 margin_right = 660.0
 margin_bottom = 188.0
 theme = ExtResource( 15 )
-text = "Conveyor"
+text = "Conveyor (DC)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -258,4 +258,3 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="RunButton" to="." method="_on_RunButton_pressed"]
-[connection signal="pressed" from="ConveyorButton" to="." method="_on_ConveyorButton_pressed"]
