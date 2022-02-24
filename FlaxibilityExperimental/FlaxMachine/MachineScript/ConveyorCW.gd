@@ -4,7 +4,7 @@ var cost = 5
 var type = "ConveyorCW"
 
 var holding
-var conveyorRotation #target location
+var conveyorRotation = 'north'
 var maxArrayIndex
 var currentPos
 
@@ -12,7 +12,8 @@ var shortestDist = 60
 var defaultNode = 0
 var currentNode
 var mouseOver = false
-var clicked = false
+var clickL = false
+var clickR = false
 var restNodePos
 
 
@@ -22,20 +23,31 @@ func _ready():
 	maxArrayIndex = ((Global.gridColumn * 10) + Global.gridRows) + 1
 
 func _process(delta):
-	if (clicked == true) and (mouseOver == true):
+	if (mouseOver == true) and (clickL == true):
 		# global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
+#	elif (mouseOver == true) and (clickL == true) and (clickR == true):
+#
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
 func _input(event):
-	if (mouseOver == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
-		get_tree().set_input_as_handled()
-#		print("clicked", type)
-		clicked = true
+	if (mouseOver == true) and (event is InputEventMouseButton) and (event.pressed == true):
+		if (event.button_index == BUTTON_LEFT):
+			get_tree().set_input_as_handled()
+	#		print("clickL", type)
+			clickL = true
+		if Input.is_mouse_button_pressed(BUTTON_RIGHT) == true:
+			get_tree().set_input_as_handled()
+			clickR = true
+			rotate_conveyor()
 	elif (event is InputEventMouseButton) and (event.pressed == false):
-		clicked = false
-		snap_to_nearest_rest_node()
+		if (event.button_index == BUTTON_LEFT):
+			clickL = false
+			snap_to_nearest_rest_node()
+		if Input.is_mouse_button_pressed(BUTTON_RIGHT) == false:
+			get_tree().set_input_as_handled()
+			clickR = false
 
 func snap_to_nearest_rest_node():
 #	var index = -1
@@ -76,18 +88,30 @@ func _on_ConveyorCW_mouse_entered():
 func _on_ConveyorCW_mouse_exited():
 	mouseOver = false
 
-func index_to_pos(index):
-	var posX = 0
-	var posY = 0
-	
-	for i in index:
-		print('index', index)
-		print('posX', posX)
-		if posX > Global.gridRows:
-			posX = 0
-			posY += 1
-		posX += 1
-	return ((posY * 10) + posX)
+#func index_to_pos(index):
+#	var posX = 0
+#	var posY = 0
+#
+#	for i in index:
+#		print('index', index)
+#		print('posX', posX)
+#		if posX > Global.gridRows:
+#			posX = 0
+#			posY += 1
+#		posX += 1
+#	return ((posY * 10) + posX)
+
+func rotate_conveyor():
+	var rotations = ['north', 'east', 'south', 'west']
+	var newRotationsIndex = rotations.find(conveyorRotation) - 1
+	if newRotationsIndex > (rotations.size() - 1):
+		newRotationsIndex -= rotations.size()
+	conveyorRotation = rotations[newRotationsIndex]
+	print(conveyorRotation)
+	print(self.rotation_degrees)
+	self.rotation_degrees += 90
+#	self.rotation_degrees = lerp_angle(self.rotation_degrees, self.rotation_degrees + 90, speed)
+	print(self.rotation_degrees)
 
 func move_items():
 	var targetPos
