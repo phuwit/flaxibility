@@ -42,6 +42,7 @@ func _on_RunButton_pressed():
 		RunButton = true
 		Global.RunButton = RunButton
 		TransferItem()
+		gamecheck()
 
 func gameClear():
 	get_node("LevelCompletedPopup").visible = true
@@ -101,7 +102,21 @@ func updateResource():
 func _process(delta):
 	updateResource()
 
-
+func gamecheck():	
+	#print("0 :"+str(Global.allRestNodesGrid[0].machine.type))
+	#print("1 :"+str(Global.allRestNodesGrid[1].machine.type))
+	#print("2 :"+str(Global.allRestNodesGrid[2].machine.type))
+	#print("3 :"+str(Global.allRestNodesGrid[3].machine.type))
+	if (Global.allRestNodesGrid[0].machine.type == "Loom"):
+		if (Global.allRestNodesGrid[1].machine.type == "Sewing") or (Global.allRestNodesGrid[2] == "Sewing"):
+			if(Global.allRestNodesGrid[3] == "Dyeing"):
+				print("level complete")
+			else:
+				print("level fail")
+		else:
+			print("level fail")
+	else:
+		print("level fail")
 #For Demo in slides
 #func _process(_delta):
 #	print(drawer.get_node("MachineLoom").clicked)
