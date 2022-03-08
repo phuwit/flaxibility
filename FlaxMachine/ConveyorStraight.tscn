@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://FlaxMachine/MachineAssets/conveyor_straight.svg" type="Texture" id=1]
+[ext_resource path="res://FlaxMachine/MachineScript/ConveyorStraight.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "ConveyorStraightFrames",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50, 80 )
+
+[node name="ConveyorStraight" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "ConveyorStraightFrames"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_ConveyorStraight_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_ConveyorStraight_mouse_exited"]

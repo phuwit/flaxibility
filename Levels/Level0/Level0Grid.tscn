@@ -22,16 +22,16 @@ position = Vector2( 625.5, 457.5 )
 [node name="Sprites" type="Sprite" parent="RestZone00"]
 texture = ExtResource( 2 )
 
-[node name="RestZone10" parent="." groups=["restZonesGrid"] instance=ExtResource( 3 )]
+[node name="RestZone01" parent="." groups=["restZonesGrid"] instance=ExtResource( 3 )]
 position = Vector2( 790.5, 457.5 )
 
-[node name="Sprites" type="Sprite" parent="RestZone10"]
+[node name="Sprites" type="Sprite" parent="RestZone01"]
 texture = ExtResource( 2 )
 
-[node name="RestZone01" parent="." groups=["restZonesGrid"] instance=ExtResource( 3 )]
+[node name="RestZone10" parent="." groups=["restZonesGrid"] instance=ExtResource( 3 )]
 position = Vector2( 625.5, 622.5 )
 
-[node name="Sprites" type="Sprite" parent="RestZone01"]
+[node name="Sprites" type="Sprite" parent="RestZone10"]
 texture = ExtResource( 2 )
 
 [node name="RestZone11" parent="." groups=["restZonesGrid"] instance=ExtResource( 3 )]

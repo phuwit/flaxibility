@@ -13,9 +13,6 @@ anchor_bottom = 1.0
 margin_top = 256.0
 margin_right = -1424.0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GridMachine" type="Area2D" parent="."]
 z_index = -1
@@ -65,4 +62,10 @@ position = Vector2( 168, 432 )
 [node name="DrawerRestZone11" parent="." groups=["restZonesDrawer"] instance=ExtResource( 2 )]
 position = Vector2( 336, 432 )
 
-[node name="Container" type="Node" parent="."]
+[node name="ContainerLoom" type="Node" parent="."]
+
+[node name="ContainerSewing" type="Node" parent="."]
+
+[node name="ContainerDyeing" type="Node" parent="."]
+
+[node name="ContainerPackager" type="Node" parent="."]

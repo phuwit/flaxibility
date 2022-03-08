@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://FlaxMachine/MachineAssets/conveyor_curved_cw.svg" type="Texture" id=1]
+[ext_resource path="res://FlaxMachine/MachineScript/ConveyorCW.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "ConveyorCWFrames",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 65, 65 )
+
+[node name="ConveyorCW" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "ConveyorCWFrames"
+
+[node name="HoldingLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 15, 15 )
+shape = SubResource( 2 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_ConveyorCW_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_ConveyorCW_mouse_exited"]

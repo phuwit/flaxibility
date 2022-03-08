@@ -2,7 +2,7 @@ extends Area2D
 
 
 var cost = 40
-var type = "Sewing"
+var type = "Dyeing"
 
 var input
 var output
@@ -56,19 +56,20 @@ func snap_to(restNode):
 #		print(currentNode.selected)
 	restNode.select()
 	restNode.machine = self
-	print(restNode.machine.type)
-	print(restNode)
+#	print(restNode.machine.type)
+#	print(restNode)
 	currentNode = restNode
 	restNodePos = restNode.global_position
+	
 
-#func snap_to_from_index(y, x):
-#	var snappingTarget = Global.allRestNodes[y][x]
-#	snap_to(snappingTarget)
+func snap_to_from_index(index):
+	var snappingTarget = Global.allRestNodes[index]
+	snap_to(snappingTarget)
 
-func _on_MachineSewing_mouse_entered():
+func _on_MachineDyeing_mouse_entered():
 	mouseOver = true
-#	print("MOUSE OVER LAEW")
+	# print("MOUSE OVER LAEW")
 
-func _on_MachineSewing_mouse_exited():
+func _on_MachineDyeing_mouse_exited():
 	mouseOver = false
-#	print("MOUSE EXIT LAEW")
+	# print("MOUSE EXIT LAEW")

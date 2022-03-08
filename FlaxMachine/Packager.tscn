@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://FlaxMachine/MachineAssets/packager_gridded.svg" type="Texture" id=1]
+[ext_resource path="res://FlaxMachine/MachineScript/Packager.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "PackagerFrames",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 70, 70 )
+
+[node name="MachinePackager" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "PackagerFrames"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_MachinePackager_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_MachinePackager_mouse_exited"]
