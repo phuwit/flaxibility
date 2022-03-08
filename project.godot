@@ -24,6 +24,10 @@ config/name="flaxibility"
 run/main_scene="res://level 1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=1920

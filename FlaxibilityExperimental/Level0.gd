@@ -42,7 +42,6 @@ func _on_RunButton_pressed():
 		RunButton = true
 		Global.RunButton = RunButton
 		TransferItem()
-			
 
 func gameClear():
 	get_node("LevelCompletedPopup").visible = true

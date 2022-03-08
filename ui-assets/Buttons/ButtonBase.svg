@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="240.0px"
-   height="240.0px"
-   viewBox="0 0 240.0 240.0"
+   width="160"
+   height="160"
+   viewBox="0 0 160 160"
    version="1.1"
    id="SVGRoot"
-   sodipodi:docname="exit button.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="ButtonBase.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,31 +23,54 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="0.64765011"
-     inkscape:cx="117.34731"
-     inkscape:cy="561.25984"
+     inkscape:zoom="4"
+     inkscape:cx="41.125"
+     inkscape:cy="79.375"
      inkscape:window-width="1920"
-     inkscape:window-height="1012"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="xygrid"
-       id="grid202" />
+       id="grid202"
+       originx="0"
+       originy="0" />
   </sodipodi:namedview>
   <defs
      id="defs191">
     <inkscape:path-effect
        effect="fillet_chamfer"
-       id="path-effect1659"
+       id="path-effect848"
        is_visible="true"
        lpeversion="1"
-       satellites_param="F,0,0,1,0,64,0,1 @ F,0,0,1,0,64,0,1 @ F,0,0,1,0,64,0,1 @ F,0,0,1,0,64,0,1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
        unit="px"
        method="auto"
        mode="F"
-       radius="64"
+       radius="0"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1659"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,32,0,1 @ F,0,0,1,0,32,0,1 @ F,0,0,1,0,32,0,1 @ F,0,0,1,0,32,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="32"
        chamfer_steps="1"
        flexible="false"
        use_knot_distance="true"
@@ -63,20 +86,12 @@
     <path
        style="fill:#4d4d4d;fill-rule:evenodd;stroke-width:0.758972"
        id="rect424-3"
-       width="240"
-       height="240"
+       width="160"
+       height="160"
        x="0"
        y="0"
        sodipodi:type="rect"
        inkscape:path-effect="#path-effect1659"
-       d="m 64,0 h 112 a 64,64 45 0 1 64,64 v 112 a 64,64 135 0 1 -64,64 H 64 A 64,64 45 0 1 0,176 V 64 A 64,64 135 0 1 64,0 Z" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 80,80 80,80"
-       id="path2793" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 160,80 80,160"
-       id="path2795" />
+       d="m 32,0 h 96 a 32,32 45 0 1 32,32 v 96 a 32,32 135 0 1 -32,32 H 32 A 32,32 45 0 1 0,128 V 32 A 32,32 135 0 1 32,0 Z" />
   </g>
 </svg>
