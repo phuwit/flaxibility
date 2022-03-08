@@ -108,8 +108,8 @@ func gamecheck():
 	#print("2 :"+str(Global.allRestNodesGrid[2].machine.type))
 	#print("3 :"+str(Global.allRestNodesGrid[3].machine.type))
 	if (Global.allRestNodesGrid[0].machine.type == "Loom"):
-		if (Global.allRestNodesGrid[1].machine.type == "Sewing") or (Global.allRestNodesGrid[2] == "Sewing"):
-			if(Global.allRestNodesGrid[3] == "Dyeing"):
+		if (Global.allRestNodesGrid[1].machine.type == "Sewing") or (Global.allRestNodesGrid[2].machine.type == "Sewing"):
+			if(Global.allRestNodesGrid[3].machine.type == "Dyeing"):
 				print("level complete")
 			else:
 				print("level fail")
