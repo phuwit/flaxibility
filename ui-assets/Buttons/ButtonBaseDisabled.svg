@@ -4,42 +4,46 @@
 <svg
    width="160"
    height="160"
-   viewBox="0 0 42.333333 42.333333"
+   viewBox="0 0 160 160"
    version="1.1"
-   id="svg1065"
+   id="SVGRoot"
+   sodipodi:docname="ButtonBaseDisabled.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="IconExit.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview1067"
+     id="namedview196"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="4.323827"
-     inkscape:cx="95.86415"
-     inkscape:cy="54.928192"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="4"
+     inkscape:cx="41.125"
+     inkscape:cy="79.375"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     units="px"
-     width="160px" />
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid202"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
   <defs
-     id="defs1062">
+     id="defs191">
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect848"
@@ -57,25 +61,37 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1659"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,32,0,1 @ F,0,0,1,0,32,0,1 @ F,0,0,1,0,32,0,1 @ F,0,0,1,0,32,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="32"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-95.033339,-102.64872)">
-    <g
-       id="g826"
-       transform="translate(12.700008,12.700002)">
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:3.28702;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 96.195476,103.81086 14.609044,14.60905"
-         id="path2793"
-         inkscape:path-effect="#path-effect848"
-         inkscape:original-d="m 96.195476,103.81086 14.609044,14.60905" />
-      <path
-         style="fill:none;stroke:#ffffff;stroke-width:3.28702;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 110.80452,103.81086 96.195476,118.41991"
-         id="path2795" />
-    </g>
+     id="layer1">
+    <path
+       style="fill:#b3b3b3;fill-rule:evenodd;stroke-width:0.758972"
+       id="rect424-3"
+       width="160"
+       height="160"
+       x="0"
+       y="0"
+       sodipodi:type="rect"
+       inkscape:path-effect="#path-effect1659"
+       d="m 32,0 h 96 a 32,32 45 0 1 32,32 v 96 a 32,32 135 0 1 -32,32 H 32 A 32,32 45 0 1 0,128 V 32 A 32,32 135 0 1 32,0 Z" />
   </g>
 </svg>

@@ -56,20 +56,19 @@ func snap_to(restNode):
 #		print(currentNode.selected)
 	restNode.select()
 	restNode.machine = self
-#	print(restNode.machine.type)
-#	print(restNode)
+	print(restNode.machine.type)
+	print(restNode)
 	currentNode = restNode
 	restNodePos = restNode.global_position
-	
 
-func snap_to_from_index(index):
-	var snappingTarget = Global.allRestNodes[index]
-	snap_to(snappingTarget)
+#func snap_to_from_index(y, x):
+#	var snappingTarget = Global.allRestNodes[y][x]
+#	snap_to(snappingTarget)
 
 func _on_MachineLoom_mouse_entered():
 	mouseOver = true
-#	print("MOUSE OVER LAEW", type)
+	print("MOUSE OVER LAEW", type)
 
 func _on_MachineLoom_mouse_exited():
 	mouseOver = false
-#	print("MOUSE EXIT LAEW", type)
+	print("MOUSE EXIT LAEW", type)

@@ -6,7 +6,8 @@ var type = "ConveyorCW"
 var holding
 var conveyorRotation = 'east'
 var maxArrayIndex
-var currentPos
+var currentPosY
+var currentPosX
 
 var shortestDist = 60 
 var defaultNode = 0
@@ -18,11 +19,15 @@ var restNodePos
 
 
 func _ready():
+#	print(Global.gridColumn)
+#	print(Global.gridRows)
 	maxArrayIndex = ((Global.gridColumn * 10) + Global.gridRows) + 1
 
 func _process(delta):
 	if (mouseOver == true) and (clickL == true):
+		# global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
+#	elif (mouseOver == true) and (clickL == true) and (clickR == true):
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
@@ -30,6 +35,7 @@ func _input(event):
 	if (mouseOver == true) and (event is InputEventMouseButton) and (event.pressed == true):
 		if (event.button_index == BUTTON_LEFT):
 			get_tree().set_input_as_handled()
+	#		print("clickL", type)
 			clickL = true
 		if (event.button_index == BUTTON_RIGHT):
 			get_tree().set_input_as_handled()
@@ -46,15 +52,26 @@ func _input(event):
 			clickR = false
 
 func snap_to_nearest_rest_node():
+#	var index = -1
 	for child in Global.allRestNodes:
+#		index += 1
+#		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
-			currentPos = Global.restNodesGridPos.find(child)
 			snap_to(child)
+			currentPosY = child.posY
+			currentPosX = child.posX
+#			print("child : "+str(child))
 
 func snap_to(restNode):
+#	print('restNode')
+#	print(restNode)
+#	print(restNode.selected)
 	if currentNode:
 		currentNode.selected = false
+#		print('currentNode')
+#		print(currentNode)
+#		print(currentNode.selected)
 	restNode.select()
 	restNode.machine = self
 	print(restNode.machine.type)
@@ -70,6 +87,19 @@ func _on_ConveyorCW_mouse_entered():
 
 func _on_ConveyorCW_mouse_exited():
 	mouseOver = false
+
+#func index_to_pos(index):
+#	var posX = 0
+#	var posY = 0
+#
+#	for i in index:
+#		print('index', index)
+#		print('posX', posX)
+#		if posX > Global.gridRows:
+#			posX = 0
+#			posY += 1
+#		posX += 1
+#	return ((posY * 10) + posX)
 
 func rotate_conveyor():
 	var rotationsDirections = ['north', 'east', 'south', 'west']
@@ -87,29 +117,37 @@ func rotate_conveyor():
 	print(self.rotation_degrees)
 
 func move_items():
-	var targetPos
-	var sourcePos
+	var targetPosY
+	var targetPosX
+	var sourcePosY
+	var sourcePosX
 	
 	match conveyorRotation:
 		'north':
-			targetPos = currentPos - 10
-			sourcePos = currentPos + 1
+			targetPosY = currentPosY - 1
+			targetPosX = currentPosX
+			sourcePosY = currentPosY
+			sourcePosX = currentPosX + 1
 		'east':
-			targetPos = currentPos + 1
-			sourcePos = currentPos + 10
+			targetPosY = currentPosY
+			targetPosX = currentPosX + 1
+			sourcePosY = currentPosY + 1
+			sourcePosX = currentPosX
 		'south':
-			targetPos = currentPos + 10
-			sourcePos = currentPos - 1
+			targetPosY = currentPosY + 1
+			targetPosX = currentPosX
+			sourcePosY = currentPosY
+			sourcePosX = currentPosX - 1
 		'west':
-			targetPos = currentPos - 1
-			sourcePos = currentPos - 10
+			targetPosY = currentPosY
+			targetPosX = currentPosX - 1
+			sourcePosY = currentPosY - 1
+			sourcePosX = currentPosX
 	
-	print(sourcePos, 'and', targetPos, 'and', Global.maxArrayIndex)
-	
-	if (sourcePos >= 0) and (sourcePos <= Global.maxArrayIndex) and (targetPos >= 0) and (targetPos <= Global.maxArrayIndex):
-		var target = Global.restNodesGridPos[targetPos].machine
+	if (sourcePosY >= 0) and (sourcePosX >= 0) and (sourcePosY <= Global.gridColumn) and (sourcePosX <= Global.gridRows) and (targetPosY >= 0) and (targetPosX >= 0) and (targetPosY <= Global.gridColumn) and (targetPosX <= Global.gridRows):
+		var target = Global.restNodesGridPos[targetPosY][targetPosX].machine
 		print('target', target, target.input)
-		var source = Global.restNodesGridPos[sourcePos].machine
+		var source = Global.restNodesGridPos[sourcePosY][sourcePosX].machine
 		print('source', source, source.output)
 		if source and (source.output != null):
 			print('source.output != null')

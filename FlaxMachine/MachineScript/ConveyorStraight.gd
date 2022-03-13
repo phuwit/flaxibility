@@ -6,7 +6,8 @@ var type = "ConveyorStraight"
 var holding
 var conveyorRotation = 'east'
 var maxArrayIndex
-var currentPos
+var currentPosY
+var currentPosX
 
 var shortestDist = 60 
 var defaultNode = 0
@@ -46,15 +47,26 @@ func _input(event):
 			clickR = false
 
 func snap_to_nearest_rest_node():
+#	var index = -1
 	for child in Global.allRestNodes:
+#		index += 1
+#		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
 		if distanceToRest < shortestDist and child.selected == false:
-			currentPos = Global.restNodesGridPos.find(child)
 			snap_to(child)
+			currentPosY = child.posY
+			currentPosX = child.posX
+#			print("child : "+str(child))
 
 func snap_to(restNode):
+#	print('restNode')
+#	print(restNode)
+#	print(restNode.selected)
 	if currentNode:
 		currentNode.selected = false
+#		print('currentNode')
+#		print(currentNode)
+#		print(currentNode.selected)
 	restNode.select()
 	restNode.machine = self
 	print(restNode.machine.type)
@@ -87,28 +99,36 @@ func rotate_conveyor():
 	print(self.rotation_degrees)
 
 func move_items():
-	var targetPos
-	var sourcePos
+	var targetPosY
+	var targetPosX
+	var sourcePosY
+	var sourcePosX
 	match conveyorRotation:
 		'north':
-			targetPos = currentPos - 10
-			sourcePos = currentPos + 10
+			targetPosY = currentPosY - 1
+			targetPosX = currentPosX
+			sourcePosY = currentPosY + 1
+			sourcePosX = currentPosX
 		'east':
-			targetPos = currentPos + 1
-			sourcePos = currentPos - 1
+			targetPosY = currentPosY
+			targetPosX = currentPosX + 1
+			sourcePosY = currentPosY
+			sourcePosX = currentPosX - 1
 		'south':
-			targetPos = currentPos + 10
-			sourcePos = currentPos - 10
+			targetPosY = currentPosY + 1
+			targetPosX = currentPosX
+			sourcePosY = currentPosY - 1
+			sourcePosX = currentPosX
 		'west':
-			targetPos = currentPos - 1
-			sourcePos = currentPos - 1
+			targetPosY = currentPosY
+			targetPosX = currentPosX - 1
+			sourcePosY = currentPosY
+			sourcePosX = currentPosX + 1
 	
-	print(sourcePos, 'and', targetPos, 'and', Global.maxArrayIndex)
-	
-	if (sourcePos >= 0) and (sourcePos <= Global.maxArrayIndex) and (targetPos >= 0) and (targetPos <= Global.maxArrayIndex):
-		var target = Global.restNodesGridPos[targetPos].machine
+	if (sourcePosY >= 0) and (sourcePosX >= 0) and (sourcePosY <= Global.gridColumn) and (sourcePosX <= Global.gridRows) and (targetPosY >= 0) and (targetPosX >= 0) and (targetPosY <= Global.gridColumn) and (targetPosX <= Global.gridRows):
+		var target = Global.restNodesGridPos[targetPosY][targetPosX].machine
 		print('target', target, target.input)
-		var source = Global.restNodesGridPos[sourcePos].machine
+		var source = Global.restNodesGridPos[sourcePosY][sourcePosX].machine
 		print('source', source, source.output)
 		if source and (source.output != null):
 			print('source.output != null')

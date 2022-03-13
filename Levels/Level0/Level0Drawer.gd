@@ -3,17 +3,21 @@ extends Control
 
 var drawerNodesPos = []
 var maxArrayIndex
-var outOfMoney = false
+#var allRestNodesDrawer = [] #moved to Global.allRestNodesDrawer
 
 var MachineLoom = preload('res://FlaxMachine/Loom.tscn')
 var MachineSewing = preload('res://FlaxMachine/Sewing.tscn')
 var MachineDyeing = preload('res://FlaxMachine/Dyeing.tscn')
 var MachinePackager = preload('res://FlaxMachine/Packager.tscn')
 
-var defaultLoomPos = 00
-var defaultSewingPos = 01
-var defaultDyeingPos = 10
-var defaultPackagerPos = 11
+var defaultLoomPosY = 0
+var defaultLoomPosX = 0
+var defaultSewingPosY = 0
+var defaultSewingPosX = 1
+var defaultDyeingPosY = 1
+var defaultDyeingPosX = 0
+var defaultPackagerPosY = 1
+var defaultPackagerPosX = 1
 
 func _ready():
 	Global.allRestNodesDrawer = get_tree().get_nodes_in_group('restZonesDrawer')
@@ -21,62 +25,75 @@ func _ready():
 	var drawerColumn = 1 # start counting at 0
 	var drawerRows = 1 # start counting at 0
 	
-	generate_pos_array(drawerColumn, drawerRows)
+	drawerNodesPos = generate_pos_array(drawerRows, drawerColumn, Global.allRestNodesDrawer)
+#	assign_default_node()
 	
-	spawn_machine(MachineLoom, drawerNodesPos[defaultLoomPos], false)
-	spawn_machine(MachineSewing, drawerNodesPos[defaultSewingPos], false)
-	spawn_machine(MachineDyeing, drawerNodesPos[defaultDyeingPos], false)
-	spawn_machine(MachinePackager, drawerNodesPos[defaultPackagerPos], false)
+	spawn_machine(MachineLoom, drawerNodesPos[defaultLoomPosY][defaultLoomPosX], false)
+	spawn_machine(MachineSewing, drawerNodesPos[defaultSewingPosY][defaultSewingPosX], false)
+	spawn_machine(MachineDyeing, drawerNodesPos[defaultDyeingPosY][defaultDyeingPosX], false)
+	spawn_machine(MachinePackager, drawerNodesPos[defaultPackagerPosY][defaultPackagerPosX], false)
 
 func _process(delta):
-	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPos)
-	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPos)
-	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPos)
-	spawn_machine_when_rest_node_is_empty(MachinePackager, defaultPackagerPos)
+	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPosY, defaultLoomPosX)
+	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPosY, defaultSewingPosX)
+	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPosY, defaultDyeingPosX)
+	spawn_machine_when_rest_node_is_empty(MachinePackager, defaultPackagerPosY, defaultPackagerPosX)
+#	pass
 
-func generate_pos_array(drawerColumn, drawerRows):
-	var currentColumn = 0
-	var currentRow  = 0
-	var arrayIndex
-	var currentChild = 0
+func generate_pos_array(width, height, allNodes):
+	var array = []
+	var currentIndex = 0
+	width += 1
+	height += 1
 	
-	var maxArrayIndex = (drawerColumn * 10) + drawerRows
-	drawerNodesPos.resize(maxArrayIndex + 1)
+	for y in range(height):
+		array.append([])
+		array[y].resize(width)
 	
-	for child in Global.allRestNodesDrawer:
-		if currentRow > drawerRows:
-			currentRow = 0
-			currentColumn += 1
-		arrayIndex = int(String(currentColumn) + String(currentRow))
-		drawerNodesPos[arrayIndex] = child
-		currentChild += 1
-		currentRow += 1
+		for x in range(width):
+			print(allNodes)
+			array[y][x] = allNodes[currentIndex]
+			currentIndex += 1
+	
+#	print(array)
+	return array
+
+#func assign_default_node():
+#	$MachineLoom.defaultNode = drawerNodesPos[defaultLoomPos]
+#	$MachineSewing.defaultNode = drawerNodesPos[defaultSewingPos]
+#	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
+#	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
 
 func spawn_machine(machine, restNode, reduceMoney):
-	var containerName = 'Container'
 	var newMachine = machine.instance()
 	var machineCost = newMachine.cost
+	var containerName = 'Container' + newMachine.type
+#	print(containerName)
+#	var defaultNode = drawerNodesPos[defaultLoomPos]
 	if reduceMoney == true:
 		var moneyOpsSuccessful = money_ops(machineCost)
 		if moneyOpsSuccessful == true:
+			print(newMachine)
 			get_node(containerName).add_child(newMachine)
 			newMachine.snap_to(restNode)
 		else:
-			outOfMoney = true
 			newMachine.queue_free()
 	elif reduceMoney == false:
 		get_node(containerName).add_child(newMachine)
 		newMachine.snap_to(restNode)
 
 
-func spawn_machine_when_rest_node_is_empty(machine, defaultMachinePos):
-	var restNode = drawerNodesPos[defaultMachinePos]
-	if restNode.selected == false and outOfMoney == false:
+func spawn_machine_when_rest_node_is_empty(machine, defaultMachinePosY, defaultMachinePosX):
+	var restNode = drawerNodesPos[defaultMachinePosY][defaultMachinePosX]
+#	print(restNode.selected)
+	if restNode.selected == false:
+#		print(restNode)
 		spawn_machine(machine, restNode, true)
 
 func money_ops(amount):
-	if amount >= Global.money:
-		Global.money - amount
+#	print(amount, Global.money)
+	if amount <= Global.money:
+		Global.money -= amount
 		return true
 	else:
 		return false
