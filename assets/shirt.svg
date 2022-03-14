@@ -7,7 +7,7 @@
    viewBox="0 0 95.355398 64.037104"
    version="1.1"
    id="svg2638"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="shirt.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9195959"
-     inkscape:cx="41.163716"
+     inkscape:cx="41.100582"
      inkscape:cy="37.691317"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -38,9 +38,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1012"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata2635">
@@ -60,7 +60,7 @@
      transform="translate(-322.55181,-585.12431)">
     <path
        id="rect873"
-       style="fill:#b3b3b3;stroke-width:0.912871"
+       style="fill:#ffffff;stroke-width:0.912871"
        d="m 355.29591,585.12431 -15.0664,4.0371 -17.6777,17.67774 14.1425,14.14258 8.5352,-8.53516 v 36.71484 h 50 v -36.71484 l 8.5352,8.53516 14.1425,-14.14258 -17.6777,-17.67774 -15.0664,-4.0371 a 16,12 0 0 1 -14.9336,7.74609 16,12 0 0 1 -14.9336,-7.74609 z" />
     <path
        id="path1882-7-0"

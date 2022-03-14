@@ -68,7 +68,8 @@ func spawn_machine(machine, restNode, reduceMoney):
 	var newMachine = machine.instance()
 	var machineCost = newMachine.cost
 	var containerName = 'Container' + newMachine.type
-#	print(containerName)
+	print(containerName)
+	print(get_node(containerName))
 #	var defaultNode = drawerNodesPos[defaultLoomPos]
 	if reduceMoney == true:
 		var moneyOpsSuccessful = money_ops(machineCost)

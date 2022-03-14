@@ -7,7 +7,7 @@
    viewBox="0 0 60.000004 60.000018"
    version="1.1"
    id="svg4910"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="dye.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.2"
-     inkscape:cx="34.285714"
+     inkscape:cx="34.330357"
      inkscape:cy="31.473214"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -37,10 +37,17 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1012"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-page="true" />
   <metadata
      id="metadata4907">
     <rdf:RDF>
@@ -58,14 +65,14 @@
      id="layer1"
      transform="translate(-804.28571,-521.42857)">
     <circle
-       style="display:inline;fill:#00695c"
+       style="display:inline;fill:#ffffff"
        id="path852"
        cx="834.28571"
        cy="551.42859"
        r="30" />
     <path
        id="path852-7"
-       style="display:inline;fill:#1a1a1a;fill-opacity:0.403227"
-       d="m 834.28571,521.42857 a 30,30 0 0 0 -12.87305,2.93359 40,40 0 0 1 36.65235,39.85157 40,40 0 0 1 -0.48047,6.02343 30,30 0 0 0 6.70117,-18.80859 30,30 0 0 0 -30,-30 z" />
+       style="display:inline;fill:#cccccc;fill-opacity:0.403227"
+       d="m 834.28571,581.42859 a 30,30 0 0 0 12.87305,-2.93359 40,40 0 0 1 -36.65235,-39.85157 40,40 0 0 1 0.48047,-6.02343 30,30 0 0 0 -6.70117,18.80859 30,30 0 0 0 30,30 z" />
   </g>
 </svg>

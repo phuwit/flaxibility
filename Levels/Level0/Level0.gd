@@ -21,6 +21,8 @@ func _ready():
 	Global.money = money
 	Global.cotton = cotton
 	Global.color = color
+
+	Global.RunButton = false
 	
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZones')
 
