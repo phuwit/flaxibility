@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ui-assets/building-hud.svg" type="Texture" id=1]
+[ext_resource path="res://Themes/DosisTres/DosisLevelNumber.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui-assets/Buttons/Icons/IconReload.svg" type="Texture" id=3]
+[ext_resource path="res://Themes/DosisTres/DosisLevelSelectButton.tres" type="DynamicFont" id=4]
+[ext_resource path="res://ui-assets/Buttons/Icons/IconPlay.svg" type="Texture" id=5]
+[ext_resource path="res://Themes/ThemeMenuButton.tres" type="Theme" id=6]
+
+[node name="Level0HUD" type="Control"]
+
+[node name="HUDBackground" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="LevelNumber" type="Label" parent="HUDBackground"]
+margin_left = 47.0
+margin_top = 28.0
+margin_right = 179.0
+margin_bottom = 181.0
+custom_fonts/font = ExtResource( 2 )
+text = "00"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_top = 900.0
+margin_right = 496.0
+margin_bottom = 1060.0
+custom_constants/hseparation = 32
+columns = 4
+
+[node name="SpacerL" type="NinePatchRect" parent="GridContainer"]
+margin_right = 40.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonStart" type="Button" parent="GridContainer"]
+margin_left = 72.0
+margin_right = 232.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+size_flags_horizontal = 0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 5 )
+clip_text = true
+
+[node name="ButtonReset" type="Button" parent="GridContainer"]
+margin_left = 264.0
+margin_right = 424.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+size_flags_horizontal = 0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 4 )
+icon = ExtResource( 3 )
+clip_text = true
+
+[node name="SpacerR" type="NinePatchRect" parent="GridContainer"]
+margin_left = 456.0
+margin_right = 496.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -24,8 +24,7 @@ func _ready():
 
 	Global.RunButton = false
 	
-	Global.allRestNodes = get_tree().get_nodes_in_group('restZone')
-	print(Global.allRestNodes)
+	Global.allRestNodes = get_tree().get_nodes_in_group('restZones')
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

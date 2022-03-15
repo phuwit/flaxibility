@@ -5,31 +5,34 @@
 [ext_resource path="res://RestZone.tscn" type="PackedScene" id=4]
 
 [node name="Level0Drawer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1424.0
 script = ExtResource( 2 )
 
 [node name="RestZoneDrawer00" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
-position = Vector2( 144, 384 )
+position = Vector2( 120, 384 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneDrawer00"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 3 )
 
 [node name="RestZoneDrawer01" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
-position = Vector2( 352, 384 )
+position = Vector2( 376, 384 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneDrawer01"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 3 )
 
 [node name="RestZoneDrawer10" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
-position = Vector2( 144, 560 )
+position = Vector2( 120, 592 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneDrawer10"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 3 )
 
 [node name="RestZoneDrawer11" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
-position = Vector2( 352, 560 )
+position = Vector2( 376, 592 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneDrawer11"]
 position = Vector2( 0, 3.05176e-05 )
