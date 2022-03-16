@@ -33,6 +33,9 @@ func _ready():
 	spawn_machine(MachineDyeing, drawerNodesPos[defaultDyeingPosY][defaultDyeingPosX], false)
 	spawn_machine(MachinePackager, drawerNodesPos[defaultPackagerPosY][defaultPackagerPosX], false)
 
+	connect_nodes(get_tree().root)
+	get_tree().connect("node_added", self, "_on_SceneTree_node_added")
+
 func _process(delta):
 	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPosY, defaultLoomPosX)
 	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPosY, defaultSewingPosX)
@@ -98,3 +101,26 @@ func money_ops(amount):
 		return true
 	else:
 		return false
+
+# automatically add button sounds from https://gamedev.stackexchange.com/questions/184354/add-a-sound-to-all-the-buttons-in-a-project
+func _on_SceneTree_node_added(node):
+	if node is Area2D:
+		connect_to_node(node)
+
+func _on_mouse_down():
+	get_node('SoundDropPlayer').play()
+
+func _on_mouse_up():
+	get_node('SoundPickPlayer').play()
+
+# recursively connect all nodes
+func connect_nodes(root):
+	for child in root.get_children():
+		if child is Area2D:
+			connect_to_node(child)
+		connect_nodes(child)
+
+func connect_to_node(node):
+	node.connect("mouse_down", self, "_on_mouse_down")
+	node.connect("mouse_up", self, "_on_mouse_up")
+	print('connected')

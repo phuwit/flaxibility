@@ -22,7 +22,7 @@ centered = false
 texture = ExtResource( 7 )
 centered = false
 
-[node name="Control" parent="." instance=ExtResource( 3 )]
+[node name="Level0HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="Level0Grid" parent="." instance=ExtResource( 2 )]
 

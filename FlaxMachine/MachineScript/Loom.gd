@@ -29,14 +29,19 @@ func _process(delta):
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
-func _input(event):
+signal mouse_up
+signal mouse_down
+
+func _on_MachineLoom_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 	if (mouseOver == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
-		get_tree().set_input_as_handled()
-#		print("clicked", type)
 		clicked = true
+		emit_signal("mouse_down")
+		get_tree().set_input_as_handled()
 	elif (event is InputEventMouseButton) and (event.pressed == false):
 		clicked = false
+		emit_signal("mouse_up")
 		snap_to_nearest_rest_node()
+		get_tree().set_input_as_handled()
 
 func snap_to_nearest_rest_node():
 	for child in Global.allRestNodes:

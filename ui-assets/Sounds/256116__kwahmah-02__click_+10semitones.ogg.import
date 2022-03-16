@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/256116__kwahmah-02__click_+10semitones.ogg-091b104d9316a3eea27f9204d76f8d36.oggstr"
+
+[deps]
+
+source_file="res://ui-assets/Sounds/256116__kwahmah-02__click_+10semitones.ogg"
+dest_files=[ "res://.import/256116__kwahmah-02__click_+10semitones.ogg-091b104d9316a3eea27f9204d76f8d36.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
