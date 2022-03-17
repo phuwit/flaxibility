@@ -13,6 +13,12 @@ var currentNode
 var mouseOver = false
 var clicked = false
 var restNodePos
+var outOfMoney = false
+
+signal mouse_up
+signal mouse_down
+signal out_of_money(type)
+
 #var allRestNodes = [] #moved to Global.allRestNodes
 
 #func _ready():
@@ -23,25 +29,30 @@ var restNodePos
 #	print("Global.allRestNodes :"+str(Global.allRestNodes))
 
 func _process(delta):
-	if (clicked == true) and (mouseOver == true) and (Global.RunButton == false) and Global.money >= cost:
+	if (clicked == true) and (mouseOver == true) and (Global.RunButton == false) and (outOfMoney == false):
 		# global_position = lerp(global_positsion, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
-signal mouse_up
-signal mouse_down
-
 func _on_MachineLoom_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
-	if (mouseOver == true) and (event is InputEventMouseButton) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
-		clicked = true
-		emit_signal("mouse_down")
-		get_tree().set_input_as_handled()
-	elif (event is InputEventMouseButton) and (event.pressed == false):
-		clicked = false
-		emit_signal("mouse_up")
-		snap_to_nearest_rest_node()
-		get_tree().set_input_as_handled()
+	if (event is InputEventMouseButton):
+		if (Global.money >= cost):
+			outOfMoney = false
+
+			if (mouseOver == true) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
+				clicked = true
+				emit_signal("mouse_down")
+				get_tree().set_input_as_handled()
+			elif (event.pressed == false):
+				clicked = false
+				emit_signal("mouse_up")
+				snap_to_nearest_rest_node()
+				get_tree().set_input_as_handled()
+	
+		else:
+			outOfMoney = true
+			emit_signal("out_of_money", type)
 
 func snap_to_nearest_rest_node():
 	for child in Global.allRestNodes:

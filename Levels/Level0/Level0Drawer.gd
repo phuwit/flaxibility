@@ -58,33 +58,24 @@ func generate_pos_array(width, height, allNodes):
 			array[y][x] = allNodes[currentIndex]
 			currentIndex += 1
 	
-#	print(array)
 	return array
-
-#func assign_default_node():
-#	$MachineLoom.defaultNode = drawerNodesPos[defaultLoomPos]
-#	$MachineSewing.defaultNode = drawerNodesPos[defaultSewingPos]
-#	$MachineDyeing.defaultNode = drawerNodesPos[defaultDyeingPos]
-#	$MachinePackager.defaultNode = drawerNodesPos[defaultPackagerPos]
 
 func spawn_machine(machine, restNode, reduceMoney):
 	var newMachine = machine.instance()
 	var machineCost = newMachine.cost
-	var containerName = 'Container' + newMachine.type
-	print(containerName)
-	print(get_node(containerName))
-#	var defaultNode = drawerNodesPos[defaultLoomPos]
+	var machineType = newMachine.type
+	var containerName = 'Container' + machineType
+	# print(containerName)
+	# print(get_node(containerName))
+	# var defaultNode = drawerNodesPos[defaultLoomPos]
 	if reduceMoney == true:
 		var moneyOpsSuccessful = money_ops(machineCost)
-		if moneyOpsSuccessful == true:
-			print(newMachine)
-			get_node(containerName).add_child(newMachine)
-			newMachine.snap_to(restNode)
-		else:
+		if moneyOpsSuccessful == false:
 			newMachine.queue_free()
-	elif reduceMoney == false:
-		get_node(containerName).add_child(newMachine)
-		newMachine.snap_to(restNode)
+			pass
+	get_node(containerName).add_child(newMachine)
+	add_to_group(machineType)
+	newMachine.snap_to(restNode)
 
 
 func spawn_machine_when_rest_node_is_empty(machine, defaultMachinePosY, defaultMachinePosX):
@@ -113,6 +104,11 @@ func _on_mouse_down():
 func _on_mouse_up():
 	get_node('SoundPickPlayer').play()
 
+func _on_out_of_money(type):
+	var text = "Out of money on buying " + type
+	print(get_parent())
+	get_parent().hud.display_warning(text)
+
 # recursively connect all nodes
 func connect_nodes(root):
 	for child in root.get_children():
@@ -123,4 +119,4 @@ func connect_nodes(root):
 func connect_to_node(node):
 	node.connect("mouse_down", self, "_on_mouse_down")
 	node.connect("mouse_up", self, "_on_mouse_up")
-	print('connected')
+	node.connect("out_of_money", self, "_on_out_of_money")

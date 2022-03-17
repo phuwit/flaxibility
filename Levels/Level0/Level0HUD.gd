@@ -34,3 +34,12 @@ func connect_to_button(button):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func display_warning(text):
+	get_node("Warning").visible = true
+	get_node("Warning/WarningText").text = text
+	get_node("Warning/WarningTimer").start()
+
+func _on_WarningTimer_timeout():
+	get_node("Warning").visible = false
+	# get_node("Warning/WarningText").text = null

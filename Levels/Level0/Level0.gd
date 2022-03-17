@@ -13,6 +13,7 @@ var delay = 0
 var i = 2
 onready var drawer = get_node("Level0Drawer")
 onready var grid = get_node("Level0Grid")
+onready var hud = get_node("Level0HUD")
 onready var gridID_Back = get_node("Level0Drawer/GridMachine")
 
 
@@ -26,7 +27,6 @@ func _ready():
 	
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZone')
 	print(Global.allRestNodes)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
