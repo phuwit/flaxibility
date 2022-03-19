@@ -13,6 +13,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SoundClickPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
@@ -79,7 +82,7 @@ custom_constants/hseparation = 40
 columns = 9
 
 [node name="SpacerL" type="NinePatchRect" parent="LevelsContainer"]
-margin_right = 620.0
+margin_right = 12.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -162,8 +165,8 @@ text = "6"
 clip_text = true
 
 [node name="SpacerR" type="NinePatchRect" parent="LevelsContainer"]
-margin_left = 1300.0
-margin_right = 1920.0
+margin_left = 1452.0
+margin_right = 1464.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -171,3 +174,9 @@ size_flags_vertical = 3
 [connection signal="pressed" from="PlayExitContainer/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
 [connection signal="pressed" from="PlayExitContainer/ButtonExit" to="." method="_on_ButtonExit_pressed"]
 [connection signal="pressed" from="LevelsContainer/Button0" to="." method="_on_Button0_pressed"]
+[connection signal="pressed" from="LevelsContainer/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="LevelsContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="LevelsContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="LevelsContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="LevelsContainer/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="LevelsContainer/Button6" to="." method="_on_Button6_pressed"]

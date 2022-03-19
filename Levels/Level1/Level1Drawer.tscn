@@ -1,22 +1,25 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click_+10semitones.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Levels/Level0/Level0Drawer.gd" type="Script" id=2]
+[ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click_-10semitones.ogg" type="AudioStream" id=1]
+[ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click_+10semitones.ogg" type="AudioStream" id=2]
 [ext_resource path="res://ui-assets/building-gridlets.svg" type="Texture" id=3]
 [ext_resource path="res://RestZone.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click_-10semitones.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Levels/Level1/Level1Drawer.gd" type="Script" id=5]
 
-[node name="Level0Drawer" type="Control"]
-script = ExtResource( 2 )
+[node name="Level1Drawer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1445, -862 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SoundPickPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 1 )
 
 [node name="SoundDropPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 2 )
 
 [node name="RestZoneDrawer00" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
 position = Vector2( 144, 384 )
@@ -43,6 +46,20 @@ texture = ExtResource( 3 )
 position = Vector2( 352, 560 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneDrawer11"]
+position = Vector2( 0, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="RestZoneDrawer20" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+position = Vector2( 144, 737 )
+
+[node name="Sprites" type="Sprite" parent="RestZoneDrawer20"]
+position = Vector2( 0, 3.05176e-05 )
+texture = ExtResource( 3 )
+
+[node name="RestZoneDrawer21" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+position = Vector2( 352, 737 )
+
+[node name="Sprites" type="Sprite" parent="RestZoneDrawer21"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 3 )
 
