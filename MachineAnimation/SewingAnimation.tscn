@@ -1,0 +1,207 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://MachineAnimation/MachineAnimationAssets/Sewing/sewing_spindle.svg" type="Texture" id=1]
+[ext_resource path="res://MachineAnimation/MachineAnimationAssets/Sewing/sewing_needle.svg" type="Texture" id=2]
+[ext_resource path="res://MachineAnimation/MachineAnimationAssets/Sewing/sewing_base.svg" type="Texture" id=3]
+[ext_resource path="res://MachineAnimation/MachineAnimationAssets/Sewing/sewing_shade.svg" type="Texture" id=4]
+[ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=5]
+[ext_resource path="res://FlaxMachine/MachineAssets/packager_steam.svg" type="Texture" id=6]
+[ext_resource path="res://MachineAnimation/AnimationRecorder/Record.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SewingNeedle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SewingShade:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 96, 52 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PackagerSteamL:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PackagerSteamL:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 23, 99 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PackagerSteamL:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -180.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("PackagerSteamL:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "SewingAnim"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SewingNeedle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 2, 1, 0.5 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 2.25 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SewingShade:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 96, 52 ), Vector2( 96, 43 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PackagerSteamL:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ Vector2( 23, 99 ), Vector2( 10, 75 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PackagerSteamL:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ 0.0, -180.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PackagerSteamL:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.4, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.6, 0.6 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("PackagerSteamL:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.4, 1 ),
+"transitions": PoolRealArray( 0.5, 0.5 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=3]
+light_mode = 2
+
+[node name="SewingAnimationPlayer" type="AnimationPlayer"]
+root_node = NodePath(".")
+anims/RESET = SubResource( 1 )
+anims/SewingAnim = SubResource( 2 )
+
+[node name="SewingBase" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="SewingNeedle" type="Sprite" parent="."]
+position = Vector2( 36, 48 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 110.25, 79.25 )
+scale = Vector2( 0.0153646, 0.049537 )
+texture = ExtResource( 5 )
+mode = 2
+
+[node name="SewingShade" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 96, 43 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="SewingSpindle" type="Sprite" parent="."]
+position = Vector2( 96, 50 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="PackagerSteamL" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 10, 75 )
+rotation = -3.14159
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 6 )
+
+[node name="Record" parent="." instance=ExtResource( 7 )]
+margin_right = 140.0
+margin_bottom = 140.0
+animation_player_path = NodePath("..")
+animation_name = "SewingAnim"
+resultFolder = "res://FlaxMachine/MachineAssets"

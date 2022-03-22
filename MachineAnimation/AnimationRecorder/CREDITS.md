@@ -1,0 +1,1 @@
+[AnimationRecorder](https://github.com/AhmedElTabarani/AnimationRecorder) by [AhmedElTabarani](https://github.com/AhmedElTabarani) on GitHub under [MIT License](https://github.com/AhmedElTabarani/AnimationRecorder/blob/main/LICENSE)

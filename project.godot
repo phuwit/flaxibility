@@ -44,6 +44,7 @@ singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 [global]
 
 import=false
+ignore=false
 
 [importer_defaults]
 

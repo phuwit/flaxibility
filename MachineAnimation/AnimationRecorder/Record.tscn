@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MachineAnimation/AnimationRecorder/Record.gd" type="Script" id=1]
+
+[node name="Record" type="Control"]
+margin_right = 1.0
+margin_bottom = 1.0
+rect_min_size = Vector2( 1, 1 )
+script = ExtResource( 1 )
+animation_name = ""
+resultFolder = "res://AnimRecResult"
+saveOption = 1
+numberOfColumns = 10
+exitAfterFinish = true

@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="37.041672mm"
+   width="37.041668mm"
    height="37.041668mm"
-   viewBox="0 0 140.00002 140"
+   viewBox="0 0 140 140"
    version="1.1"
-   id="svg1415"
+   id="svg9224"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="packager_gridded.svg"
+   sodipodi:docname="dyeing_swoosh.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
-     id="defs1409" />
+     id="defs9218" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="33.392857"
-     inkscape:cy="72.678571"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="58.424698"
+     inkscape:cy="70.799067"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:pagecheckerboard="0"
@@ -45,9 +45,11 @@
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:snap-bbox-midpoints="true" />
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true" />
   <metadata
-     id="metadata1412">
+     id="metadata9221">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -61,41 +63,21 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-1055.7143,-1241.4286)">
-    <rect
-       style="fill:#e3f2fd;stroke-width:0.450929"
-       id="rect855"
-       width="107.69231"
-       height="16"
-       x="1071.8682"
-       y="1355.4286" />
-    <rect
-       style="fill:#666666;stroke-width:0.439385"
-       id="rect1513"
-       width="140"
-       height="10"
-       x="1055.7142"
-       y="1371.4286" />
-    <rect
-       style="fill:#673ab7;stroke-width:0.439385"
-       id="rect1513-3"
-       width="140"
-       height="10"
-       x="1055.7144"
-       y="1345.4286" />
-    <rect
-       style="fill:#808080;stroke-width:0.713976"
-       id="rect1708"
-       width="9"
-       height="48"
-       x="1121.2144"
-       y="1297.4286" />
-    <rect
-       style="fill:#666666;stroke-width:0.649049"
-       id="rect1884"
-       width="18"
-       height="56"
-       x="1116.7144"
-       y="1241.4286" />
+     transform="translate(-1001.4286,-501.42857)">
+    <path
+       style="color:#000000;fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;fill-opacity:0.50349653"
+       d="m 1113.4277,568.42773 a 3,3 0 0 0 -3,3 c 0,13.93816 -7.4292,26.80632 -19.5,33.77539 a 3,3 0 0 0 -1.0976,4.09766 3,3 0 0 0 4.0976,1.09961 c 13.9189,-8.03606 22.5,-22.90053 22.5,-38.97266 a 3,3 0 0 0 -3,-3 z"
+       id="path2313" />
+    <circle
+       style="fill:#ffffff;fill-opacity:0.50349653;stroke:none;stroke-width:6.38379;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3301"
+       cx="1076.2164"
+       cy="-613.42859"
+       r="4.7878332"
+       transform="scale(1,-1)" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;fill-opacity:0.50349653"
+       d="m 1092.6426,547.71484 a 2.5,2.5 0 0 0 -1.7676,0.73243 2.5,2.5 0 0 0 0,3.53515 c 7.5613,7.56131 10.0519,18.80314 6.3945,28.85156 a 2.5,2.5 0 0 0 1.4942,3.20508 2.5,2.5 0 0 0 3.2051,-1.49414 c 4.3178,-11.86319 1.3683,-25.17075 -7.5586,-34.09765 a 2.5,2.5 0 0 0 -1.7676,-0.73243 z"
+       id="path3631" />
   </g>
 </svg>
