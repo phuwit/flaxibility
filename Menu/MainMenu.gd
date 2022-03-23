@@ -33,6 +33,10 @@ func connect_buttons(root):
 func connect_to_button(button):
 	button.connect("pressed", self, "_on_Button_pressed")
 
+func change_to_scene_path(path):
+	var error = get_tree().change_scene(path)
+	if error != 0:
+		print ("An unexpected error occured when trying to switch to the new scene, error code : " + error)
 
 func _on_ButtonPlay_pressed():
 	get_node("LevelsContainer").visible = not get_node("LevelsContainer").visible
@@ -41,28 +45,22 @@ func _on_ButtonExit_pressed():
 	get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
 
 func _on_Button0_pressed():
-	get_tree().change_scene('res://Levels/Level0/Level0.tscn')
-
+	change_to_scene_path("res://Levels/Level0/Level0.tscn")
 
 func _on_Button1_pressed():
-	get_tree().change_scene("res://Levels/Level1/Level1.tscn")
-
+	change_to_scene_path("res://Levels/Level1/Level1.tscn")
 
 func _on_Button2_pressed():
-	get_tree().change_scene("res://Levels/Level2/Level2.tscn")
-
+	change_to_scene_path("res://Levels/Level2/Level2.tscn")
 
 func _on_Button3_pressed():
-	get_tree().change_scene("res://Levels/Level3/Level3.tscn")
-
+	change_to_scene_path("res://Levels/Level3/Level3.tscn")
 
 func _on_Button4_pressed():
-	get_tree().change_scene("res://Levels/Level4/Level4.tscn")
-
+	change_to_scene_path("res://Levels/Level4/Level4.tscn")
 
 func _on_Button5_pressed():
-	get_tree().change_scene("res://Levels/Level5/Level5.tscn")
-
+	change_to_scene_path("res://Levels/Level5/Level5.tscn")
 
 func _on_Button6_pressed():
-	get_tree().change_scene("res://Levels/Level6/Level6.tscn")
+	change_to_scene_path("res://Levels/Level6/Level6.tscn")

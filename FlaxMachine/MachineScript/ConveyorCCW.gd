@@ -1,10 +1,10 @@
 extends Area2D
 
 var cost = 5
-var type = "ConveyorCW"
+var type = "ConveyorCCW"
 
 var holding
-var conveyorRotation = 'east'
+var conveyorRotation = 'west'
 var maxArrayIndex
 var currentPosY
 var currentPosX
@@ -16,7 +16,6 @@ var mouseOver = false
 var clickL = false
 var clickR = false
 var restNodePos
-
 
 signal conveyor_invalid_target_or_source(currentPosY, currentPosX)
 signal conveyor_target_busy(currentPosY, currentPosX)
@@ -131,21 +130,21 @@ func move_items():
 			targetPosY = currentPosY - 1
 			targetPosX = currentPosX
 			sourcePosY = currentPosY
-			sourcePosX = currentPosX + 1
+			sourcePosX = currentPosX - 1
 		'east':
 			targetPosY = currentPosY
 			targetPosX = currentPosX + 1
-			sourcePosY = currentPosY + 1
+			sourcePosY = currentPosY - 1
 			sourcePosX = currentPosX
 		'south':
 			targetPosY = currentPosY + 1
 			targetPosX = currentPosX
 			sourcePosY = currentPosY
-			sourcePosX = currentPosX - 1
+			sourcePosX = currentPosX + 1
 		'west':
 			targetPosY = currentPosY
 			targetPosX = currentPosX - 1
-			sourcePosY = currentPosY - 1
+			sourcePosY = currentPosY + 1
 			sourcePosX = currentPosX
 	
 	if not (sourcePosY >= 0) and not (sourcePosX >= 0) and not (sourcePosY <= Global.gridColumn) and not (sourcePosX <= Global.gridRows) and not (targetPosY >= 0) and not (targetPosX >= 0) and not (targetPosY <= Global.gridColumn) and not (targetPosX <= Global.gridRows):

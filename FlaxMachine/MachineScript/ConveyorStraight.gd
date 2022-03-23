@@ -4,7 +4,7 @@ var cost = 5
 var type = "ConveyorStraight"
 
 var holding
-var conveyorRotation = 'east'
+var conveyorRotation = 'north'
 var maxArrayIndex
 var currentPosY
 var currentPosX
@@ -16,6 +16,9 @@ var mouseOver = false
 var clickL = false
 var clickR = false
 var restNodePos
+
+signal conveyor_invalid_target_or_source(currentPosY, currentPosX)
+signal conveyor_target_busy(currentPosY, currentPosX)
 
 
 func _ready():
@@ -125,24 +128,32 @@ func move_items():
 			sourcePosY = currentPosY
 			sourcePosX = currentPosX + 1
 	
-	if (sourcePosY >= 0) and (sourcePosX >= 0) and (sourcePosY <= Global.gridColumn) and (sourcePosX <= Global.gridRows) and (targetPosY >= 0) and (targetPosX >= 0) and (targetPosY <= Global.gridColumn) and (targetPosX <= Global.gridRows):
-		var target = Global.restNodesGridPos[targetPosY][targetPosX].machine
-		print('target', target, target.input)
-		var source = Global.restNodesGridPos[sourcePosY][sourcePosX].machine
-		print('source', source, source.output)
-		if source and (source.output != null):
-			print('source.output != null')
-			if target and (target.input == null) and (holding == null):
-				print('target.input != null')
-				holding = source.output
-				source.output = null
-				get_node("HoldingLabel").text = holding
-#				todo: play anim
-				yield(get_tree().create_timer(0.5), "timeout")
-				target.input = holding
-				holding = null
-				get_node("HoldingLabel").text = 'text'
-				return true
-			else:
-				return false
-#				todo: throw invalid target error & clog
+	if not (sourcePosY >= 0) and not (sourcePosX >= 0) and not (sourcePosY <= Global.gridColumn) and not (sourcePosX <= Global.gridRows) and not (targetPosY >= 0) and not (targetPosX >= 0) and not (targetPosY <= Global.gridColumn) and not (targetPosX <= Global.gridRows):
+		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
+		pass
+	
+	var target = Global.restNodesGridPos[targetPosY][targetPosX].machine
+	print('target', target, target.input)
+	var source = Global.restNodesGridPos[sourcePosY][sourcePosX].machine
+	print('source', source, source.output)
+
+	if (target == false) or (source == false):
+		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
+		pass
+
+	if source and (source.output != null):
+		print('source.output != null')
+		if target and (target.input == null) and (holding == null):
+			print('target.input != null')
+			holding = source.output
+			source.output = null
+			get_node("HoldingLabel").text = holding
+				# todo: play anim
+			yield(get_tree().create_timer(0.5), "timeout")
+			target.input = holding
+			holding = null
+			get_node("HoldingLabel").text = 'text'
+			return true
+		else:
+			emit_signal('conveyor_target_busy', currentPosY, currentPosX)
+			return false

@@ -11,7 +11,7 @@ var shortestDist = 60
 var defaultNode = 0
 var currentNode
 var mouseOver = false
-var clicked = false
+var clickL = false
 var restNodePos
 var outOfMoney = false
 
@@ -29,7 +29,7 @@ signal out_of_money(type)
 #	print("Global.allRestNodes :"+str(Global.allRestNodes))
 
 func _process(delta):
-	if (clicked == true) and (mouseOver == true) and (Global.RunButton == false) and (outOfMoney == false):
+	if (clickL == true) and (mouseOver == true) and (Global.RunButton == false) and (outOfMoney == false):
 		# global_position = lerp(global_positsion, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
 	else:
@@ -41,18 +41,19 @@ func _on_MachineLoom_input_event(_viewport:Node, event:InputEvent, _shape_idx:in
 			outOfMoney = false
 
 			if (mouseOver == true) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
-				clicked = true
+				clickL = true
 				emit_signal("mouse_down")
-				get_tree().set_input_as_handled()
 			elif (event.pressed == false):
-				clicked = false
+				clickL = false
 				emit_signal("mouse_up")
 				snap_to_nearest_rest_node()
-				get_tree().set_input_as_handled()
+
+			get_tree().set_input_as_handled()
 	
 		else:
 			outOfMoney = true
-			emit_signal("out_of_money", type)
+			if (event.button_index == BUTTON_LEFT) and (event.pressed == true):
+				emit_signal("out_of_money", type)
 
 func snap_to_nearest_rest_node():
 	for child in Global.allRestNodes:
@@ -83,8 +84,8 @@ func snap_to(restNode):
 
 func _on_MachineLoom_mouse_entered():
 	mouseOver = true
-	print("MOUSE OVER LAEW", type)
+	# print("MOUSE OVER LAEW", type)
 
 func _on_MachineLoom_mouse_exited():
 	mouseOver = false
-	print("MOUSE EXIT LAEW", type)
+	# print("MOUSE EXIT LAEW", type)

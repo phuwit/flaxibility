@@ -7,7 +7,7 @@
    viewBox="0 0 160.0 160.0"
    version="1.1"
    id="SVGRoot"
-   sodipodi:docname="conveyor_straight.svg"
+   sodipodi:docname="conveyor_straight_elevated_shade.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -113,29 +113,12 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline">
-    <g
-       id="g833-7"
-       transform="translate(0,4.9e-5)"
-       style="display:inline">
-      <rect
-         style="fill:#1a1a1a;stroke-width:1.13495"
-         id="rect803-5"
-         width="100"
-         height="160"
-         x="30"
-         y="-1.7763568e-15" />
-      <path
-         id="rect1019-2"
-         style="fill:#4d4d4d;stroke-width:0.783861"
-         d="m 78.556641,124.2793 a 15,15 0 0 0 -7.927735,3.21679 L 59.734375,136.21289 39.371094,152.50391 30,160 h 12 76 12 l -9.37109,-7.49609 -10.42579,-8.3418 -9.9375,-7.94922 -10.894526,-8.7168 A 15,15 0 0 0 78.556641,124.2793 Z" />
-      <path
-         id="rect1019-9-2"
-         style="display:inline;fill:#4d4d4d;stroke-width:0.783861"
-         d="m 78.556641,44.279297 a 15,15 0 0 0 -7.927735,3.216797 L 59.734375,56.212891 39.371094,72.503906 30,80 v 35.78906 h 0.002 l 9.369141,-7.49414 20.363281,-16.291014 10.894531,-8.716797 a 15,15 0 0 1 7.927735,-3.216797 15,15 0 0 1 10.814453,3.216797 l 10.894529,8.716797 9.9375,7.949219 10.42579,8.341795 9.36914,7.49414 H 130 V 80 l -9.37109,-7.496094 -10.42579,-8.341797 -9.9375,-7.949218 -10.894526,-8.716797 A 15,15 0 0 0 78.556641,44.279297 Z" />
-      <path
-         id="rect935-2-6"
-         style="display:inline;fill:#4d4d4d;stroke-width:1.88804"
-         d="m 29.999902,0 v 35.78906 h 0.002 l 9.36914,-7.49414 20.363281,-16.29101 10.894532,-8.7168 a 15,15 0 0 1 7.927735,-3.2168 15,15 0 0 1 10.81445,3.2168 l 10.89454,8.7168 9.9375,7.94922 10.42578,8.34179 9.36914,7.49414 H 130 V 0 Z" />
-    </g>
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:0.601399;stroke-width:25.408;stroke-linecap:round;stroke-linejoin:round"
+       id="rect899-8"
+       width="116"
+       height="160"
+       x="22"
+       y="0" />
   </g>
 </svg>

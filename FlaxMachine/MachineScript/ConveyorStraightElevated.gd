@@ -1,10 +1,10 @@
 extends Area2D
 
-var cost = 5
-var type = "ConveyorCW"
+var cost = 10
+var type = "ConveyorStraightElevated"
 
 var holding
-var conveyorRotation = 'east'
+var conveyorRotation = 'north'
 var maxArrayIndex
 var currentPosY
 var currentPosX
@@ -16,56 +16,49 @@ var mouseOver = false
 var clickL = false
 var clickR = false
 var restNodePos
-
+var outOfMoney = false
 
 signal conveyor_invalid_target_or_source(currentPosY, currentPosX)
 signal conveyor_target_busy(currentPosY, currentPosX)
 
 
 func _ready():
-#	print(Global.gridColumn)
-#	print(Global.gridRows)
 	maxArrayIndex = ((Global.gridColumn * 10) + Global.gridRows) + 1
 
 func _process(delta):
 	if (mouseOver == true) and (clickL == true):
-		# global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
-#	elif (mouseOver == true) and (clickL == true) and (clickR == true):
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
-func _input(event):
-	if (mouseOver == true) and (event is InputEventMouseButton) and (event.pressed == true):
-		if (event.button_index == BUTTON_LEFT):
+		
+func _on_ConveyorStraight_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
+	if (event is InputEventMouseButton):
+		if (Global.money >= cost):
+			outOfMoney = false
+
+			if (mouseOver == true) and (event.button_index == BUTTON_LEFT) and (event.pressed == true):
+				clickL = true
+				emit_signal("mouse_down")
+			elif (event.pressed == false):
+				clickL = false
+				emit_signal("mouse_up")
+				snap_to_nearest_rest_node()
+				
 			get_tree().set_input_as_handled()
-	#		print("clickL", type)
-			clickL = true
-		if (event.button_index == BUTTON_RIGHT):
-			get_tree().set_input_as_handled()
-			print('R just pressed')
-			clickR = true
-			rotate_conveyor()
-	elif (event is InputEventMouseButton) and (event.pressed == false):
-		if (event.button_index == BUTTON_LEFT):
-			clickL = false
-			snap_to_nearest_rest_node()
-		if Input.is_mouse_button_pressed(BUTTON_RIGHT) == false:
-			get_tree().set_input_as_handled()
-			print('R just not pressed')
-			clickR = false
+	
+		else:
+			outOfMoney = true
+			if (event.button_index == BUTTON_LEFT) and (event.pressed == true):
+				emit_signal("out_of_money", type)
 
 func snap_to_nearest_rest_node():
-#	var index = -1
 	for child in Global.allRestNodes:
-#		index += 1
-#		print('child.selected = ', child.selected)
 		var distanceToRest = global_position.distance_to(child.global_position)
-		if distanceToRest < shortestDist and child.selected == false:
+		if distanceToRest < shortestDist and child.selected == true and child.machine.type == "ConveyorStraight":
 			snap_to(child)
 			currentPosY = child.posY
 			currentPosX = child.posX
-#			print("child : "+str(child))
 
 func snap_to(restNode):
 #	print('restNode')
@@ -86,24 +79,11 @@ func snap_to_from_index(index):
 	var snappingTarget = Global.allRestNodes[index]
 	snap_to(snappingTarget)
 
-func _on_ConveyorCW_mouse_entered():
+func _on_ConveyorStraight_mouse_entered():
 	mouseOver = true
 
-func _on_ConveyorCW_mouse_exited():
+func _on_ConveyorStraight_mouse_exited():
 	mouseOver = false
-
-#func index_to_pos(index):
-#	var posX = 0
-#	var posY = 0
-#
-#	for i in index:
-#		print('index', index)
-#		print('posX', posX)
-#		if posX > Global.gridRows:
-#			posX = 0
-#			posY += 1
-#		posX += 1
-#	return ((posY * 10) + posX)
 
 func rotate_conveyor():
 	var rotationsDirections = ['north', 'east', 'south', 'west']
@@ -125,28 +105,27 @@ func move_items():
 	var targetPosX
 	var sourcePosY
 	var sourcePosX
-	
 	match conveyorRotation:
 		'north':
 			targetPosY = currentPosY - 1
 			targetPosX = currentPosX
-			sourcePosY = currentPosY
-			sourcePosX = currentPosX + 1
+			sourcePosY = currentPosY + 1
+			sourcePosX = currentPosX
 		'east':
 			targetPosY = currentPosY
 			targetPosX = currentPosX + 1
-			sourcePosY = currentPosY + 1
-			sourcePosX = currentPosX
+			sourcePosY = currentPosY
+			sourcePosX = currentPosX - 1
 		'south':
 			targetPosY = currentPosY + 1
 			targetPosX = currentPosX
-			sourcePosY = currentPosY
-			sourcePosX = currentPosX - 1
+			sourcePosY = currentPosY - 1
+			sourcePosX = currentPosX
 		'west':
 			targetPosY = currentPosY
 			targetPosX = currentPosX - 1
-			sourcePosY = currentPosY - 1
-			sourcePosX = currentPosX
+			sourcePosY = currentPosY
+			sourcePosX = currentPosX + 1
 	
 	if not (sourcePosY >= 0) and not (sourcePosX >= 0) and not (sourcePosY <= Global.gridColumn) and not (sourcePosX <= Global.gridRows) and not (targetPosY >= 0) and not (targetPosX >= 0) and not (targetPosY <= Global.gridColumn) and not (targetPosX <= Global.gridRows):
 		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)

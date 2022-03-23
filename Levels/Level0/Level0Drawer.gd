@@ -36,7 +36,7 @@ func _ready():
 	connect_nodes(get_tree().root)
 	get_tree().connect("node_added", self, "_on_SceneTree_node_added")
 
-func _process(delta):
+func _process(_delta):
 	spawn_machine_when_rest_node_is_empty(MachineLoom, defaultLoomPosY, defaultLoomPosX)
 	spawn_machine_when_rest_node_is_empty(MachineSewing, defaultSewingPosY, defaultSewingPosX)
 	spawn_machine_when_rest_node_is_empty(MachineDyeing, defaultDyeingPosY, defaultDyeingPosX)
@@ -75,6 +75,7 @@ func spawn_machine(machine, restNode, reduceMoney):
 			pass
 	get_node(containerName).add_child(newMachine)
 	add_to_group(machineType)
+	connect_conveyor_signals(newMachine)
 	newMachine.snap_to(restNode)
 
 
@@ -106,7 +107,14 @@ func _on_mouse_up():
 
 func _on_out_of_money(type):
 	var text = "Out of money on buying " + type
-	print(get_parent())
+	get_parent().hud.display_warning(text)
+
+func _on_conveyor_invalid_target_or_source(currentPosY, currentPosX):
+	var text = "Invalid target on conveyor at node [" + currentPosY + ", " + currentPosX + "]"
+	get_parent().hud.display_warning(text)
+
+func _on_conveyor_target_busy(currentPosY, currentPosX):
+	var text = "Conveyor target busy at node [" + currentPosY + ", " + currentPosX + "]"
 	get_parent().hud.display_warning(text)
 
 # recursively connect all nodes
@@ -120,3 +128,11 @@ func connect_to_node(node):
 	node.connect("mouse_down", self, "_on_mouse_down")
 	node.connect("mouse_up", self, "_on_mouse_up")
 	node.connect("out_of_money", self, "_on_out_of_money")
+
+func connect_conveyor_signals(node):
+	var regex = RegEx.new()
+	regex.compile("^Conveyor")
+	var result = regex.search(node.type)
+	if result:
+		node.connect("conveyor_invalid_target_or_source", self, "_on_conveyor_invalid_target_or_source")
+		node.connect("conveyor_target_busy", self, "_on_conveyor_target_busy")

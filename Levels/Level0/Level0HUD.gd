@@ -38,6 +38,7 @@ func connect_to_button(button):
 func display_warning(text):
 	get_node("Warning").visible = true
 	get_node("Warning/WarningText").text = text
+	get_node('SoundFailPlayer').play()
 	get_node("Warning/WarningTimer").start()
 
 func _on_WarningTimer_timeout():

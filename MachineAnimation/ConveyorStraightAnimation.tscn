@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MachineAnimation/MachineAnimationAssets/ConveyorStraight/conveyor_straight_base.svg" type="Texture" id=1]
+[ext_resource path="res://MachineAnimation/MachineAnimationAssets/ConveyorStraight/conveyor_straight_stripes.svg" type="Texture" id=2]
+[ext_resource path="res://MachineAnimation/AnimationRecorder/Record.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ConveyorStraightAnim"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ConveyorStraightAnimationPlayer/ConveyorStraightStripesTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -160 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ConveyorStraightAnimationPlayer/ConveyorStraightStripesTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[node name="ConveyorStraightAnimationPlayer" type="AnimationPlayer"]
+anims/ConveyorStraightAnim = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="ConveyorStraightBaseTop" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ConveyorStraightStripesTop" type="Sprite" parent="."]
+position = Vector2( 0, -160 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ConveyorStraightStripesBottom" type="Sprite" parent="ConveyorStraightStripesTop"]
+position = Vector2( 0, 160 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Record" parent="." instance=ExtResource( 3 )]
+margin_right = 160.0
+margin_bottom = 160.0
+animation_player_path = NodePath("..")
+animation_name = "ConveyorStraightAnim"
+resultFolder = "res://FlaxMachine/MachineAssets"

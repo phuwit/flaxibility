@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/342756__rhodesmas__failure-01.ogg-3f0e60c6ed43ff182b1fc3d913090655.oggstr"
+
+[deps]
+
+source_file="res://ui-assets/Sounds/342756__rhodesmas__failure-01.ogg"
+dest_files=[ "res://.import/342756__rhodesmas__failure-01.ogg-3f0e60c6ed43ff182b1fc3d913090655.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
