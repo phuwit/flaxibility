@@ -88,4 +88,4 @@ func _on_MachineLoom_mouse_entered():
 
 func _on_MachineLoom_mouse_exited():
 	mouseOver = false
-	# print("MOUSE EXIT LAEW", type)
+	# print("MOUSE EXIT LAEW", type

@@ -13,8 +13,6 @@
 [ext_resource path="res://Themes/DosisTres/DosisWarningText.tres" type="DynamicFont" id=11]
 
 [node name="Level1HUD" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false

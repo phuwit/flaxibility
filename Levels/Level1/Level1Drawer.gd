@@ -55,7 +55,7 @@ func generate_pos_array(width, height, allNodes):
 		array[y].resize(width)
 	
 		for x in range(width):
-			print(allNodes)
+			# print(allNodes)
 			array[y][x] = allNodes[currentIndex]
 			currentIndex += 1
 	

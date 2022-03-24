@@ -8,12 +8,7 @@
 [ext_resource path="res://Levels/Level1/Level1.gd" type="Script" id=6]
 
 [node name="Level1" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GridBackground" type="Sprite" parent="."]
 position = Vector2( 960, 540 )

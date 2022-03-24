@@ -1,8 +1,5 @@
 extends Control
 
-
-#var allRestNodesGrid #moved to Global.allRestNodesGrid
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.allRestNodesGrid = get_tree().get_nodes_in_group('restZonesGrid')

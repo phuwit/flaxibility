@@ -6,348 +6,343 @@
 [ext_resource path="res://Levels/Level1/Level1Grid.gd" type="Script" id=6]
 
 [node name="Level1Grid" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BG" type="Sprite" parent="."]
 visible = false
 position = Vector2( 1210, 540 )
 texture = ExtResource( 1 )
 
-[node name="RestZoneGrid00" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid00" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 630, 122 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid00"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid01" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid01" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 795, 122 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid01"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid02" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid02" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 961, 123 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid02"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid03" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid03" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1127, 123 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid03"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid04" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid04" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1293, 123 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid04"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid05" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid05" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1459, 123 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid05"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid06" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid06" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1625, 123 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid06"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid07" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid07" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1790, 123 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid07"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid10" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid10" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 630, 289 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid10"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid11" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid11" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 795, 289 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid11"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid12" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid12" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 961, 290 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid12"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid13" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid13" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1127, 290 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid13"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid14" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid14" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1293, 290 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid14"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid15" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid15" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1459, 290 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid15"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid16" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid16" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1625, 290 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid16"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid17" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid17" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1790, 290 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid17"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid20" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid20" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 630, 455 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid20"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid21" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid21" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 795, 455 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid21"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid22" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid22" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 961, 456 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid22"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid23" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid23" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1127, 456 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid23"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid24" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid24" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1293, 456 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid24"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid25" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid25" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1459, 456 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid25"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid26" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid26" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1625, 456 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid26"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid27" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid27" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1790, 456 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid27"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid30" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid30" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 630, 622 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid30"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid31" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid31" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 795, 622 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid31"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid32" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid32" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 961, 623 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid32"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid33" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid33" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1127, 623 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid33"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid34" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid34" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1293, 623 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid34"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid35" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid35" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1459, 623 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid35"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid36" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid36" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1625, 623 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid36"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid37" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid37" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1790, 623 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid37"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid40" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid40" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 630, 789 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid40"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid41" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid41" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 795, 789 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid41"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid42" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid42" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 961, 790 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid42"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid43" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid43" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1127, 790 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid43"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid44" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid44" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1293, 790 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid44"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid45" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid45" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1459, 790 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid45"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid46" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid46" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1625, 790 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid46"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid47" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid47" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1790, 790 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid47"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid50" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid50" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 630, 956 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid50"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid51" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid51" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 795, 956 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid51"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid52" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid52" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 961, 957 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid52"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid53" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid53" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1127, 957 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid53"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid54" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid54" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1293, 957 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid54"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid55" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid55" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1459, 957 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid55"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid56" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid56" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1625, 957 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid56"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
 
-[node name="RestZoneGrid57" parent="." groups=["restZonesDrawer"] instance=ExtResource( 4 )]
+[node name="RestZoneGrid57" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
 position = Vector2( 1790, 957 )
 
 [node name="Sprites" type="Sprite" parent="RestZoneGrid57"]

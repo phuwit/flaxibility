@@ -13,9 +13,6 @@ anchor_bottom = 1.0
 margin_right = -1920.0
 margin_bottom = -1080.0
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GridBackground" type="Sprite" parent="."]
 texture = ExtResource( 6 )

@@ -1,9 +1,5 @@
 extends Control
 
-
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.allRestNodesGrid = get_tree().get_nodes_in_group('restZonesGrid')
@@ -21,7 +17,7 @@ func generate_pos_array(width, height, allNodes):
 	var currentIndex = 0
 	width += 1
 	height += 1
-	
+
 	for y in range(height):
 		array.append([])
 		array[y].resize(width)
