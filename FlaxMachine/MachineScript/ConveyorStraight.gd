@@ -141,6 +141,16 @@ func move_items():
 		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
 		pass
 
+	if (source.type == 'Warehouse'):
+		if (source.interfaceMode == 'in'):
+			emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
+			pass
+
+		elif (source.interfaceMode == 'out') and (source.holding == null) and (source.stock > 0):
+			source.stock -= 1
+			holding = source.stockTemplate
+			pass
+
 	if source and (source.output != null):
 		print('source.output != null')
 		if target and (target.input == null) and (holding == null):
