@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Themes/DosisTres/DosisLevelSelectButton.tres" type="DynamicFont" id=1]
-[ext_resource path="res://ui-assets/logo.png" type="Texture" id=2]
-[ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=3]
+[ext_resource path="res://ui-assets/WhiteBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui-assets/Buttons/Icons/IconExit.svg" type="Texture" id=4]
 [ext_resource path="res://ui-assets/Buttons/Icons/IconPlay.svg" type="Texture" id=5]
 [ext_resource path="res://Themes/ThemeMenuButton.tres" type="Theme" id=6]
 [ext_resource path="res://Menu/MainMenu.gd" type="Script" id=7]
+[ext_resource path="res://Menu/Fade.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click.ogg" type="AudioStream" id=9]
+[ext_resource path="res://ui-assets/logo.svg" type="Texture" id=10]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -18,13 +19,11 @@ script = ExtResource( 7 )
 stream = ExtResource( 9 )
 volume_db = -3.0
 
-[node name="1920X1080White" type="Sprite" parent="."]
-texture = ExtResource( 3 )
-centered = false
+[node name="WhiteBackground" parent="." instance=ExtResource( 2 )]
 
-[node name="LogoPNG" type="Sprite" parent="."]
+[node name="Logo" type="Sprite" parent="."]
 position = Vector2( 960, 330 )
-texture = ExtResource( 2 )
+texture = ExtResource( 10 )
 
 [node name="PlayExitContainer" type="GridContainer" parent="."]
 anchor_top = 0.5
@@ -46,7 +45,6 @@ size_flags_vertical = 3
 margin_left = 740.0
 margin_right = 900.0
 margin_bottom = 160.0
-size_flags_horizontal = 0
 theme = ExtResource( 6 )
 toggle_mode = true
 icon = ExtResource( 5 )
@@ -168,6 +166,9 @@ margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Fade" parent="." instance=ExtResource( 8 )]
+visible = false
+
 [connection signal="pressed" from="PlayExitContainer/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
 [connection signal="pressed" from="PlayExitContainer/ButtonExit" to="." method="_on_ButtonExit_pressed"]
 [connection signal="pressed" from="LevelsContainer/Button0" to="." method="_on_Button0_pressed"]
@@ -177,3 +178,4 @@ size_flags_vertical = 3
 [connection signal="pressed" from="LevelsContainer/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="LevelsContainer/Button5" to="." method="_on_Button5_pressed"]
 [connection signal="pressed" from="LevelsContainer/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="fade_finished" from="Fade" to="." method="_on_Fade_fade_finished"]

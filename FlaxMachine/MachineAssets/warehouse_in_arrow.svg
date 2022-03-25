@@ -23,22 +23,23 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="3.026417"
-     inkscape:cx="53.033009"
-     inkscape:cy="77.814788"
+     inkscape:zoom="4.28"
+     inkscape:cx="62.500001"
+     inkscape:cy="93.808412"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-bbox="false"
+     inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-smooth-nodes="false"
-     inkscape:object-paths="true" />
+     inkscape:object-paths="true"
+     inkscape:snap-page="true" />
   <defs
      id="defs735">
     <inkscape:path-effect
@@ -148,7 +149,7 @@
        inkscape:randomized="0"
        d="m -33.446402,-130.2819 -10.995592,0 -10.995591,0 5.497796,-9.52246 5.497795,-9.52246 5.497796,9.52246 z"
        inkscape:transform-center-y="-1.6666708"
-       transform="matrix(2.9102573,0,0,0.52507432,209.33763,219.07434)"
+       transform="matrix(2.9102573,0,0,0.52507432,209.33763,220.40768)"
        inkscape:transform-center-x="5.0349417e-06" />
   </g>
 </svg>

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo.png-0d0f8af495c8406bc607293076d3566e.stex"
+path="res://.import/conveyor_splitter.svg-f95fa97b2949f3b0558870e201173a0f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui-assets/logo.png"
-dest_files=[ "res://.import/logo.png-0d0f8af495c8406bc607293076d3566e.stex" ]
+source_file="res://FlaxMachine/MachineAssets/conveyor_splitter.svg"
+dest_files=[ "res://.import/conveyor_splitter.svg-f95fa97b2949f3b0558870e201173a0f.stex" ]
 
 [params]
 

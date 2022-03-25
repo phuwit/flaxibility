@@ -320,6 +320,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "PackagerFrames"
+frame = 35
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
