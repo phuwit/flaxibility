@@ -64,7 +64,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LevelsContainer" type="GridContainer" parent="."]
-visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -77,14 +76,13 @@ custom_constants/hseparation = 40
 columns = 9
 
 [node name="SpacerL" type="NinePatchRect" parent="LevelsContainer"]
-margin_right = 12.0
 margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button0" type="Button" parent="LevelsContainer"]
-margin_left = 52.0
-margin_right = 212.0
+margin_left = 40.0
+margin_right = 200.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 size_flags_horizontal = 0
@@ -94,8 +92,8 @@ text = "0"
 clip_text = true
 
 [node name="Button1" type="Button" parent="LevelsContainer"]
-margin_left = 252.0
-margin_right = 412.0
+margin_left = 240.0
+margin_right = 400.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 size_flags_horizontal = 0
@@ -105,8 +103,8 @@ text = "1"
 clip_text = true
 
 [node name="Button2" type="Button" parent="LevelsContainer"]
-margin_left = 452.0
-margin_right = 612.0
+margin_left = 440.0
+margin_right = 600.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 size_flags_horizontal = 0
@@ -116,8 +114,8 @@ text = "2"
 clip_text = true
 
 [node name="Button3" type="Button" parent="LevelsContainer"]
-margin_left = 652.0
-margin_right = 812.0
+margin_left = 640.0
+margin_right = 800.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 size_flags_horizontal = 0
@@ -127,8 +125,8 @@ text = "3"
 clip_text = true
 
 [node name="Button4" type="Button" parent="LevelsContainer"]
-margin_left = 852.0
-margin_right = 1012.0
+margin_left = 840.0
+margin_right = 1000.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 size_flags_horizontal = 0
@@ -138,8 +136,8 @@ text = "4"
 clip_text = true
 
 [node name="Button5" type="Button" parent="LevelsContainer"]
-margin_left = 1052.0
-margin_right = 1212.0
+margin_left = 1040.0
+margin_right = 1200.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 size_flags_horizontal = 0
@@ -149,8 +147,8 @@ text = "5"
 clip_text = true
 
 [node name="Button6" type="Button" parent="LevelsContainer"]
-margin_left = 1252.0
-margin_right = 1412.0
+margin_left = 1240.0
+margin_right = 1400.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 160, 160 )
 size_flags_horizontal = 0
@@ -159,10 +157,20 @@ custom_fonts/font = ExtResource( 1 )
 text = "6"
 clip_text = true
 
-[node name="SpacerR" type="NinePatchRect" parent="LevelsContainer"]
-margin_left = 1452.0
-margin_right = 1464.0
+[node name="Button7" type="Button" parent="LevelsContainer"]
+margin_left = 1440.0
+margin_right = 1600.0
 margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+size_flags_horizontal = 0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 1 )
+text = "T"
+clip_text = true
+
+[node name="SpacerR" type="NinePatchRect" parent="LevelsContainer"]
+margin_top = 176.0
+margin_bottom = 176.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -178,4 +186,5 @@ visible = false
 [connection signal="pressed" from="LevelsContainer/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="LevelsContainer/Button5" to="." method="_on_Button5_pressed"]
 [connection signal="pressed" from="LevelsContainer/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="LevelsContainer/Button7" to="." method="_on_Button7_pressed"]
 [connection signal="fade_finished" from="Fade" to="." method="_on_Fade_fade_finished"]

@@ -85,3 +85,7 @@ func _on_Button5_pressed():
 func _on_Button6_pressed():
 	path = "res://Levels/Level6/Level6.tscn"
 	play_fade()
+
+func _on_Button7_pressed():
+	path = 'res://Levels/Test/Level1.tscn'
+	play_fade()

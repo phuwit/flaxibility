@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click.ogg" type="AudioStream" id=1]
+[ext_resource path="res://ui-assets/Buttons/Icons/IconPlay.svg" type="Texture" id=2]
+[ext_resource path="res://Themes/DosisTres/DosisLevelSelectButton.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui-assets/Buttons/Icons/IconBack.svg" type="Texture" id=4]
+[ext_resource path="res://Themes/ThemeMenuButton.tres" type="Theme" id=5]
+[ext_resource path="res://ui-assets/building-hud.svg" type="Texture" id=6]
+[ext_resource path="res://ui-assets/Buttons/Icons/IconReload.svg" type="Texture" id=7]
+[ext_resource path="res://Themes/DosisTres/DosisLevelNumber.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Levels/Test/Level1HUD.gd" type="Script" id=9]
+[ext_resource path="res://ui-assets/warning.svg" type="Texture" id=10]
+[ext_resource path="res://Themes/DosisTres/DosisWarningText.tres" type="DynamicFont" id=11]
+
+[node name="Level1HUD" type="Control"]
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -3.0
+
+[node name="HUDBackground" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="LevelNumber" type="Label" parent="HUDBackground"]
+margin_left = 47.0
+margin_top = 28.0
+margin_right = 179.0
+margin_bottom = 181.0
+custom_fonts/font = ExtResource( 8 )
+text = "01"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 256 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="WarningText" type="Label" parent="Warning"]
+margin_left = 48.0
+margin_top = 4.0
+margin_right = 236.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 11 )
+text = "Out of money on buying Loom"
+
+[node name="WarningTimer" type="Timer" parent="Warning"]
+wait_time = 3.0
+one_shot = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_top = 940.0
+margin_right = 620.0
+margin_bottom = 1100.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_constants/hseparation = 32
+columns = 5
+
+[node name="SpacerL" type="NinePatchRect" parent="GridContainer"]
+margin_right = 6.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonBack" type="Button" parent="GridContainer"]
+margin_left = 38.0
+margin_right = 198.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 140, 140 )
+size_flags_horizontal = 0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
+icon = ExtResource( 4 )
+clip_text = true
+
+[node name="ButtonStart" type="Button" parent="GridContainer"]
+margin_left = 230.0
+margin_right = 390.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 140, 140 )
+size_flags_horizontal = 0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
+icon = ExtResource( 2 )
+clip_text = true
+
+[node name="ButtonReset" type="Button" parent="GridContainer"]
+margin_left = 422.0
+margin_right = 582.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 140, 140 )
+size_flags_horizontal = 0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
+icon = ExtResource( 7 )
+clip_text = true
+
+[node name="SpacerR" type="NinePatchRect" parent="GridContainer"]
+margin_left = 614.0
+margin_right = 620.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="timeout" from="Warning/WarningTimer" to="." method="_on_WarningTimer_timeout"]
+[connection signal="pressed" from="GridContainer/ButtonBack" to="." method="_on_ButtonBack_pressed"]
