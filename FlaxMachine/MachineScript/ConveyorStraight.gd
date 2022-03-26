@@ -17,6 +17,15 @@ var clickL = false
 var clickR = false
 var restNodePos
 
+var absoluteNorthY
+var absoluteNorthX
+var absoluteEastY
+var absoluteEastX
+var absoluteSouthY
+var absoluteSouthX
+var absoluteWestY
+var absoluteWestX
+
 signal conveyor_invalid_target_or_source(currentPosY, currentPosX)
 signal conveyor_target_busy(currentPosY, currentPosX)
 
@@ -106,64 +115,96 @@ func move_items():
 	var targetPosX
 	var sourcePosY
 	var sourcePosX
+	get_nearby_absolute_position()
+	
 	match conveyorRotation:
 		'north':
-			targetPosY = currentPosY - 1
-			targetPosX = currentPosX
-			sourcePosY = currentPosY + 1
-			sourcePosX = currentPosX
+			targetPosY = absoluteNorthY
+			targetPosX = absoluteNorthX
+			sourcePosY = absoluteSouthY
+			sourcePosX = absoluteSouthX
 		'east':
-			targetPosY = currentPosY
-			targetPosX = currentPosX + 1
-			sourcePosY = currentPosY
-			sourcePosX = currentPosX - 1
+			targetPosY = absoluteEastY
+			targetPosX = absoluteEastX
+			sourcePosY = absoluteWestY
+			sourcePosX = absoluteWestX
 		'south':
-			targetPosY = currentPosY + 1
-			targetPosX = currentPosX
-			sourcePosY = currentPosY - 1
-			sourcePosX = currentPosX
+			targetPosY = absoluteSouthY
+			targetPosX = absoluteSouthX
+			sourcePosY = absoluteNorthY
+			sourcePosX = absoluteNorthX
 		'west':
-			targetPosY = currentPosY
-			targetPosX = currentPosX - 1
-			sourcePosY = currentPosY
-			sourcePosX = currentPosX + 1
+			targetPosY = absoluteWestY
+			targetPosX = absoluteWestX
+			sourcePosY = absoluteEastY
+			sourcePosX = absoluteEastX
 	
-	if not (sourcePosY >= 0) and not (sourcePosX >= 0) and not (sourcePosY <= Global.gridColumn) and not (sourcePosX <= Global.gridRows) and not (targetPosY >= 0) and not (targetPosX >= 0) and not (targetPosY <= Global.gridColumn) and not (targetPosX <= Global.gridRows):
+	var isLegalPos = []
+	isLegalPos.append(check_legal_pos(sourcePosY, sourcePosX))
+	isLegalPos.append(check_legal_pos(targetPosY, targetPosX))
+
+	if isLegalPos.has(false):
 		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
 		pass
 	
-	var target = Global.restNodesGridPos[targetPosY][targetPosX].machine
-	print('target', target, target.input)
-	var source = Global.restNodesGridPos[sourcePosY][sourcePosX].machine
-	print('source', source, source.output)
-
-	if (target == false) or (source == false):
-		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
-		pass
-
-	if (source.type == 'Warehouse'):
-		if (source.interfaceMode == 'in'):
-			emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
-			pass
-
-		elif (source.interfaceMode == 'out') and (source.holding == null) and (source.stock > 0):
-			source.stock -= 1
-			holding = source.stockTemplate
-			pass
+	var source = get_node_from_pos(sourcePosY, sourcePosX)
+	var target = get_node_from_pos(targetPosY, targetPosX)
 
 	if source and (source.output != null):
 		print('source.output != null')
 		if target and (target.input == null) and (holding == null):
-			print('target.input != null')
-			holding = source.output
-			source.output = null
-			get_node("HoldingLabel").text = holding
-				# todo: play anim
-			yield(get_tree().create_timer(0.5), "timeout")
-			target.input = holding
-			holding = null
-			get_node("HoldingLabel").text = 'text'
+			if (target.type.begins_with('Conveyor') == true):
+				target.holding = holding
+				holding = null
+				if (target.type == 'ConveyorMerger'):
+					target.merge()
+
+			else:
+				print('target.input != null')
+				holding = source.output
+				source.output = null
+				get_node("HoldingLabel").text = holding
+					# todo: play anim
+				yield(get_tree().create_timer(0.5), "timeout")
+				target.input = holding
+				holding = null
+				get_node("HoldingLabel").text = 'text'
+
 			return true
 		else:
 			emit_signal('conveyor_target_busy', currentPosY, currentPosX)
 			return false
+		
+func get_nearby_absolute_position():
+	absoluteNorthY = currentPosY - 1
+	absoluteNorthX = currentPosX
+
+	absoluteEastY = currentPosY
+	absoluteEastX = currentPosX + 1
+
+	absoluteSouthY = currentPosY
+	absoluteSouthX = currentPosX + 1
+	
+	absoluteWestY = currentPosY
+	absoluteWestX = currentPosX - 1
+
+func check_legal_pos(posY, posX):
+	if (posY >= 0) and (posX >= 0) and (posY <= Global.gridColumn) and (posX <= Global.gridRows):
+		return true
+	else:
+		return false
+
+func get_node_from_pos(posY, posX):
+	if (check_legal_pos(posY, posX) == false):
+		return null
+	elif (Global.restNodesGridPos[posY][posX] != null):
+		return Global.restNodesGridPos[posY][posX]
+
+func get_conveyor_from_pos(posY, posX):
+	var node = get_node_from_pos(posY, posX)
+	if (node == null):
+		return null
+	elif (node.type == 'ConveyorCCW') or (node.type == 'ConveyorCW') or (node.type == 'ConveyorStraight'):
+		return node
+	else:
+		return null
