@@ -46,18 +46,10 @@ func snap_to_nearest_rest_node():
 			snap_to(child)
 
 func snap_to(restNode):
-#	print('restNode')
-#	print(restNode)
-#	print(restNode.selected)
 	if currentNode:
 		currentNode.selected = false
-#		print('currentNode')
-#		print(currentNode)
-#		print(currentNode.selected)
-	restNode.select()
 	restNode.machine = self
-	print(restNode.machine.type)
-	print(restNode)
+	restNode.select()
 	currentNode = restNode
 	restNodePos = restNode.global_position
 

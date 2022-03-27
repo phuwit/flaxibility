@@ -321,8 +321,14 @@ script = ExtResource( 2 )
 frames = SubResource( 1 )
 animation = "ConveyorStraightFrames"
 
+[node name="HoldingLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "text"
+
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
+[connection signal="input_event" from="." to="." method="_on_ConveyorStraight_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_ConveyorStraight_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_ConveyorStraight_mouse_exited"]

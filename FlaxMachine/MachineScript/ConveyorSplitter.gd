@@ -18,6 +18,7 @@ var mouseOver = false
 var clickL = false
 var clickR = false
 var restNodePos
+var outOfMoney
 
 var absoluteNorthY
 var absoluteNorthX
@@ -41,24 +42,40 @@ func _process(delta):
 	else:
 		global_position = lerp(global_position, restNodePos, 10 * delta)
 
-func _input(event):
-	if (mouseOver == true) and (event is InputEventMouseButton) and (event.pressed == true):
-		if (event.button_index == BUTTON_LEFT):
+func _on_ConveyorSplitter_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
+	if (event is InputEventMouseButton):
+		# print(event)
+		# print(event.button_index)
+		# print(event.pressed)
+		if (Global.money >= cost):
+			outOfMoney = false
+			if (event.pressed == true):
+				if (event.button_index == BUTTON_LEFT):
+					# print('L just pressed')
+					clickL = true
+					emit_signal("mouse_down")
+				elif (event.button_index == BUTTON_RIGHT):
+					# print('R just pressed')
+					clickR = true
+					rotate_conveyor()
+			elif (event.pressed == false):
+				# print(event.button_index)
+				if (event.button_index == BUTTON_LEFT):
+					# print('L just not pressed')
+					clickL = false
+					clickR = false
+					emit_signal("mouse_up")
+					snap_to_nearest_rest_node()
+				elif (event.button_index == BUTTON_RIGHT):
+					# print('R just not pressed')
+					clickR = false
+
 			get_tree().set_input_as_handled()
-			clickL = true
-		if (event.button_index == BUTTON_RIGHT):
-			get_tree().set_input_as_handled()
-			print('R just pressed')
-			clickR = true
-			rotate_conveyor()
-	elif (event is InputEventMouseButton) and (event.pressed == false):
-		if (event.button_index == BUTTON_LEFT):
-			clickL = false
-			snap_to_nearest_rest_node()
-		if Input.is_mouse_button_pressed(BUTTON_RIGHT) == false:
-			get_tree().set_input_as_handled()
-			print('R just not pressed')
-			clickR = false
+	
+		else:
+			outOfMoney = true
+			if (event.button_index == BUTTON_LEFT) and (event.pressed == true):
+				emit_signal("out_of_money", type)
 
 func snap_to_nearest_rest_node():
 #	var index = -1
@@ -73,17 +90,10 @@ func snap_to_nearest_rest_node():
 #			print("child : "+str(child))
 
 func snap_to(restNode):
-#	print('restNode')
-#	print(restNode)
-#	print(restNode.selected)
 	if currentNode:
 		currentNode.selected = false
-#		print('currentNode')
-#		print(currentNode)
-#		print(currentNode.selected)
-	restNode.select()
 	restNode.machine = self
-	print(restNode.machine.type)
+	restNode.select()
 	currentNode = restNode
 	restNodePos = restNode.global_position
 
@@ -91,10 +101,10 @@ func snap_to_from_index(index):
 	var snappingTarget = Global.allRestNodes[index]
 	snap_to(snappingTarget)
 
-func _on_ConveyorStraight_mouse_entered():
+func _on_ConveyorSplitter_mouse_entered():
 	mouseOver = true
 
-func _on_ConveyorStraight_mouse_exited():
+func _on_ConveyorSplitter_mouse_exited():
 	mouseOver = false
 
 func rotate_conveyor():

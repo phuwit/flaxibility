@@ -29,7 +29,7 @@ signal out_of_money(type)
 #	print("Global.allRestNodes :"+str(Global.allRestNodes))
 
 func _process(delta):
-	if (clickL == true) and (mouseOver == true) and (Global.RunButton == false) and (outOfMoney == false):
+	if (clickL == true) and (Global.RunButton == false) and (outOfMoney == false):
 		# global_position = lerp(global_positsion, get_global_mouse_position(), 25 * delta)
 		global_position = get_global_mouse_position()
 	else:
@@ -71,10 +71,10 @@ func snap_to(restNode):
 #		print('currentNode')
 #		print(currentNode)
 #		print(currentNode.selected)
-	restNode.select()
 	restNode.machine = self
-	print(restNode.machine.type)
-	print(restNode)
+	restNode.select()
+	# print(restNode.machine.type)
+	# print(restNode)
 	currentNode = restNode
 	restNodePos = restNode.global_position
 

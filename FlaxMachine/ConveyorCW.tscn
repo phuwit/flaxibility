@@ -312,7 +312,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 65, 65 )
+extents = Vector2( 80, 80 )
 
 [node name="ConveyorCW" type="Area2D"]
 script = ExtResource( 2 )
@@ -323,14 +323,13 @@ animation = "ConveyorCWFrames"
 frame = 20
 
 [node name="HoldingLabel" type="Label" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 text = "text"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( 15, 15 )
 shape = SubResource( 2 )
 
+[connection signal="input_event" from="." to="." method="_on_ConveyorCW_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_ConveyorCW_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_ConveyorCW_mouse_exited"]

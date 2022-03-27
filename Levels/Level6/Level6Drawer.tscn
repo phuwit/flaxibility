@@ -3,8 +3,9 @@
 [ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click_-10semitones.ogg" type="AudioStream" id=1]
 [ext_resource path="res://ui-assets/building-gridlets.svg" type="Texture" id=2]
 [ext_resource path="res://ui-assets/Sounds/256116__kwahmah-02__click_+10semitones.ogg" type="AudioStream" id=3]
-[ext_resource path="res://RestZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://FlaxMachine/RestZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level6/Level6Drawer.gd" type="Script" id=5]
+
 
 [node name="Level6Drawer" type="Control"]
 anchor_right = 1.0

@@ -11,7 +11,6 @@ func _ready():
 	connect_buttons(get_tree().root)
 	get_tree().connect("node_added", self, "_on_SceneTree_node_added")
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -44,6 +43,8 @@ func display_warning(text):
 func _on_WarningTimer_timeout():
 	get_node("Warning").visible = false
 
-
 func _on_ButtonBack_pressed():
 	get_tree().change_scene("res://Menu/MainMenu.tscn")
+
+func _on_ButtonReset_pressed():
+	get_tree().reload_current_scene()

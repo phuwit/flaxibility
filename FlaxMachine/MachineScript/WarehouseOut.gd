@@ -3,8 +3,8 @@ extends Area2D
 
 var type = 'Warehouse'
 
-var stock: int
-var stockTemplate: Object
+var stock: int = 10
+var stockTemplate: Object = preload('res://Items/Shirt.tscn')
 var holding
 var interfaceRotation = 'south'
 var interfaceMode = 'out'
@@ -23,7 +23,7 @@ func _ready():
 	apply_rotation(interfaceRotation)
 
 # func _process(_delta):
-# 	pass
+	# pass
 
 func apply_rotation(rotationName):
 	var rotationsDirections = ['north', 'east', 'south', 'west']

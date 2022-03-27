@@ -29,6 +29,8 @@ func _ready():
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZone')
 	# print(Global.allRestNodes)
 
+	hud.get_node('GridContainer/ButtonStart').connect('pressed', drawer, '_on_ButtonStart_pressed')
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

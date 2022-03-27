@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/71512__philberts__trash-fall.ogg-22c6a764b909828edf48e9101bad3111.oggstr"
+
+[deps]
+
+source_file="res://ui-assets/Sounds/71512__philberts__trash-fall.ogg"
+dest_files=[ "res://.import/71512__philberts__trash-fall.ogg-22c6a764b909828edf48e9101bad3111.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -313,21 +313,26 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 50, 80 )
+extents = Vector2( 58, 80 )
 
-[node name="ConveyorStraight" type="Area2D"]
+[node name="ConveyorStraightElevated" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="ConveyorStraightElevatedShade" type="Sprite" parent="."]
+[node name="Shade" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "ConveyorStraightFrames"
 
+[node name="HoldingLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "text"
+
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[connection signal="input_event" from="." to="." method="_on_ConveyorStraight_input_event"]
-[connection signal="mouse_entered" from="." to="." method="_on_ConveyorStraight_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_ConveyorStraight_mouse_exited"]
+[connection signal="input_event" from="." to="." method="_on_ConveyorStraightElevated_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_ConveyorStraightElevated_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_ConveyorStraightElevated_mouse_exited"]

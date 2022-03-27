@@ -5,6 +5,7 @@
 [ext_resource path="res://FlaxMachine/MachineScript/WarehouseOut.gd" type="Script" id=3]
 
 [node name="WarehouseOut" type="Area2D"]
+scale = Vector2( 1.00251, 0.995633 )
 script = ExtResource( 3 )
 
 [node name="Warehouse" type="Sprite" parent="."]
