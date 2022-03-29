@@ -16,6 +16,7 @@ var mouseOver = false
 var clickL = false
 var clickR = false
 var restNodePos
+var currentNode
 
 
 func _ready():
@@ -33,6 +34,15 @@ func apply_rotation(rotationName):
 	
 	get_node('Arrow').rotation_degrees = newRotationsDegree
 
+func snap_to(restNode):
+	print('snapped', type)
+	if currentNode:
+		currentNode.selected = false
+	restNode.machine = self
+	restNode.select()
+	currentNode = restNode
+	restNodePos = restNode.global_position
+	
 # func move_items():
 # 	var targetPosY
 # 	var targetPosX

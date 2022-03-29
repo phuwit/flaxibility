@@ -8,6 +8,7 @@ var conveyorRotation = 'north'
 var maxArrayIndex
 var currentPosY
 var currentPosX
+var bought = false
 
 var shortestDist = 60 
 var defaultNode = 0

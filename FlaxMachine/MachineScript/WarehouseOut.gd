@@ -4,7 +4,8 @@ extends Area2D
 var type = 'Warehouse'
 
 var stock: int = 10
-var stockTemplate: Object = preload('res://Items/Shirt.tscn')
+var stockTemplate: Object
+var stockTemplatePacked = preload('res://Items/Shirt.tscn')
 var holding
 var interfaceRotation = 'south'
 var interfaceMode = 'out'
@@ -16,11 +17,14 @@ var mouseOver = false
 var clickL = false
 var clickR = false
 var restNodePos
+var currentNode
 
 
 func _ready():
 	maxArrayIndex = ((Global.gridColumn * 10) + Global.gridRows) + 1
 	apply_rotation(interfaceRotation)
+	stockTemplate = stockTemplatePacked.instance()
+	self.add_child(stockTemplate)
 
 # func _process(_delta):
 	# pass
@@ -33,6 +37,14 @@ func apply_rotation(rotationName):
 	
 	get_node('Arrow').rotation_degrees = newRotationsDegree
 
+func snap_to(restNode):
+	if currentNode:
+		currentNode.selected = false
+	restNode.machine = self
+	restNode.select()
+	currentNode = restNode
+	restNodePos = restNode.global_position
+	
 # func move_items():
 # 	var targetPosY
 # 	var targetPosX

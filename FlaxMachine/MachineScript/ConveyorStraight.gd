@@ -8,6 +8,7 @@ var conveyorRotation = 'north'
 var maxArrayIndex
 var currentPosY
 var currentPosX
+var bought = false
 
 var shortestDist = 60 
 var defaultNode = 0
@@ -90,6 +91,8 @@ func snap_to_nearest_rest_node():
 func snap_to(restNode):
 	if currentNode:
 		currentNode.selected = false
+	if restNode.is_in_group('restZonesGrid'):
+		bought = true
 	restNode.machine = self
 	restNode.select()
 	currentNode = restNode
@@ -121,6 +124,10 @@ func rotate_conveyor():
 	# print(self.rotation_degrees)
 
 func move_items():
+	if bought == false:
+		return
+
+	print('move triggered')
 	var targetPosY
 	var targetPosX
 	var sourcePosY
@@ -155,27 +162,49 @@ func move_items():
 
 	if isLegalPos.has(false):
 		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
-		pass
+		return
 	
 	var source = get_node_from_pos(sourcePosY, sourcePosX)
 	var target = get_node_from_pos(targetPosY, targetPosX)
+ 
+	if source:
+		print(source)
+		if (source.type.begins_with('Conveyor')):
+			print('conveyor route')
+			holding = source.holding
+			source.holding = null
+		
+		elif (source.type == 'Warehouse'):
+			print('warehouse route')
+			if (source.interfaceMode == 'out') and (source.stock > 0):
+				holding = source.stockTemplate
+				source.stock -= 1
+			print(holding)
 
-	if source and (source.output != null):
-		print('source.output != null')
-		if target and (target.input == null) and (holding == null):
-			if (target.type.begins_with('Conveyor') == true):
+		elif (source.output != null):
+			print('normal route')
+			print('source.output != null')
+			holding = source.output
+			source.output = null
+			get_node("HoldingLabel").text = holding
+		if target:
+			print(target.type)
+			print(target.type.begins_with('Conveyor'))
+			if (target.type.begins_with('Conveyor')):
+				print('conveyor route')
 				target.holding = holding
 				holding = null
 				if (target.type == 'ConveyorMerger'):
 					target.merge()
 
-			else:
-				print('target.input != null')
-				holding = source.output
-				source.output = null
-				get_node("HoldingLabel").text = holding
-					# todo: play anim
-				yield(get_tree().create_timer(0.5), "timeout")
+			elif (source.type == 'Warehouse'):
+				print('warehouse route')
+				if (source.interfaceMode == 'in'):
+					source.stock += 1
+
+			elif (target.input == null):
+				print('normal route')
+				print('target.input ==null')
 				target.input = holding
 				holding = null
 				get_node("HoldingLabel").text = 'text'
@@ -208,7 +237,7 @@ func get_node_from_pos(posY, posX):
 	if (check_legal_pos(posY, posX) == false):
 		return null
 	elif (Global.restNodesGridPos[posY][posX] != null):
-		return Global.restNodesGridPos[posY][posX]
+		return Global.restNodesGridPos[posY][posX].machine
 
 func get_conveyor_from_pos(posY, posX):
 	var node = get_node_from_pos(posY, posX)

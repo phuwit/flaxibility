@@ -9,18 +9,18 @@ func _ready():
 	
 	Global.maxArrayIndex = (Global.gridColumn * 10) + Global.gridRows
 #	var maxArrayIndex = int(Global.gridColumn*gridRows)
-
+	
 	Global.restNodesGridPos = generate_pos_array(Global.gridColumn, Global.gridRows, Global.allRestNodesGrid)
-
-	Global.restNodesGridPos[0][0].selected = true
-	Global.restNodesGridPos[0][7].selected = true
+	get_node('WarehouseIn00').snap_to(Global.restNodesGridPos[0][0])
+	get_node('WarehouseOut07').snap_to(Global.restNodesGridPos[0][7])
+	print(Global.restNodesGridPos[0][0].machine)
 
 func generate_pos_array(width, height, allNodes):
 	var array = []
 	var currentIndex = 0
 	width += 1
 	height += 1
-	
+
 	for y in range(height):
 		array.append([])
 		array[y].resize(width)

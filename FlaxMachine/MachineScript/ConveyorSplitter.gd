@@ -10,6 +10,7 @@ var maxArrayIndex
 var currentPosY
 var currentPosX
 var nextTarget = 0
+var bought = false
 
 var shortestDist = 60 
 var defaultNode = 0

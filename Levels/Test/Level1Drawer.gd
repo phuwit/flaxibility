@@ -29,7 +29,6 @@ var defaultPackagerPosX = 1
 
 func _ready():
 	Global.allRestNodesDrawer = get_tree().get_nodes_in_group('restZonesDrawer')
-	print(Global.allRestNodesDrawer)
 	
 	var drawerColumn = 2 # start counting at 0
 	var drawerRows = 3 # start counting at 0
@@ -96,7 +95,7 @@ func spawn_machine(machine, restNode, reduceMoney):
 			newMachine.queue_free()
 			pass
 	get_node(containerName).add_child(newMachine)
-	add_to_group(machineType)
+	newMachine.add_to_group(machineType)
 	newMachine.snap_to(restNode)
 
 
@@ -147,8 +146,11 @@ func _on_Trash_trashed():
 	get_node('SoundTrashedPlayer').play()
 
 func _on_ButtonStart_pressed():
-	print('start pressed')
+	print(Global.restNodesGridPos[0][0].machine)
+	# print('start pressed')
+	# for child in get_tree().get_nodes_in_group('ConveyorStraight'):
+	# 	print(child)
 	# for child in ['ConveyorCCW', 'ConveyorCW', 'ConveyorStraight', 'ConveyorStraightElevated']:
 	# 	get_tree().call_group(child, "move_items")
-	get_tree().call_group('ConveyorCCW', 'move_items')
+	get_tree().call_group('ConveyorStraight', 'move_items')
 	
