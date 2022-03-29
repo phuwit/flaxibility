@@ -15,6 +15,10 @@ visible = false
 position = Vector2( 1210, 540 )
 texture = ExtResource( 1 )
 
+[node name="RestZone00" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
+position = Vector2( 630, 123 )
+scale = Vector2( 1.00251, 0.995633 )
+
 [node name="WarehouseIn00" parent="." instance=ExtResource( 2 )]
 position = Vector2( 630, 123 )
 
@@ -59,6 +63,10 @@ position = Vector2( 1625, 123 )
 [node name="Sprites" type="Sprite" parent="RestZoneGrid06"]
 position = Vector2( 0, 3.05176e-05 )
 texture = ExtResource( 5 )
+
+[node name="RestZone07" parent="." groups=["restZonesGrid"] instance=ExtResource( 4 )]
+position = Vector2( 1790, 123 )
+scale = Vector2( 1.00251, 0.995633 )
 
 [node name="WarehouseOut07" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1790, 122 )

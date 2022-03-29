@@ -26,7 +26,7 @@ func _ready():
 	var drawerColumn = 2 # start counting at 0
 	var drawerRows = 1 # start counting at 0
 	
-	drawerNodesPos = generate_pos_array(drawerRows, drawerColumn, Global.allRestNodesDrawer)
+	drawerNodesPos = generate_pos_array(drawerColumn, drawerRows, Global.allRestNodesDrawer)
 #	assign_default_node()
 	
 	spawn_machine(MachineLoom, drawerNodesPos[defaultLoomPosY][defaultLoomPosX], false)
