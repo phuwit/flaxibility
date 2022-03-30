@@ -96,6 +96,8 @@ func spawn_machine(machine, restNode, reduceMoney):
 			pass
 	get_node(containerName).add_child(newMachine)
 	newMachine.add_to_group(machineType)
+	if machineType.begins_with('Conveyor'):
+		newMachine.add_to_group('Conveyor')
 	newMachine.snap_to(restNode)
 
 
@@ -146,11 +148,10 @@ func _on_Trash_trashed():
 	get_node('SoundTrashedPlayer').play()
 
 func _on_ButtonStart_pressed():
-	print(Global.restNodesGridPos[0][0].machine)
 	# print('start pressed')
 	# for child in get_tree().get_nodes_in_group('ConveyorStraight'):
 	# 	print(child)
 	# for child in ['ConveyorCCW', 'ConveyorCW', 'ConveyorStraight', 'ConveyorStraightElevated']:
 	# 	get_tree().call_group(child, "move_items")
-	get_tree().call_group('ConveyorStraight', 'move_items')
-	
+	get_tree().call_group('Conveyor', 'move_items')
+	# get_tree().call_group('ConveyorStraight', 'move_items')

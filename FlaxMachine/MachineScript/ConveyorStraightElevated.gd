@@ -19,6 +19,15 @@ var clickR = false
 var restNodePos
 var outOfMoney = false
 
+var absoluteNorthY
+var absoluteNorthX
+var absoluteEastY
+var absoluteEastX
+var absoluteSouthY
+var absoluteSouthX
+var absoluteWestY
+var absoluteWestX
+
 signal conveyor_invalid_target_or_source(currentPosY, currentPosX)
 signal conveyor_target_busy(currentPosY, currentPosX)
 
@@ -71,10 +80,22 @@ func _on_ConveyorStraightElevated_input_event(_viewport:Node, event:InputEvent, 
 func snap_to_nearest_rest_node():
 	for child in Global.allRestNodes:
 		var distanceToRest = global_position.distance_to(child.global_position)
-		if distanceToRest < shortestDist and child.selected == true and child.machine.type == "ConveyorStraight":
-			snap_to(child)
-			currentPosY = child.posY
-			currentPosX = child.posX
+		if distanceToRest < shortestDist:
+			if child.is_in_group('trash'):
+				snap_to(child)
+				currentPosY = child.posY
+				currentPosX = child.posX
+			elif child.machine.type == "ConveyorStraight" and child.selected == true:
+				if child.machine.conveyorRotation == 'north' or child.machine.conveyorRotation == 'south'\
+					and conveyorRotation == 'east' or conveyorRotation == 'west':
+					snap_to(child)
+					currentPosY = child.posY
+					currentPosX = child.posX
+				elif child.machine.conveyorRotation == 'east' or child.machine.conveyorRotation == 'west'\
+					and conveyorRotation == 'north' or conveyorRotation == 'south':
+					snap_to(child)
+					currentPosY = child.posY
+					currentPosX = child.posX
 
 func snap_to(restNode):
 	if currentNode:
@@ -110,10 +131,17 @@ func rotate_conveyor():
 	print(self.rotation_degrees)
 
 func move_items():
+	if bought == false:
+		return
+
+	if holding != null:
+		return
+
 	var targetPosY
 	var targetPosX
 	var sourcePosY
 	var sourcePosX
+	get_nearby_absolute_position()
 	match conveyorRotation:
 		'north':
 			targetPosY = currentPosY - 1
@@ -136,32 +164,115 @@ func move_items():
 			sourcePosY = currentPosY
 			sourcePosX = currentPosX + 1
 	
-	if not (sourcePosY >= 0) and not (sourcePosX >= 0) and not (sourcePosY <= Global.gridColumn) and not (sourcePosX <= Global.gridRows) and not (targetPosY >= 0) and not (targetPosX >= 0) and not (targetPosY <= Global.gridColumn) and not (targetPosX <= Global.gridRows):
+	var isLegalPos = []
+	isLegalPos.append(check_legal_pos(sourcePosY, sourcePosX))
+	isLegalPos.append(check_legal_pos(targetPosY, targetPosX))
+
+	if isLegalPos.has(false):
 		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
-		pass
+		return
 	
-	var target = Global.restNodesGridPos[targetPosY][targetPosX].machine
-	print('target', target, target.input)
-	var source = Global.restNodesGridPos[sourcePosY][sourcePosX].machine
-	print('source', source, source.output)
+	var source = get_node_from_pos(sourcePosY, sourcePosX)
+	var target = get_node_from_pos(targetPosY, targetPosX)
 
-	if (target == false) or (source == false):
-		emit_signal('conveyor_invalid_target_or_source', currentPosY, currentPosX)
-		pass
+	if source:
+		# print(source)
+		if (source.type.begins_with('Conveyor')):
+			print('source conveyor route', self, source, source.holding, holding)
+			source.remove_child_in_HoldingContainer()
+			holding = source.holding
+			source.holding = null
+		
+		elif (source.type == 'Warehouse'):
+			# print('warehouse route')
+			if (source.interfaceMode == 'out') and (source.stock > 0):
+				holding = source.stockTemplatePacked.instance()
+				source.stock -= 1
 
-	if source and (source.output != null):
-		print('source.output != null')
-		if target and (target.input == null) and (holding == null):
-			print('target.input != null')
+		elif (source.output != null):
+			# print('normal route')
+			# print('source.output != null')
 			holding = source.output
 			source.output = null
 			get_node("HoldingLabel").text = holding
-				# todo: play anim
-			yield(get_tree().create_timer(0.5), "timeout")
-			target.input = holding
-			holding = null
-			get_node("HoldingLabel").text = 'text'
-			return true
+
+
+		if target:
+			# print(target.type)
+			# print(target.type.begins_with('Conveyor'))
+			if (target.type.begins_with('Conveyor')):
+				pass
+			# 	print('target conveyor route', self)
+			# 	target.holding = holding
+			# 	holding = null
+			# 	if (target.type == 'ConveyorMerger'):
+			# 		target.merge()
+
+			elif (target.type == 'Warehouse'):
+				# print('warehouse route')
+				if (source.interfaceMode == 'in'):
+					source.stock += 1
+
+			elif (target.input == null):
+				# print('normal route')
+				# print('target.input ==null')
+				target.input = holding
+				holding = null
+				get_node("HoldingLabel").text = 'text'
+
+			# return true
 		else:
 			emit_signal('conveyor_target_busy', currentPosY, currentPosX)
-			return false
+			# return false
+	
+	print(holding)		
+	display_holding()
+		
+func get_nearby_absolute_position():
+	absoluteNorthY = currentPosY - 1
+	absoluteNorthX = currentPosX
+
+	absoluteEastY = currentPosY
+	absoluteEastX = currentPosX + 1
+
+	absoluteSouthY = currentPosY
+	absoluteSouthX = currentPosX + 1
+	
+	absoluteWestY = currentPosY
+	absoluteWestX = currentPosX - 1
+
+func check_legal_pos(posY, posX):
+	if (posY >= 0) and (posX >= 0) and (posY <= Global.gridColumn) and (posX <= Global.gridRows):
+		return true
+	else:
+		return false
+
+func get_node_from_pos(posY, posX):
+	if (check_legal_pos(posY, posX) == false):
+		return null
+	elif (Global.restNodesGridPos[posY][posX] != null):
+		return Global.restNodesGridPos[posY][posX].machine
+
+func get_conveyor_from_pos(posY, posX):
+	var node = get_node_from_pos(posY, posX)
+	if (node == null):
+		return null
+	elif (node.type == 'ConveyorCCW') or (node.type == 'ConveyorCW') or (node.type == 'ConveyorStraight'):
+		return node
+	else:
+		return null
+
+func display_holding():
+	# print('holding triggered')
+	if holding != null:
+		# print('holding not null')
+		# for child in get_tree().get_nodes_in_group('holding'):
+		# 	child.queue_free()
+
+		get_node('HoldingContainer').add_child(holding)
+		holding.add_to_group('holding')
+
+func remove_child_in_HoldingContainer():
+	for child in get_node('HoldingContainer').get_children():
+		# print('removing', child)
+		get_node('HoldingContainer').remove_child(child)

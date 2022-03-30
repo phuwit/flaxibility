@@ -25,7 +25,6 @@ func _on_VideoPlayer_finished():
 
 
 func _input(event:InputEvent):
-	print(event)
 	if (event is InputEventKey) or (event is InputEventMouseButton):
 		change_to_scene_path('res://Menu/MainMenu.tscn')
 

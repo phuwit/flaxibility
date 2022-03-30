@@ -1,4 +1,4 @@
-extends Control
+     extends Control
 
 
 var path
@@ -43,7 +43,6 @@ func play_fade():
 	get_node("Fade").fade()
 
 func play_reverse_fade():
-	print('reverse')
 	get_node("Fade").show()
 	get_node("Fade").reverse_fade()
 

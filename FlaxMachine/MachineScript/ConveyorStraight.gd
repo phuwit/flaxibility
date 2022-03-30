@@ -43,6 +43,7 @@ func _process(delta):
 
 func _on_ConveyorStraight_input_event(_viewport:Node, event:InputEvent, _shape_idx:int):
 	if (event is InputEventMouseButton):
+		print(self)
 		# print(event)
 		# print(event.button_index)
 		# print(event.pressed)
@@ -127,7 +128,10 @@ func move_items():
 	if bought == false:
 		return
 
-	print('move triggered')
+	if holding != null:
+		return
+
+	# print('move triggered =======', self, holding)
 	var targetPosY
 	var targetPosX
 	var sourcePosY
@@ -166,53 +170,59 @@ func move_items():
 	
 	var source = get_node_from_pos(sourcePosY, sourcePosX)
 	var target = get_node_from_pos(targetPosY, targetPosX)
- 
+
 	if source:
-		print(source)
+		# print(source)
 		if (source.type.begins_with('Conveyor')):
-			print('conveyor route')
+			print('source conveyor route', self, source, source.holding, holding)
+			source.remove_child_in_HoldingContainer()
 			holding = source.holding
 			source.holding = null
 		
 		elif (source.type == 'Warehouse'):
-			print('warehouse route')
+			# print('warehouse route')
 			if (source.interfaceMode == 'out') and (source.stock > 0):
-				holding = source.stockTemplate
+				holding = source.stockTemplatePacked.instance()
 				source.stock -= 1
-			print(holding)
 
 		elif (source.output != null):
-			print('normal route')
-			print('source.output != null')
+			# print('normal route')
+			# print('source.output != null')
 			holding = source.output
 			source.output = null
 			get_node("HoldingLabel").text = holding
-		if target:
-			print(target.type)
-			print(target.type.begins_with('Conveyor'))
-			if (target.type.begins_with('Conveyor')):
-				print('conveyor route')
-				target.holding = holding
-				holding = null
-				if (target.type == 'ConveyorMerger'):
-					target.merge()
 
-			elif (source.type == 'Warehouse'):
-				print('warehouse route')
+
+		if target:
+			# print(target.type)
+			# print(target.type.begins_with('Conveyor'))
+			if (target.type.begins_with('Conveyor')):
+				pass
+			# 	print('target conveyor route', self)
+			# 	target.holding = holding
+			# 	holding = null
+			# 	if (target.type == 'ConveyorMerger'):
+			# 		target.merge()
+
+			elif (target.type == 'Warehouse'):
+				# print('warehouse route')
 				if (source.interfaceMode == 'in'):
 					source.stock += 1
 
 			elif (target.input == null):
-				print('normal route')
-				print('target.input ==null')
+				# print('normal route')
+				# print('target.input ==null')
 				target.input = holding
 				holding = null
 				get_node("HoldingLabel").text = 'text'
 
-			return true
+			# return true
 		else:
 			emit_signal('conveyor_target_busy', currentPosY, currentPosX)
-			return false
+			# return false
+	
+	print(holding)		
+	display_holding()
 		
 func get_nearby_absolute_position():
 	absoluteNorthY = currentPosY - 1
@@ -247,3 +257,18 @@ func get_conveyor_from_pos(posY, posX):
 		return node
 	else:
 		return null
+
+func display_holding():
+	# print('holding triggered')
+	if holding != null:
+		# print('holding not null')
+		# for child in get_tree().get_nodes_in_group('holding'):
+		# 	child.queue_free()
+
+		get_node('HoldingContainer').add_child(holding)
+		holding.add_to_group('holding')
+
+func remove_child_in_HoldingContainer():
+	for child in get_node('HoldingContainer').get_children():
+		# print('removing', child)
+		get_node('HoldingContainer').remove_child(child)

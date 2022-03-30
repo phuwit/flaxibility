@@ -25,6 +25,7 @@ func _ready():
 	apply_rotation(interfaceRotation)
 	stockTemplate = stockTemplatePacked.instance()
 	self.add_child(stockTemplate)
+	print(stockTemplate)
 
 # func _process(_delta):
 	# pass
