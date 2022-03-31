@@ -114,3 +114,4 @@ size_flags_vertical = 3
 
 [connection signal="timeout" from="Warning/WarningTimer" to="." method="_on_WarningTimer_timeout"]
 [connection signal="pressed" from="GridContainer/ButtonBack" to="." method="_on_ButtonBack_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonStart" to="." method="_on_ButtonStart_pressed"]

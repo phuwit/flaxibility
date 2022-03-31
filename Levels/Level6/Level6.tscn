@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=1]
 [ext_resource path="res://ui-assets/building-machinedrawer.svg" type="Texture" id=2]
 [ext_resource path="res://Levels/Level6/Level6HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level6/Level6Drawer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level6/Level6.gd" type="Script" id=5]
+[ext_resource path="res://Levels/Level6/Level6Grid.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/conveyor_straight.svg" type="Texture" id=7]
+[ext_resource path="res://assets/conveyor_curved_ccw.svg" type="Texture" id=8]
+[ext_resource path="res://assets/conveyor_curved_cw.svg" type="Texture" id=9]
 
 [node name="Level6" type="Control"]
 anchor_right = 1.0
@@ -25,3 +29,51 @@ centered = false
 [node name="Level6HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="Level6Drawer" parent="." instance=ExtResource( 4 )]
+
+[node name="Level6Grid" parent="." instance=ExtResource( 6 )]
+
+[node name="belt" type="Node" parent="."]
+
+[node name="ConveyorStraight" type="Sprite" parent="belt"]
+position = Vector2( 1459, 456 )
+rotation = 1.5708
+texture = ExtResource( 7 )
+
+[node name="ConveyorCurvedCcw" type="Sprite" parent="belt"]
+position = Vector2( 630, 289 )
+rotation = 3.14159
+texture = ExtResource( 8 )
+
+[node name="ConveyorCurvedCcw3" type="Sprite" parent="belt"]
+position = Vector2( 1790, 456 )
+rotation = 1.5708
+texture = ExtResource( 8 )
+
+[node name="ConveyorCurvedCw2" type="Sprite" parent="belt"]
+position = Vector2( 1293, 290 )
+rotation = 1.5708
+texture = ExtResource( 9 )
+
+[node name="ConveyorCurvedCcw4" type="Sprite" parent="belt"]
+position = Vector2( 796, 454 )
+rotation = -3.14159
+texture = ExtResource( 8 )
+
+[node name="ConveyorStraight3" type="Sprite" parent="belt"]
+position = Vector2( 1126, 457 )
+rotation = 1.5708
+texture = ExtResource( 7 )
+
+[node name="ConveyorStraight5" type="Sprite" parent="belt"]
+position = Vector2( 961, 290 )
+rotation = 1.5708
+texture = ExtResource( 7 )
+
+[node name="ConveyorStraight6" type="Sprite" parent="belt"]
+position = Vector2( 1625, 456 )
+rotation = 1.5708
+texture = ExtResource( 7 )
+
+[node name="ConveyorStraight7" type="Sprite" parent="belt"]
+position = Vector2( 1789, 290 )
+texture = ExtResource( 7 )

@@ -20,6 +20,8 @@ var defaultDyeingPosX = 0
 var defaultPackagerPosY = 1
 var defaultPackagerPosX = 1
 
+
+
 func _ready():
 	Global.allRestNodesDrawer = get_tree().get_nodes_in_group('restZonesDrawer')
 	

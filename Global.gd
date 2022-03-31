@@ -7,6 +7,7 @@ var color = 0
 var cotton = 0
 var thread = 0
 var fabric = 0
+var shirt = 0
 var color_fabric = 0
 var gridID = []
 

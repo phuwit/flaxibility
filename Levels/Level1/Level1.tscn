@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=1]
 [ext_resource path="res://ui-assets/building-machinedrawer.svg" type="Texture" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://Levels/Level1/Level1Grid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level1/Level1Drawer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level1/Level1.gd" type="Script" id=6]
+[ext_resource path="res://assets/conveyor_straight.svg" type="Texture" id=7]
+[ext_resource path="res://assets/conveyor_curved_ccw.svg" type="Texture" id=8]
+[ext_resource path="res://assets/conveyor_curved_cw.svg" type="Texture" id=9]
+[ext_resource path="res://Levels/Level1/cotton.gd" type="Script" id=10]
+[ext_resource path="res://Levels/Level1/money.gd" type="Script" id=11]
+[ext_resource path="res://Levels/Level1/Thread.gd" type="Script" id=12]
 
 [node name="Level1" type="Control"]
 script = ExtResource( 6 )
@@ -20,6 +26,101 @@ centered = false
 
 [node name="Level1HUD" parent="." instance=ExtResource( 3 )]
 
+[node name="money" type="Label" parent="Level1HUD"]
+margin_left = 201.0
+margin_top = 70.0
+margin_right = 256.0
+margin_bottom = 84.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Money : "
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cotton" type="Label" parent="Level1HUD"]
+margin_left = 201.0
+margin_top = 98.0
+margin_right = 251.0
+margin_bottom = 112.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Cotton :"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thread" type="Label" parent="Level1HUD"]
+margin_left = 201.0
+margin_top = 125.0
+margin_right = 256.0
+margin_bottom = 139.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Thread : "
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level1Grid" parent="." instance=ExtResource( 4 )]
+margin_top = 1.0
+margin_bottom = 1.0
 
 [node name="Level1Drawer" parent="." instance=ExtResource( 5 )]
+
+[node name="belt" type="Node" parent="."]
+
+[node name="ConveyorCurvedCcw" type="Sprite" parent="belt"]
+position = Vector2( 630, 456 )
+rotation = -3.14159
+texture = ExtResource( 8 )
+
+[node name="ConveyorStraight2" type="Sprite" parent="belt"]
+position = Vector2( 795, 456 )
+rotation = 1.5708
+texture = ExtResource( 7 )
+
+[node name="ConveyorStraight" type="Sprite" parent="belt"]
+position = Vector2( 631, 290 )
+rotation = 3.14159
+texture = ExtResource( 7 )
+
+[node name="ConveyorCurvedCcw2" type="Sprite" parent="belt"]
+position = Vector2( 1790, 290 )
+rotation = -4.71239
+texture = ExtResource( 8 )
+
+[node name="ConveyorCurvedCcw3" type="Sprite" parent="belt"]
+position = Vector2( 961, 457 )
+rotation = 1.5708
+texture = ExtResource( 8 )
+
+[node name="ConveyorCurvedCw" type="Sprite" parent="belt"]
+position = Vector2( 1127, 291 )
+rotation = 1.5708
+texture = ExtResource( 9 )
+
+[node name="ConveyorCurvedCw2" type="Sprite" parent="belt"]
+position = Vector2( 1459, 290 )
+rotation = -5.56363e-08
+texture = ExtResource( 9 )
+
+[node name="ConveyorCurvedCw3" type="Sprite" parent="belt"]
+position = Vector2( 961, 291 )
+rotation = 5.56363e-08
+texture = ExtResource( 9 )
+
+[node name="ConveyorCurvedCcw4" type="Sprite" parent="belt"]
+position = Vector2( 1128, 457 )
+rotation = -3.14159
+texture = ExtResource( 8 )
+
+[node name="ConveyorCurvedCcw5" type="Sprite" parent="belt"]
+position = Vector2( 1459, 458 )
+rotation = 1.5708
+texture = ExtResource( 8 )
+
+[node name="ConveyorStraight3" type="Sprite" parent="belt"]
+position = Vector2( 1626, 291 )
+rotation = 1.5708
+texture = ExtResource( 7 )

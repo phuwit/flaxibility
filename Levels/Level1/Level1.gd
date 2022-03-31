@@ -29,6 +29,7 @@ func _ready():
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZone')
 	# print(Global.allRestNodes)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if(Global.RunButton == true):
+		if(Global.restNodesGridPos[2][4].selected == true):
+			print("loom")

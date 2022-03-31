@@ -47,3 +47,7 @@ func _on_WarningTimer_timeout():
 
 func _on_ButtonBack_pressed():
 	get_tree().change_scene("res://Menu/MainMenu.tscn")
+
+
+func _on_ButtonStart_pressed():
+	Global.RunButton = true
