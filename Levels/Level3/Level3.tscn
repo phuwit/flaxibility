@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=1]
 [ext_resource path="res://ui-assets/building-machinedrawer.svg" type="Texture" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://assets/conveyor_straight.svg" type="Texture" id=7]
 [ext_resource path="res://assets/conveyor_curved_ccw.svg" type="Texture" id=8]
 [ext_resource path="res://assets/conveyor_curved_cw.svg" type="Texture" id=9]
+[ext_resource path="res://Levels/Level3/Dye.gd" type="Script" id=10]
+[ext_resource path="res://Levels/Level2/Frabic.gd" type="Script" id=11]
+[ext_resource path="res://Levels/Level2/Shirt.gd" type="Script" id=12]
+[ext_resource path="res://Levels/Level1/Thread.gd" type="Script" id=13]
+[ext_resource path="res://Levels/Level1/money.gd" type="Script" id=14]
 
 [node name="Level3" type="Control"]
 anchor_right = 1.0
@@ -27,6 +32,66 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Level3HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="money" type="Label" parent="Level3HUD"]
+margin_left = 201.0
+margin_top = 70.0
+margin_right = 256.0
+margin_bottom = 84.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Money : "
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thread" type="Label" parent="Level3HUD"]
+margin_left = 201.0
+margin_top = 125.0
+margin_right = 256.0
+margin_bottom = 139.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Thread : "
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Frabic" type="Label" parent="Level3HUD"]
+margin_left = 201.0
+margin_top = 154.0
+margin_right = 251.0
+margin_bottom = 168.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Fabric : "
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shirt" type="Label" parent="Level3HUD"]
+margin_left = 326.0
+margin_top = 70.0
+margin_right = 367.0
+margin_bottom = 84.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Shirt : "
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dye" type="Label" parent="Level3HUD"]
+margin_left = 201.0
+margin_top = 98.0
+margin_right = 241.0
+margin_bottom = 112.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Dye : "
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Level3Drawer" parent="." instance=ExtResource( 4 )]
 

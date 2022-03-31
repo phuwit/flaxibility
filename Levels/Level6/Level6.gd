@@ -4,10 +4,10 @@ extends Control
 
 var restNodesPos 
 var money = 100
-var color = 0
-var cotton = 10
+var color = 50
+var cotton = 0
 var thread = 0
-var fabric = 0
+var fabric = 100
 var color_fabric = 0
 var RunButton = false
 var delay = 0

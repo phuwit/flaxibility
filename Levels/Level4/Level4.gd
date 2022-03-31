@@ -5,8 +5,8 @@ extends Control
 var restNodesPos 
 var money = 100
 var color = 0
-var cotton = 10
-var thread = 0
+var cotton = 0
+var thread = 15
 var fabric = 0
 var color_fabric = 0
 var RunButton = false

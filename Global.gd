@@ -8,7 +8,12 @@ var cotton = 0
 var thread = 0
 var fabric = 0
 var shirt = 0
+var screened_fabric = 0
+var screened_shirt = 0
 var color_fabric = 0
+var color_shirt = 0
+var pack_screened_shirt = 0
+var pack_color_shirt = 0
 var gridID = []
 
 var allRestNodes: Array
