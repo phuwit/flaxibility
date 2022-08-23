@@ -2,7 +2,8 @@ extends Control
 
 
 
-var restNodesPos 
+var restNodesPos
+var mission = 0 
 var money = 120
 var color = 0
 var cotton = 10
@@ -23,12 +24,21 @@ func _ready():
 	Global.money = money
 	Global.cotton = cotton
 	Global.color = color
+	Global.mission = mission
 
 	Global.RunButton = false
 	
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZone')
-	print(Global.allRestNodes)
+	#print(Global.allRestNodes)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if(Global.RunButton == true):
+		if(Global.restNodesGridPos[1][2].selected == true):
+			while(Global.cotton >= 5):
+				Global.cotton = Global.cotton - 5
+				Global.thread = Global.thread+1
+			if(Global.cotton == 0 and Global.thread == 2):
+				mission = 1
+				Global.mission = mission
+				Global.RunButton == false
+

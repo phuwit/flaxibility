@@ -2,6 +2,7 @@ extends Node
 
 
 var RunButton = false
+var mission = 0
 var money = 0
 var color = 0
 var cotton = 0

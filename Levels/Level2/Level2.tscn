@@ -18,6 +18,8 @@
 [node name="Level2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -1920.0
+margin_bottom = -1080.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,6 +34,8 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Level2HUD" parent="." instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="money" type="Label" parent="Level2HUD"]
 margin_left = 201.0
@@ -91,8 +95,12 @@ __meta__ = {
 }
 
 [node name="Level2 Grid" parent="." instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="Level2Drawer" parent="." instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="belt" type="Node" parent="."]
 

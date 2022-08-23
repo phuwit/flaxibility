@@ -51,3 +51,7 @@ func _on_ButtonBack_pressed():
 
 func _on_ButtonStart_pressed():
 	Global.RunButton = true
+
+
+func _on_ButtonReset_pressed():
+	get_tree().reload_current_scene()

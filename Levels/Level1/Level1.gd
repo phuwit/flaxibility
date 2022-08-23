@@ -2,7 +2,8 @@ extends Control
 
 
 
-var restNodesPos 
+var restNodesPos
+var mission = 0 
 var money = 100
 var color = 0
 var cotton = 10
@@ -23,6 +24,8 @@ func _ready():
 	Global.money = money
 	Global.cotton = cotton
 	Global.color = color
+	Global.thread = thread
+	Global.mission = mission
 
 	Global.RunButton = false
 	
@@ -32,4 +35,10 @@ func _ready():
 func _process(delta):
 	if(Global.RunButton == true):
 		if(Global.restNodesGridPos[2][4].selected == true):
-			print("loom")
+			while(Global.cotton >= 5):
+				Global.cotton = Global.cotton - 5
+				Global.thread = Global.thread+1
+			if(Global.cotton == 0 and Global.thread == 2):
+				mission = 1
+				Global.mission = mission
+				Global.RunButton == false
