@@ -1,4 +1,4 @@
-extends Label
+extends Popup
 
 
 # Declare member variables here. Examples:
@@ -12,4 +12,5 @@ func _ready():
 
 
 func _process(delta):
-	text = "Packed shirt : "+String(Global.shirt)
+	if Global.mission == 1:
+		popup()

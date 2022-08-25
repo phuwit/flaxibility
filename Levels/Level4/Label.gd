@@ -12,4 +12,4 @@ func _ready():
 
 
 func _process(delta):
-	text = "Screened shirt : "+String(Global.screened_shirt)
+	text = "Shirt : "+String(Global.shirt)

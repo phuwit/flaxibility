@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ui-assets/1920x1080_white.svg" type="Texture" id=1]
 [ext_resource path="res://ui-assets/building-machinedrawer.svg" type="Texture" id=2]
@@ -16,10 +16,13 @@
 [ext_resource path="res://Levels/Level2/Shirt.gd" type="Script" id=14]
 [ext_resource path="res://Levels/Level6/Pack(DyeShirt).gd" type="Script" id=15]
 [ext_resource path="res://Levels/Level1/money.gd" type="Script" id=16]
+[ext_resource path="res://Levels/Level6/pack fabric.gd" type="Script" id=17]
 
 [node name="Level6" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -1920.0
+margin_bottom = -1080.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,30 +50,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Frabic" type="Label" parent="Level6HUD"]
-margin_left = 201.0
-margin_top = 125.0
-margin_right = 251.0
-margin_bottom = 139.0
-rect_scale = Vector2( 1.25, 1.25 )
-text = "Fabric : "
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Shirt" type="Label" parent="Level6HUD"]
-margin_left = 201.0
-margin_top = 154.0
-margin_right = 242.0
-margin_bottom = 168.0
-rect_scale = Vector2( 1.25, 1.25 )
-text = "Shirt : "
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Dye" type="Label" parent="Level6HUD"]
 margin_left = 201.0
 margin_top = 98.0
@@ -83,44 +62,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Screenedshirt" type="Label" parent="Level6HUD"]
+[node name="thread" type="Label" parent="Level6HUD"]
+margin_left = 201.0
+margin_top = 125.0
+margin_right = 251.0
+margin_bottom = 139.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Thread : "
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fabric" type="Label" parent="Level6HUD"]
+margin_left = 201.0
+margin_top = 154.0
+margin_right = 242.0
+margin_bottom = 168.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Fabric : "
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shirt" type="Label" parent="Level6HUD"]
 margin_left = 326.0
 margin_top = 70.0
 margin_right = 430.0
 margin_bottom = 84.0
 rect_scale = Vector2( 1.25, 1.25 )
-text = "Screened shirt : "
+text = "Shirt : "
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Color_shirt" type="Label" parent="Level6HUD"]
+[node name="Color_fabric" type="Label" parent="Level6HUD"]
 margin_left = 326.0
 margin_top = 98.0
 margin_right = 412.0
 margin_bottom = 112.0
 rect_scale = Vector2( 1.25, 1.25 )
-text = "Color shirt : "
+text = "Color fabric  : "
 script = ExtResource( 12 )
+
+[node name="pack fabric" type="Label" parent="Level6HUD"]
+margin_left = 326.0
+margin_top = 125.0
+margin_right = 451.0
+margin_bottom = 139.0
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Packed colored fabric : "
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Pack(DyeShirt)" type="Label" parent="Level6HUD"]
 margin_left = 326.0
 margin_top = 154.0
 margin_right = 425.0
 margin_bottom = 168.0
-text = "Pack(Cshirt) :"
+rect_scale = Vector2( 1.25, 1.25 )
+text = "Packed shirt :"
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Pack(screenedshirt)" type="Label" parent="Level6HUD"]
-margin_left = 326.0
-margin_top = 125.0
-margin_right = 451.0
-margin_bottom = 139.0
-text = "Pack(Sshirt) : "
 
 [node name="Level6Drawer" parent="." instance=ExtResource( 4 )]
 

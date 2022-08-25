@@ -2,7 +2,7 @@ extends Control
 
 
 var restNodesPos 
-var money = 100
+var money = 160
 var color = 5
 var cotton = 100
 var thread = 0

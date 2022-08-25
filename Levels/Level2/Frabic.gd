@@ -12,4 +12,4 @@ func _ready():
 
 
 func _process(delta):
-	text = "Fabric : "+String(Global.fabric)
+	text = "Thread : "+String(Global.thread)

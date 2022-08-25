@@ -18,12 +18,15 @@ onready var grid = get_node("Level1Grid")
 onready var hud = get_node("Level1HUD")
 onready var gridID_Back = get_node("Level1Drawer/GridMachine")
 
-
+func reset():
+	Global.cotton = 0
+	Global.thread = 0
+	Global.RunButton = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	reset()
 	Global.money = money
 	Global.cotton = cotton
-	Global.color = color
 	Global.thread = thread
 	Global.mission = mission
 
@@ -38,7 +41,6 @@ func _process(delta):
 			while(Global.cotton >= 5):
 				Global.cotton = Global.cotton - 5
 				Global.thread = Global.thread+1
-			if(Global.cotton == 0 and Global.thread == 2):
+			if(Global.thread == 2):
 				mission = 1
 				Global.mission = mission
-				Global.RunButton == false
