@@ -12,7 +12,4 @@ func _ready():
 
 
 func _process(delta):
-	if(Global.pack_color_fabric > 9):
-		text = "Packed colored fabric : "+String(Global.pack_color_fabric)
-	else:
-		text = "Packed c_fabric : "+String(Global.pack_color_fabric)
+	text = "Packed C_fabric :"+String(Global.pack_color_fabric)

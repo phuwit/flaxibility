@@ -108,6 +108,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="objective" type="Label" parent="Level2HUD"]
+margin_left = 371.0
+margin_top = 24.0
+margin_right = 479.0
+margin_bottom = 56.0
+text = "objective :
+- 3 colored fabric"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level2 Grid" parent="." instance=ExtResource( 9 )]
 anchor_right = 0.0
 anchor_bottom = 0.0

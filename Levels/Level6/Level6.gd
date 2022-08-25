@@ -60,7 +60,7 @@ func _process(delta):
 					Global.color_fabric = Global.color_fabric + 1
 		if(Global.restNodesGridPos[1][3].selected == true)and (Global.restNodesGridPos[1][3].machine.type == 'Sewing' or Global.restNodesGridPos[1][3].machine.type == 'Dyeing'):
 			if(Global.restNodesGridPos[1][3].machine.type == 'Sewing'):
-				while(Global.fabric > 1500):
+				while(Global.fabric > 0):
 					Global.fabric = Global.fabric-3
 					Global.shirt = Global.shirt+1
 			else:

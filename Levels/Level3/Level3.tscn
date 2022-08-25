@@ -108,6 +108,17 @@ margin_bottom = 112.0
 text = "Colored shirt :"
 script = ExtResource( 17 )
 
+[node name="objective" type="Label" parent="Level3HUD"]
+margin_left = 378.0
+margin_top = 24.0
+margin_right = 480.0
+margin_bottom = 56.0
+text = "objective :
+- 2 colored shirt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level3Drawer" parent="." instance=ExtResource( 4 )]
 margin_right = -1920.0
 margin_bottom = -1080.0

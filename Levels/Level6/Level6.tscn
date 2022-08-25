@@ -109,10 +109,10 @@ rect_scale = Vector2( 1.25, 1.25 )
 text = "Color fabric  : "
 script = ExtResource( 12 )
 
-[node name="pack fabric" type="Label" parent="Level6HUD"]
+[node name="pack color fabric" type="Label" parent="Level6HUD"]
 margin_left = 326.0
 margin_top = 125.0
-margin_right = 451.0
+margin_right = 474.0
 margin_bottom = 139.0
 rect_scale = Vector2( 1.25, 1.25 )
 text = "Packed colored fabric : "
@@ -121,7 +121,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pack(DyeShirt)" type="Label" parent="Level6HUD"]
+[node name="Pack shirt" type="Label" parent="Level6HUD"]
 margin_left = 326.0
 margin_top = 154.0
 margin_right = 425.0
@@ -129,6 +129,18 @@ margin_bottom = 168.0
 rect_scale = Vector2( 1.25, 1.25 )
 text = "Packed shirt :"
 script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="objective" type="Label" parent="Level6HUD"]
+margin_left = 316.0
+margin_top = 181.0
+margin_right = 481.0
+margin_bottom = 229.0
+text = "objective :
+- 5 packed shirt
+- 15 packed colored fabric"
 __meta__ = {
 "_edit_use_anchors_": false
 }

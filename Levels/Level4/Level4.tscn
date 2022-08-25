@@ -123,6 +123,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="objective" type="Label" parent="Level4HUD"]
+margin_left = 366.0
+margin_top = 19.0
+margin_right = 482.0
+margin_bottom = 67.0
+text = "objective :
+- 15 colored fabric
+- 5 colored shirt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level4Drawer" parent="." instance=ExtResource( 4 )]
 
 [node name="Level4Grid" parent="." instance=ExtResource( 6 )]
