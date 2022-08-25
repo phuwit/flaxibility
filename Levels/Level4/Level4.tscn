@@ -105,7 +105,7 @@ margin_top = 98.0
 margin_right = 366.0
 margin_bottom = 112.0
 rect_scale = Vector2( 1.25, 1.25 )
-text = "Screened cloth : "
+text = "Colored fabric : "
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,7 +117,7 @@ margin_top = 125.0
 margin_right = 366.0
 margin_bottom = 139.0
 rect_scale = Vector2( 1.25, 1.25 )
-text = "Screened shirt : "
+text = "Colored shirt : "
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false

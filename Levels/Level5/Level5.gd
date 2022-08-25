@@ -45,19 +45,30 @@ func _ready():
 
 func _process(delta):
 	if(Global.RunButton == true):
-		if(Global.restNodesGridPos[1][1].selected == true):
+		if(Global.restNodesGridPos[1][1].selected == true) and Global.restNodesGridPos[1][1].machine.type == 'Sewing':
 			while(Global.thread >= 5):
 				Global.thread = Global.thread - 5
 				Global.fabric = Global.fabric+1
-		if(Global.restNodesGridPos[0][2].selected == true):
-			while(Global.fabric > 54 and Global.color >= 1):
-				Global.fabric = Global.fabric-1
-				Global.color = Global.color-1
-				Global.color_fabric = Global.color_fabric+1
-		if(Global.restNodesGridPos[2][3].selected == true):
-			while(Global.fabric > 27):
-				Global.fabric = Global.fabric-3
-				Global.shirt = Global.shirt+1
+		if(Global.restNodesGridPos[0][2].selected == true)and (Global.restNodesGridPos[0][2].machine.type == 'Dyeing' or Global.restNodesGridPos[0][2].machine.type == 'Sewing'):
+			if(Global.restNodesGridPos[0][2].machine.type == 'Sewing'):
+				while(Global.fabric > 54):
+					Global.fabric = Global.fabric - 3
+					Global.shirt = Global.shirt + 1
+			else:
+				while(Global.fabric > 54 and Global.color >= 1):
+					Global.fabric = Global.fabric-1
+					Global.color = Global.color-1
+					Global.color_fabric = Global.color_fabric+1
+		if(Global.restNodesGridPos[2][3].selected == true) and (Global.restNodesGridPos[2][3].machine.type == 'Sewing' or Global.restNodesGridPos[2][3].machine.type == 'Dyeing'):
+			if(Global.restNodesGridPos[2][3].machine.type == 'Sewing'):
+				while(Global.fabric > 27):
+					Global.fabric = Global.fabric - 3
+					Global.shirt = Global.shirt + 1
+			else:
+				while(Global.fabric > 27 and Global.color >= 1):
+					Global.fabric = Global.fabric-1
+					Global.color = Global.color-1
+					Global.color_fabric = Global.color_fabric+1
 		if(Global.fabric == 27 and Global.color_fabric == 27 and Global.shirt == 9):
 				mission = 1
 				Global.mission = mission

@@ -44,27 +44,38 @@ func _ready():
 
 func _process(delta):
 	if(Global.RunButton == true):
-		if(Global.restNodesGridPos[1][1].selected == true):
+		if(Global.restNodesGridPos[1][1].selected == true) and Global.restNodesGridPos[1][1].machine.type == 'Sewing':
 			while(Global.thread >= 5):
 				Global.thread = Global.thread - 5
 				Global.fabric = Global.fabric+1
-		if(Global.restNodesGridPos[2][2].selected == true):
-			while(Global.fabric > 1500):
-				Global.fabric = Global.fabric-3
-				Global.shirt = Global.shirt+1
-		if(Global.restNodesGridPos[1][3].selected == true):
-			while(Global.fabric >= 1 and Global.color >= 1):
-				Global.fabric = Global.fabric-1
-				Global.color = Global.color-1
-				Global.color_fabric = Global.color_fabric+1
-		if(Global.restNodesGridPos[2][4].selected == true):
+		if(Global.restNodesGridPos[2][2].selected == true) and (Global.restNodesGridPos[2][2].machine.type == 'Sewing' or Global.restNodesGridPos[2][2].machine.type == 'Dyeing'):
+			if(Global.restNodesGridPos[2][2].machine.type == 'Sewing'):
+				while(Global.fabric > 1500):
+					Global.fabric = Global.fabric-3
+					Global.shirt = Global.shirt+1
+			else:
+				while(Global.fabric > 1500 and Global.color >=1):
+					Global.fabric = Global.fabric - 1
+					Global.color = Global.color - 1
+					Global.color_fabric = Global.color_fabric + 1
+		if(Global.restNodesGridPos[1][3].selected == true)and (Global.restNodesGridPos[1][3].machine.type == 'Sewing' or Global.restNodesGridPos[1][3].machine.type == 'Dyeing'):
+			if(Global.restNodesGridPos[1][3].machine.type == 'Sewing'):
+				while(Global.fabric > 1500):
+					Global.fabric = Global.fabric-3
+					Global.shirt = Global.shirt+1
+			else:
+				while(Global.fabric > 1500 and Global.color >=1):
+					Global.fabric = Global.fabric - 1
+					Global.color = Global.color - 1
+					Global.color_fabric = Global.color_fabric + 1
+		if(Global.restNodesGridPos[2][4].selected == true) and Global.restNodesGridPos[2][4].machine.type == 'Packager':
 			while(Global.shirt >= 100 or Global.color_fabric >= 100):
 				if(Global.color_fabric >= 100):
 					Global.color_fabric = Global.color_fabric-100
 					Global.pack_color_fabric = Global.pack_color_fabric+1
 				if(Global.shirt >= 100):
-					Global.shirt = Global.shirt-100
+					Global.shirt = Global.shirt - 100
 					Global.pack_shirt = Global.pack_shirt+1
 		if(Global.pack_shirt == 5 and Global.pack_color_fabric == 15):
-			mission = 1
-			Global.mission = mission
+				mission = 1
+				Global.mission = mission

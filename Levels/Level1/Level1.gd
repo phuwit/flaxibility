@@ -37,7 +37,7 @@ func _ready():
 
 func _process(delta):
 	if(Global.RunButton == true):
-		if(Global.restNodesGridPos[2][4].selected == true):
+		if(Global.restNodesGridPos[2][4].selected == true)and Global.restNodesGridPos[2][4].machine.type == 'Loom':
 			while(Global.cotton >= 5):
 				Global.cotton = Global.cotton - 5
 				Global.thread = Global.thread+1

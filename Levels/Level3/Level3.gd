@@ -49,15 +49,15 @@ func _ready():
 
 func _process(delta):
 	if(Global.RunButton == true):
-		if(Global.restNodesGridPos[2][1].selected == true):
+		if(Global.restNodesGridPos[2][1].selected == true)and Global.restNodesGridPos[2][1].machine.type == 'Sewing':
 			while(Global.thread >= 5):
 				Global.thread = Global.thread - 5
 				Global.fabric = Global.fabric+1
-		if(Global.restNodesGridPos[4][1].selected == true):
+		if(Global.restNodesGridPos[4][1].selected == true)and Global.restNodesGridPos[4][1].machine.type == 'Sewing':
 			while(Global.fabric >= 3):
 				Global.fabric = Global.fabric - 3
 				Global.shirt = Global.shirt + 1
-		if(Global.restNodesGridPos[4][1].selected == true):
+		if(Global.restNodesGridPos[5][5].selected == true)and Global.restNodesGridPos[5][5].machine.type == 'Dyeing':
 			while(Global.shirt >= 1 and Global.color >= 1):
 				Global.shirt = Global.shirt - 1
 				Global.color = Global.color - 1

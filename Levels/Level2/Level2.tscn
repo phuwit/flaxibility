@@ -58,7 +58,7 @@ margin_top = 98.0
 margin_right = 251.0
 margin_bottom = 112.0
 rect_scale = Vector2( 1.25, 1.25 )
-text = "Color :"
+text = "Dye :"
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -45,15 +45,15 @@ func _ready():
 	Global.allRestNodes = get_tree().get_nodes_in_group('restZone')
 func _process(delta):
 		if(Global.RunButton == true):
-			if(Global.restNodesGridPos[1][4].selected == true):
+			if(Global.restNodesGridPos[1][4].selected == true)and Global.restNodesGridPos[1][4].machine.type == 'Sewing':
 				while(Global.thread >= 5):
 					Global.thread = Global.thread - 5
 					Global.fabric = Global.fabric + 1
-			if(Global.restNodesGridPos[2][5].selected == true):
+			if(Global.restNodesGridPos[2][5].selected == true)and Global.restNodesGridPos[2][5].machine.type == 'Sewing':
 				while(Global.fabric > 15):
 					Global.fabric = Global.fabric - 3
 					Global.shirt = Global.shirt+1
-			if(Global.restNodesGridPos[1][6].selected == true):
+			if(Global.restNodesGridPos[1][6].selected == true)and Global.restNodesGridPos[1][6].machine.type == 'Dyeing':
 				while(Global.fabric >= 1 and Global.color >= 1):
 					Global.fabric = Global.fabric - 1
 					Global.color = Global.color - 1
@@ -64,4 +64,5 @@ func _process(delta):
 					Global.color_shirt = Global.color_shirt+1
 			if(Global.color_fabric == 15 and Global.color_shirt == 5):
 				mission = 1
+				Global.mission = mission
 
